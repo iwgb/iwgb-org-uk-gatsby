@@ -1,0 +1,100 @@
+{
+  "global": {
+    "iwgbLogo": "IWGB logo"
+  },
+  "nav": {
+    "news": "News",
+    "campaigns": "Campaigns",
+    "branches": "Branches",
+    "about": "About",
+    "support": "Support"
+  },
+  "home": {
+    "weAre": {
+      "1": "We are",
+      "2": "the IWGB.",
+      "body": "We’re a new and dynamic independent trade union. From our roots representing migrant workers, we’ve evolved to taking on the bosses of the so-called gig economy and government regulators, representing under-unionised and under-represented workforces."
+    },
+    "donate": "Donate",
+    "join": "Join",
+    "readMore": "Read more",
+    "benefits": {
+      "image": "https://cdn.iwgb.org.uk/bucket/UoL/ucl-1.jpg",
+      "title": "Putting workers first",
+      "0": {
+        "title": "Organise for change",
+        "body": "Join the IWGB and campaign for long-lasting change in your workplace. The union creates real collective power among workers.",
+        "cta": {
+          "href": "/join",
+          "text": "Join"
+        }
+      },
+      "1": {
+        "title": "Workplace protection",
+        "body": "From workplace bullying to illegal deduction of wages, if you are facing problems at work, then contact your union. ",
+        "cta": {
+          "href": "/page/support-and-advice",
+          "text": "Get support"
+        }
+      },
+      "2": {
+        "title": "Support us",
+        "body": "Your donations will help the union run campaigns and make sure we can support every member.",
+        "cta": {
+          "href": "/donate",
+          "text": "Donate"
+        }
+      }
+    },
+    "contact": {
+      "title": "Get in touch",
+      "body": "Our offices are now closed due to the Covid-19 pandemic.",
+      "copy": "Copy",
+      "form": {
+        "href": "https://iwgb.typeform.com/to/aORWuU",
+        "text": "The best way to get in touch with us is to {link}.",
+        "linkText": "send us a message"
+      },
+      "phone": {
+        "value": "+44 2035 383 720",
+        "openingHours": "We normally answer the phone 9am-5pm on working days",
+        "action": {
+          "href": "tel:00442035383720",
+          "text": "Call"
+        }
+      },
+      "address": {
+        "value": "St Margaret's House,\n15 Old Ford Road,\nBethnal Green,\nLondon,\nE2 9PJ",
+        "action": {
+          "href": "https://goo.gl/maps/NTXUpencC24oBKXH6",
+          "text": "Directions"
+        }
+      }
+    }
+  },
+  "footer": {
+    "policies": "Policies",
+    "about": "About",
+    "getInvolved": "Get involved",
+    "social": "Social",
+    "handles": {
+      "twitter": "IWGBunion",
+      "facebook": "IWGBunion",
+      "instagram": "iwgb_union"
+    },
+    "copyright": "{copy} Independent Workers Union of Great Britain {year}",
+    "credit": "Designed and built at the IWGB with love, care and coffee. Hasta la victoria siempre.",
+    "logIn": "Log in",
+    "contribute": "Contribute"
+  },
+  "post": {
+    "donate": {
+      "title": "Our work matters",
+      "body": "We're just one David and there's a lot of Goliaths out there. As such, we rely on dues and donations to do our work - if you can, we'd really appreciate any contributions to our vital work.",
+      "cta": {
+        "href": "/donate",
+        "text": "I'll contribute"
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+.nav {
+  top: 0;
+}
+
+.wordmark {
+  height: 3.5rem;
+}
+
+.join {
+  width: 8ch;
+
+  &_en::after {
+    content: "Join"
+  }
+
+  &_es::after {
+    content: "Únete"
+  }
+
+  &:hover::after {
+    content: "❤️";
+  }
+}

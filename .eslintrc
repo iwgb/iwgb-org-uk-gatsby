@@ -1,0 +1,43 @@
+{
+  "extends": [
+    "airbnb"
+  ],
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "globals": {
+    "GatsbyTypes": "readonly"
+  },
+  "rules": {
+    "import/no-unresolved": 0,
+    "react/react-in-jsx-scope": 0,
+    "react/jsx-props-no-spreading": 0,
+    "react/no-danger": 0,
+    "react/jsx-boolean-value": [0, "never"],
+    "react/jsx-filename-extension": [
+      2,
+      {
+        "extensions": [
+          ".jsx",
+          ".tsx"
+        ]
+      }
+    ],
+    "import/extensions": [
+      2,
+      {
+        "ts": "never",
+        "scss": "always"
+      }
+    ],
+    "no-unused-vars": 0,
+    "react/require-default-props": 0,
+    "no-shadow": "off",
+    "@typescript-eslint/no-shadow": "error"
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  }
+}

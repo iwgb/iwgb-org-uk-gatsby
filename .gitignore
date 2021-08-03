@@ -1,3 +1,7 @@
 node_modules/
 .cache/
-public
+public/
+.env
+schema.graphql
+src/__generated__/
+.idea/

@@ -1,0 +1,9 @@
+@import 'src/utils/utils';
+
+.icon {
+  color: $iwgb-dark-grey;
+
+  &:hover {
+    color: black;
+  }
+}

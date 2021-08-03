@@ -1,0 +1,18 @@
+$iwgb-dark-grey: #343a40;
+$iwgb-med-grey: #666;
+$iwgb-light-grey: #999;
+$iwgb-lightest-grey: #eee;
+
+$iwgb-dark-red: #962d22;
+$iwgb-red: #c0392b;
+$iwgb-light-red: #d65548;
+
+$iwgb-colours: (
+  'iwgb-dark-grey': $iwgb-dark-grey,
+  'iwgb-med-grey': $iwgb-med-grey,
+  'iwgb-light-grey': $iwgb-light-grey,
+  'iwgb-lightest-grey': $iwgb-lightest-grey,
+  'iwgb-dark-red': $iwgb-dark-red,
+  'iwgb-red': $iwgb-red,
+  'iwgb-light-red': $iwgb-light-red,
+);

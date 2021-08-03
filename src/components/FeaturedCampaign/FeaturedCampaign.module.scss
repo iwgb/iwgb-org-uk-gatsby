@@ -1,0 +1,52 @@
+@use 'sass:math';
+@import 'src/utils/utils';
+
+.campaign {
+  $margin: 10rem;
+
+  @include media-breakpoint-up(lg) {
+    padding: 0 7rem;
+  }
+
+
+  @mixin direction($direction) {
+    &.#{$direction} {
+      text-align: $direction;
+
+      @include media-breakpoint-up(lg) {
+        .text {
+          margin-#{$direction}: $margin * -1;
+        }
+      }
+
+      .body {
+        margin-#{$direction}: $margin;
+      }
+
+      .stripeBottom {
+        margin-#{$direction}: math.div($margin, 2);
+      }
+    }
+  }
+
+  @include direction(left);
+  @include direction(right);
+
+  .text {
+    margin-bottom: 5rem;
+    padding-top: 5rem;
+
+    @include media-breakpoint-up(lg) {
+      background: none !important;
+    }
+  }
+
+  .stripe {
+    font-size: 6rem;
+
+    @include media-breakpoint-down(lg) {
+      font-size: 4rem;
+    }
+  }
+}
+

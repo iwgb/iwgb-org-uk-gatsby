@@ -1,0 +1,29 @@
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import 'src/constants/colours';
+
+$font-family-base: Fira Sans, Verdana, sans-serif;
+$primary: $iwgb-red;
+
+@import '~bootstrap/scss/bootstrap';
+@import 'src/utils/colours';
+@import 'src/utils/typography';
+@import 'src/utils/media';
+@import 'src/utils/reset';
+
+[disabled] {
+  cursor: not-allowed;
+}
+
+small {
+  font-size: 80%;
+}
+
+a {
+  color: inherit;
+
+  &:hover {
+    color: inherit;
+  }
+}

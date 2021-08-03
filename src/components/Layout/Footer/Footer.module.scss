@@ -1,0 +1,11 @@
+@import 'src/utils/utils';
+
+.roundel {
+  height: 7.5rem;
+}
+
+.social {
+  @include media-breakpoint-down(md) {
+    text-align: center;
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "global": {
+    "iwgbLogo": "Logotipo de la IWGB"
+  },
+  "nav": {
+    "news": "Noticias",
+    "campaigns": "Campañas",
+    "branches": "Ramas",
+    "about": "Acerca de",
+    "support": "Apoyo"
+  },
+  "home": {
+    "weAre": {
+      "1": "Somos",
+      "2": "la IWGB.",
+      "body": "Somos un nuevo y dinámico sindicato independiente. Desde nuestras raíces, que representaban a los trabajadores migrantes, hemos evolucionado hasta asumir los jefes de la llamada economía de los \"gigas\" y los reguladores gubernamentales, que representan a las fuerzas de trabajo sub-sindicalizadas y sub-representadas."
+    },
+    "donate": "Donar",
+    "join": "Únete",
+    "readMore": "Leer más",
+    "benefits": {
+      "image": "https://cdn.iwgb.org.uk/bucket/UoL/ucl-1.jpg",
+      "title": "Únete a nosotros",
+      "0": {
+        "title": "Organizarse para el cambio",
+        "body": "Únete a la IWGB y haz campaña para un cambio duradero en tu lugar de trabajo. El sindicato crea un verdadero poder colectivo entre los trabajadores para garantizar que sus empleadores rindan cuentas.",
+        "cta": {
+          "href": "/join",
+          "text": "Únete"
+        }
+      },
+      "1": {
+        "title": "Protección del lugar de trabajo",
+        "body": "Los representantes de la IWGB y el Departamento Legal se asegurarán de que estés protegido en el trabajo. Nuestro equipo se encarga de todo tipo de casos, desde el acoso en el lugar de trabajo hasta la deducción ilegal del salario.",
+        "cta": {
+          "href": "/page/support-and-advice",
+          "text": "Consejo y apoyo"
+        }
+      },
+      "2": {
+        "title": "Desafíos legales",
+        "body": "Sus donaciones ayudarán al sindicato a hacer campañas y asegurarnos de que podemos apoyar a todos los miembros.",
+        "cta": {
+          "href": "/donate",
+          "text": "Donar"
+        }
+      }
+    },
+    "contact": {
+      "title": "Entrar en contacto",
+      "body": "Nuestras oficinas están ahora cerradas debido a la pandemia de Covid-19.",
+      "copy": "Copia",
+      "form": {
+        "href": "https://iwgb.typeform.com/to/aORWuU",
+        "text": "La mejor manera de ponerse en contacto con nosotros es {link}.",
+        "linkText": "enviándonos un mensaje"
+      },
+      "phone": {
+        "value": "+44 2035 383 720",
+        "openingHours": "Normalmente contestamos el teléfono de 9am a 5pm los días de semana.",
+        "action": {
+          "href": "tel:00442035383720",
+          "text": "Llama"
+        }
+      },
+      "address": {
+        "value": "St Margaret's House,\n15 Old Ford Road,\nBethnal Green,\nLondres,\nE2 9PJ",
+        "action": {
+          "href": "https://goo.gl/maps/NTXUpencC24oBKXH6",
+          "text": "Direcciones"
+        }
+      }
+    }
+  },
+  "footer": {
+    "policies": "Regulaciones",
+    "about": "Acerca de",
+    "getInvolved": "Involucrarse",
+    "social": "Social",
+    "handles": {
+      "twitter": "IWGBunion",
+      "facebook": "IWGBunion",
+      "instagram": "iwgb_union"
+    },
+    "copyright": "{copy} Sindicato de Trabajadores Independientes de Gran Bretaña {year}",
+    "credit": "Diseñado y construido en la IWGB con amor, cuidado y café. Hasta la victoria siempre.",
+    "logIn": "Ingresa",
+    "contribute": "Contribuiré"
+  },
+  "post": {
+    "donate": {
+      "title": "Nuestro trabajo importa",
+      "body": "Somos solo un David y hay muchos Goliat por ahí. Como tal, dependemos de las cuotas y las donaciones para hacer nuestro trabajo; si puede, realmente apreciaríamos cualquier contribución a nuestro trabajo vital.",
+      "cta": {
+        "href": "/donate",
+        "text": "Contribuiré"
+      }
+    }
+  }
+}

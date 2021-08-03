@@ -1,0 +1,21 @@
+@import 'src/utils/utils';
+
+.featured {
+  height: 70vh;
+
+  @include media-breakpoint-down(md) {
+    height: 50vh;
+  }
+
+  .text {
+    background-color: rgba($iwgb-dark-grey, .7);
+
+    h2 {
+      line-height: .95;
+    }
+  }
+
+  &:hover h2 {
+    text-decoration: underline;
+  }
+}

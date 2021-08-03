@@ -1,0 +1,11 @@
+@import 'src/utils/utils';
+
+.navItem {
+  border-top: 5px solid $iwgb-dark-red;
+  border-bottom: 5px solid $iwgb-dark-red;
+  transition: border-bottom-color .3s;
+
+ &:hover {
+    border-bottom-color: $white;
+  }
+}

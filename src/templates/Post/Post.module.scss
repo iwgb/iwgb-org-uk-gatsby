@@ -1,0 +1,20 @@
+@import 'src/utils/utils';
+
+.title {
+  background-color: rgba($iwgb-red, .8);
+  line-height: normal;
+}
+
+.image {
+  min-height: 30rem;
+}
+
+.published {
+  text-transform: uppercase;
+}
+
+.content {
+  @include media-breakpoint-up(md) {
+    border-left: 1px solid $iwgb-lightest-grey;
+  }
+}

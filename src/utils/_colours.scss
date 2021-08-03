@@ -1,0 +1,11 @@
+@import 'src/constants/colours';
+
+@each $name, $colour in $iwgb-colours {
+  .#{$name}-bg {
+    background-color: $colour;
+  }
+
+  .#{$name} {
+    color: $colour;
+  }
+}

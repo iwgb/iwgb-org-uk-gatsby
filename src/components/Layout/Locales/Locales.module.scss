@@ -1,0 +1,22 @@
+@import 'src/utils/utils';
+
+.locales {
+  .locale {
+    height: 1.5rem;
+    border-bottom: 2px solid $iwgb-dark-grey;
+    transition: border-bottom-color .3s;
+  }
+
+  .current {
+    border-bottom-color: $white;
+  }
+
+  &:hover .locale {
+    border-bottom-color: $iwgb-dark-grey;
+
+    &:hover {
+      border-bottom-color: $white;
+    }
+  }
+}
+

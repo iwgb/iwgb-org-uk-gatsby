@@ -1,0 +1,17 @@
+@import 'src/utils/utils';
+
+.header {
+  min-height: 40vh;
+
+  @include media-breakpoint-down(md) {
+    min-height: 30vh;
+  }
+}
+
+.title {
+  font-size: 6rem;
+
+  @include media-breakpoint-down(md) {
+    font-size: 4rem;
+  }
+}
