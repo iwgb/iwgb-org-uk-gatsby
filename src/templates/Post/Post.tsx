@@ -2,7 +2,7 @@ import { graphql } from 'gatsby';
 import { DateTime } from 'luxon';
 import { FormattedMessage, Link, useIntl } from 'gatsby-plugin-intl';
 import { Button } from 'react-bootstrap';
-import Container from '../../components/Layout/Container';
+import UiContainer from '../../components/Layout/UiContainer';
 import paths from '../../utils/paths';
 import GhostEntityMeta from '../../components/Meta/GhostEntityMeta';
 import useLocalisedGhostEntities from '../../hooks/useLocalisedGhostEntities';
@@ -25,7 +25,7 @@ const Post = ({ data: { allGhostPost: posts } }: Props) => {
   }
 
   return (
-    <Container path={paths.post(slug || '')}>
+    <UiContainer path={paths.post(slug || '')}>
       <GhostEntityMeta
         path={paths.post(slug || '')}
         entity={post as GatsbyTypes.GhostPost}
@@ -73,7 +73,7 @@ const Post = ({ data: { allGhostPost: posts } }: Props) => {
           </div>
         </div>
       </div>
-    </Container>
+    </UiContainer>
   );
 };
 

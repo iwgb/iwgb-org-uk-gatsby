@@ -1,7 +1,7 @@
 import { PageProps } from 'gatsby';
 import { FormattedMessage } from 'gatsby-plugin-intl';
 import LogoAnimation from '../components/LogoAnimation/LogoAnimation';
-import Container from '../components/Layout/Container';
+import UiContainer from '../components/Layout/UiContainer';
 import Paths from '../utils/paths';
 
 interface Props extends PageProps {
@@ -11,7 +11,7 @@ interface Props extends PageProps {
 }
 
 const JobType = ({ pageContext: { jobType } }: Props) => (
-  <Container
+  <UiContainer
     path={Paths.joinJobType(jobType)}
     className="d-flex flex-column align-items-center p-5"
   >
@@ -22,7 +22,7 @@ const JobType = ({ pageContext: { jobType } }: Props) => (
     <p>
       <FormattedMessage id="join.loading.body" />
     </p>
-  </Container>
+  </UiContainer>
 );
 
 export default JobType;

@@ -1,8 +1,8 @@
 import { graphql, PageProps } from 'gatsby';
 import { useIntl } from 'gatsby-plugin-intl';
-import Container from '../components/Layout/Container';
 import useLocalisedGhostEntities from '../hooks/useLocalisedGhostEntities';
 import { Modify } from '../utils/types';
+import Container from '../components/Layout/Container';
 import FeaturedStoryCard from '../components/FeaturedStoryCard/FeaturedStoryCard';
 import Feed from '../components/Feed';
 import FeaturedCampaign from '../components/FeaturedCampaign/FeaturedCampaign';
@@ -24,7 +24,10 @@ const Index = ({ data }: Modify<PageProps, { data: GraphqlData }>) => {
   const campaigns = useLocalisedGhostEntities(data.campaigns);
 
   return (
-    <Container path="">
+    <Container
+      path="/"
+      description={formatMessage({ id: 'global.description' })}
+    >
       <div className="container py-3">
         <FeaturedStoryCard
           title={featured.title}
@@ -44,7 +47,7 @@ const Index = ({ data }: Modify<PageProps, { data: GraphqlData }>) => {
           bottomText={formatMessage({ id: 'home.weAre.2' })}
           body={formatMessage({ id: 'home.weAre.body' })}
           ctaPath={Paths.join()}
-          ctaMessage={formatMessage({ id: 'home.join' })}
+          ctaMessage="home.join"
         />
         {campaigns.map(({ entity, slug }, i) => (
           <FeaturedCampaign

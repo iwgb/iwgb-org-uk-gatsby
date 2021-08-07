@@ -12,7 +12,10 @@ const Feed = ({
 }: Props) => (
   <div className="row">
     {posts.map(({ entity: post, slug }) => (
-      <div className="col-12 col-md-4">
+      <div
+        className="col-12 col-md-4"
+        key={slug}
+      >
         <Story
           image={post.feature_image}
           title={post.title}

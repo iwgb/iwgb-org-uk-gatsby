@@ -23,7 +23,11 @@ const Benefits = () => {
         <div className="container py-4">
           <div className="row py-4">
             {arrayOf(3).map((_, i) => (
-              <div className="col-12 col-md-4 d-flex flex-column justify-content-between">
+              <div
+                /* eslint-disable-next-line react/no-array-index-key */
+                key={i}
+                className="col-12 col-md-4 d-flex flex-column justify-content-between"
+              >
                 <div>
                   <h2>
                     <FormattedMessage id={`home.benefits.${i}.title`} />

@@ -1,4 +1,4 @@
-import { Link, useIntl } from 'gatsby-plugin-intl';
+import { FormattedMessage, Link, useIntl } from 'gatsby-plugin-intl';
 import { Button } from 'react-bootstrap';
 import { Fade as Hamburger } from 'hamburger-react';
 import { useState } from 'react';
@@ -55,7 +55,11 @@ const Nav = () => {
             <Button
               className={`${styles.join} ${styles[`join_${locale}`]}`}
               variant="light"
-            />
+            >
+              <span className="sr-only">
+                <FormattedMessage id="nav.joinButtonAlt" />
+              </span>
+            </Button>
           </Link>
         </div>
       </div>

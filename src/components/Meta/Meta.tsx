@@ -6,6 +6,7 @@ import { replacePathLocale } from '../../utils/intl';
 
 interface Props {
   path: string,
+  description?: string,
   image?: string,
   twitterCard?: object,
   openGraph?: object,
@@ -14,32 +15,33 @@ interface Props {
 
 const Meta = ({
   path,
-  image,
-  twitterCard,
-  openGraph,
+  description = '',
+  image = config.defaultMetaImage,
+  twitterCard = {},
+  openGraph = {},
   ...rest
-}: Props) => {
-  const defaultImage = { src: image };
-
-  return (
-    <Seo
-      siteUrl={`${env.siteUrl}${path}`}
-      image={defaultImage}
-      twitterCard={{ card: 'summary_large_image', ...defaultImage, ...twitterCard }}
-      openGraph={{ ...defaultImage, ...openGraph }}
-      alternateLinks={env.availableLocales.map((locale) => ({
-        hreflang: locale,
-        href: `${env.siteUrl}${replacePathLocale(path, locale)}`,
-      }))}
-      {...rest}
-    />
-  );
-};
-
-Meta.defaultProps = {
-  image: config.defaultMetaImage,
-  twitterCard: {},
-  openGraph: {},
-};
+}: Props) => (
+  <Seo
+    siteUrl={`${env.siteUrl}${path}`}
+    description={description}
+    image={{ src: image }}
+    twitterCard={{
+      description,
+      card: 'summary_large_image',
+      src: image,
+      ...twitterCard,
+    }}
+    openGraph={{
+      description,
+      src: image,
+      ...openGraph,
+    }}
+    alternateLinks={env.availableLocales.map((locale) => ({
+      hreflang: locale,
+      href: `${env.siteUrl}${replacePathLocale(path, locale)}`,
+    }))}
+    {...rest}
+  />
+);
 
 export default Meta;

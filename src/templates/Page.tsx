@@ -1,5 +1,5 @@
 import { graphql, PageProps } from 'gatsby';
-import Container from '../components/Layout/Container';
+import UiContainer from '../components/Layout/UiContainer';
 import paths from '../utils/paths';
 import GhostEntityMeta from '../components/Meta/GhostEntityMeta';
 import useLocalisedGhostEntities from '../hooks/useLocalisedGhostEntities';
@@ -18,7 +18,7 @@ const Page = ({ data: { allGhostPage: pages } }: Props) => {
   }
 
   return (
-    <Container path={paths.page(slug || '')}>
+    <UiContainer path={paths.page(slug || '')}>
       <GhostEntityMeta
         path={paths.page(slug || '')}
         entity={page as GatsbyTypes.GhostPage}
@@ -33,7 +33,7 @@ const Page = ({ data: { allGhostPage: pages } }: Props) => {
           </div>
         </div>
       </div>
-    </Container>
+    </UiContainer>
   );
 };
 
