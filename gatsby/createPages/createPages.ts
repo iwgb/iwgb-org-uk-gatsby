@@ -2,6 +2,7 @@ import { CreatePagesArgs } from 'gatsby';
 import createGhostPages from './createGhostPages';
 import createHomepage from './createHomepage';
 import createJoinPages from './createJoinPages';
+import createFeeds from './createFeeds';
 
 require('dotenv').config();
 
@@ -11,6 +12,7 @@ const pageCreators = [
   createGhostPages,
   createHomepage,
   createJoinPages,
+  createFeeds,
 ] as Array<(args: CreatePagesArgs, locales: string[]) => Promise<void>>;
 
 const createPages = async (args: CreatePagesArgs) => Promise.all(pageCreators

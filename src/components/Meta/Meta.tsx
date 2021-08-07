@@ -37,7 +37,7 @@ const Meta = ({
       ...openGraph,
     }}
     alternateLinks={env.availableLocales.map((locale) => ({
-      hreflang: locale,
+      hrefLang: locale,
       href: `${env.siteUrl}${replacePathLocale(path, locale)}`,
     }))}
     {...rest}

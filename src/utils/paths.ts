@@ -3,7 +3,7 @@ const Paths = {
   post: (slug: string) => `/post/${slug}`,
   join: () => '/join',
   joinJobType: (jobType: string) => `/join/${jobType}`,
-  news: (page: number = 0) => `/news/${page}`,
+  news: (page: number = 1) => `/news/${page}`,
   campaigns: () => '/campaigns',
   branches: () => '/branches',
   donate: () => '/donate',

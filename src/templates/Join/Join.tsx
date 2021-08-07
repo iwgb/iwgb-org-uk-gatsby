@@ -1,4 +1,4 @@
-import { graphql, PageProps } from 'gatsby';
+import { graphql } from 'gatsby';
 import { FormattedMessage, Link, useIntl } from 'gatsby-plugin-intl';
 import Config from '../../config';
 import * as styles from './Join.module.scss';
@@ -8,8 +8,9 @@ import Paths from '../../utils/paths';
 import JobType from '../../components/JobType/JobType';
 import useLocalisedGhostEntities from '../../hooks/useLocalisedGhostEntities';
 import HtmlContent from '../../components/HtmlContent/HtmlContent';
+import { TemplateProps } from '../../utils/types';
 
-interface Props extends PageProps {
+interface Props extends TemplateProps {
   data: GatsbyTypes.Query,
   pageContext: {
     jobTypes: string[],

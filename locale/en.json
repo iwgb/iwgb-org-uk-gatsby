@@ -182,5 +182,58 @@
         "text": "I'll contribute"
       }
     }
+  },
+  "branches": {
+    "title": "Branches of the IWGB",
+    "viewWebsite": "View website",
+    "readMore": "Read more",
+    "charityWorkers": {
+      "name": "Charity Workers",
+      "description": "The IWGB Charity Workers Branch is a worker-led, democratic trade union that represents and advocates for the rights of workers in the charity sector across the UK."
+    },
+    "cleanersAndFacilities": {
+      "name": "Cleaners and Facilities",
+      "description": "Fighting for a living wage and fair contracts for cleaners all over London, including the Royal Opera House and John Lewis"
+    },
+    "couriersAndLogistics": {
+      "description": "The companies are running scared. Changing the shape of the courier industry, from Deliveroo to CitySprint and many others",
+      "name": "Couriers and Logistics"
+    },
+    "cyclingInstructors": {
+      "name": "Cycling Instructors",
+      "description": "Cycle instructors across Britain are organising against precarity and low pay!"
+    },
+    "fosterCareWorkers": {
+      "name": "Foster Care Workers",
+      "description": "Demanding employment rights for foster care workers across the UK"
+    },
+    "gameWorkers": {
+      "name": "Game Workers",
+      "description": "Advocating for workers rights and unionisation in game development"
+    },
+    "generalMembers": {
+      "description": "If we don't have a branch covering your sector or workplace, you can join the General Members Branch instead.",
+      "name": "General Members"
+    },
+    "securityAndReceptionists": {
+      "name": "Security & Receptionists",
+      "description": "Giving a voice to security guards across London"
+    },
+    "unitedPrivateHireDrivers": {
+      "description": "You've read the headlines. We're changing the course of employment rights for private hire drivers for good.",
+      "name": "United Private Hire Drivers"
+    },
+    "universitiesOfLondon": {
+      "name": "Univerisites of London",
+      "description": "Representing security guards, cleaners, and other workers at university campuses all over London"
+    },
+    "yogaTeachers": {
+      "name": "Yoga Teachers",
+      "description": "Yoga teachers are organising for rights, equity and fair pay"
+    },
+    "nanniesAndAuPairs": {
+      "name": "Nannies and Au Pairs",
+      "description": "Support, resources and community space for nannies and au pairs based in the UK."
+    }
   }
 }

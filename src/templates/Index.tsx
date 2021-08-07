@@ -1,7 +1,7 @@
 import { graphql, PageProps } from 'gatsby';
-import { useIntl } from 'gatsby-plugin-intl';
+import { Link, useIntl } from 'gatsby-plugin-intl';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons/faArrowRight';
 import useLocalisedGhostEntities from '../hooks/useLocalisedGhostEntities';
-import { Modify } from '../utils/types';
 import Container from '../components/Layout/Container';
 import FeaturedStoryCard from '../components/FeaturedStoryCard/FeaturedStoryCard';
 import Feed from '../components/Feed';
@@ -10,14 +10,17 @@ import Config from '../config';
 import Paths from '../utils/paths';
 import Benefits from '../components/Benefits/Benefits';
 import Contact from '../components/Contact/Contact';
+import IconButton from '../components/IconButton';
 
-interface GraphqlData {
-  featured: GatsbyTypes.GhostPostConnection,
-  recentStories: GatsbyTypes.GhostPostConnection,
-  campaigns: GatsbyTypes.GhostPostConnection,
+interface Props extends PageProps {
+  data: {
+    featured: GatsbyTypes.GhostPostConnection
+    recentStories: GatsbyTypes.GhostPostConnection,
+    campaigns: GatsbyTypes.GhostPostConnection,
+  },
 }
 
-const Index = ({ data }: Modify<PageProps, { data: GraphqlData }>) => {
+const Index = ({ data }: Props) => {
   const { formatMessage } = useIntl();
   const [{ entity: featured, slug: featuredSlug }] = useLocalisedGhostEntities(data.featured);
   const recentStories = useLocalisedGhostEntities(data.recentStories);
@@ -36,9 +39,20 @@ const Index = ({ data }: Modify<PageProps, { data: GraphqlData }>) => {
           slug={featuredSlug}
         />
         <Feed
-          posts={recentStories}
-          hideMobileImages
+          entities={recentStories}
+          getPath={Paths.post}
+          hideMobileImages={true}
         />
+        <div className="row justify-content-end py-3">
+          <Link
+            className="w-auto"
+            to={Paths.news()}
+          >
+            <IconButton icon={faArrowRight}>
+              More stories
+            </IconButton>
+          </Link>
+        </div>
       </div>
       <div className="container">
         <FeaturedCampaign

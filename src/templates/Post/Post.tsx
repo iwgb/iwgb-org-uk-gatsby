@@ -10,12 +10,9 @@ import NotFound from '../../pages/404';
 import * as styles from './Post.module.scss';
 import useLocalDateTime from '../../hooks/useLocalDateTime';
 import HtmlContent from '../../components/HtmlContent/HtmlContent';
+import { TemplateProps } from '../../utils/types';
 
-interface Props {
-  data: GatsbyTypes.Query,
-}
-
-const Post = ({ data: { allGhostPost: posts } }: Props) => {
+const Post = ({ data: { allGhostPost: posts } }: TemplateProps) => {
   const [{ entity: post, slug }] = useLocalisedGhostEntities(posts);
   const published = useLocalDateTime(post.published_at);
   const { formatMessage } = useIntl();

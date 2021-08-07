@@ -2,25 +2,27 @@ import { EntitySlugTuple } from '../hooks/useLocalisedGhostEntities';
 import Story from './Story/Story';
 
 interface Props {
-  posts: EntitySlugTuple[],
+  entities: EntitySlugTuple[],
+  getPath: (slug: string) => string,
   hideMobileImages?: boolean,
 }
 
 const Feed = ({
-  posts,
+  entities,
+  getPath,
   hideMobileImages = false,
 }: Props) => (
   <div className="row">
-    {posts.map(({ entity: post, slug }) => (
+    {entities.map(({ entity, slug }) => (
       <div
         className="col-12 col-md-4"
         key={slug}
       >
         <Story
-          image={post.feature_image}
-          title={post.title}
-          published={post.published_at}
-          slug={slug}
+          image={entity.feature_image}
+          title={entity.title}
+          published={entity.published_at}
+          path={getPath(slug)}
           hideMobileImages={hideMobileImages}
         />
       </div>

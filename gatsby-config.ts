@@ -47,8 +47,12 @@ export default {
         apiKey: process.env.AIRTABLE_API_KEY,
         tables: [
           {
-            baseId: process.env.AIRTABLE_JOB_TYPES_BASE_ID,
-            tableName: process.env.AIRTABLE_JOB_TYPES_TABLE_NAME,
+            baseId: process.env.AIRTABLE_MEMBERSHIP_BASE_ID,
+            tableName: process.env.AIRTABLE_MEMBERSHIP_JOB_TYPES_TABLE_NAME,
+          },
+          {
+            baseId: process.env.AIRTABLE_WEB_DATA_BASE_ID,
+            tableName: process.env.AIRTABLE_WEB_DATA_BRANCHES_TABLE_NAME,
           },
         ],
       },

@@ -1,1 +1,5 @@
-export type Modify<T, R> = Omit<T, keyof R> & R;
+import { PageProps } from 'gatsby';
+
+export interface TemplateProps extends PageProps {
+  data: GatsbyTypes.Query,
+}

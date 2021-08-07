@@ -1,13 +1,10 @@
-import { faTwitter } from '@fortawesome/free-brands-svg-icons/faTwitter';
 import { FormattedMessage, useIntl } from 'gatsby-plugin-intl';
-import { faFacebook } from '@fortawesome/free-brands-svg-icons/faFacebook';
-import { faYoutube } from '@fortawesome/free-brands-svg-icons/faYoutube';
 import { DateTime } from 'luxon';
 import PoliciesFooter from './PoliciesFooter';
 import AboutFooter from './AboutFooter';
 import GetInvolvedFooter from './GetInvolvedFooter';
 import FooterTitle from './FooterTitle/FooterTitle';
-import SocialIcon from './SocialIcon/SocialIcon';
+import SocialIcons from '../../SocialIcons/SocialIcons';
 import * as styles from './Footer.module.scss';
 import Config from '../../../config';
 
@@ -23,17 +20,11 @@ const Footer = () => {
         <div className={`col-md ${styles.social}`}>
           <FooterTitle message="footer.social" />
           <div className="my-2">
-            <SocialIcon
-              icon={faTwitter}
-              href={`https://twitter.com/${formatMessage({ id: 'footer.handles.twitter' })}`}
-            />
-            <SocialIcon
-              icon={faFacebook}
-              href={`https://twitter.com/${formatMessage({ id: 'footer.handles.twitter' })}`}
-            />
-            <SocialIcon
-              icon={faYoutube}
-              href={`https://twitter.com/${formatMessage({ id: 'footer.handles.twitter' })}`}
+            <SocialIcons
+              className="my-2"
+              twitter={`https://twitter.com/${formatMessage({ id: 'footer.handles.twitter' })}`}
+              facebook={`https://facebook.com/${formatMessage({ id: 'footer.handles.facebook' })}`}
+              instagram={`https://instagram.com/${formatMessage({ id: 'footer.handles.instagram' })}`}
             />
           </div>
         </div>

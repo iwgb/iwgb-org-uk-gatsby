@@ -1,16 +1,13 @@
-import { graphql, PageProps } from 'gatsby';
+import { graphql } from 'gatsby';
 import UiContainer from '../components/Layout/UiContainer';
 import paths from '../utils/paths';
 import GhostEntityMeta from '../components/Meta/GhostEntityMeta';
 import useLocalisedGhostEntities from '../hooks/useLocalisedGhostEntities';
 import NotFound from '../pages/404';
 import HtmlContent from '../components/HtmlContent/HtmlContent';
+import { TemplateProps } from '../utils/types';
 
-interface Props extends PageProps {
-  data: GatsbyTypes.Query,
-}
-
-const Page = ({ data: { allGhostPage: pages } }: Props) => {
+const Page = ({ data: { allGhostPage: pages } }: TemplateProps) => {
   const [{ entity: page, slug }] = useLocalisedGhostEntities(pages);
 
   if (page === undefined || slug === undefined) {

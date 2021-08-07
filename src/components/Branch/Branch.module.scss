@@ -1,0 +1,14 @@
+@import 'src/utils/utils';
+
+.image {
+  height: 10rem;
+}
+
+.description {
+  background-color: rgba($iwgb-red, .6);
+  font-size: .9rem;
+}
+
+.text {
+  border-bottom: 1px solid black;
+}

@@ -15,7 +15,7 @@ const JobType = ({ pageContext: { jobType } }: Props) => (
     path={Paths.joinJobType(jobType)}
     className="d-flex flex-column align-items-center p-5"
   >
-    <LogoAnimation height={150} />
+    <LogoAnimation height={100} />
     <h3>
       <FormattedMessage id="join.loading.title" />
     </h3>
