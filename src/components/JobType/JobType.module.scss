@@ -1,0 +1,24 @@
+@import 'src/utils/utils';
+
+.jobType {
+  transition: background-color $transition, color $transition;
+  background-color: white;
+
+  .arrow {
+    border-radius: 50%;
+    transition: background-color $transition, color $transition;
+    background-color: rgba($iwgb-red, 0);
+    height: 3rem;
+    width: 3rem;
+  }
+
+  &:hover {
+    background-color: $iwgb-red;
+    color: white;
+
+    .arrow {
+      background-color: white;
+      color: black;
+    }
+  }
+}

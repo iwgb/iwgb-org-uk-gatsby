@@ -28,7 +28,8 @@
       2,
       {
         "ts": "never",
-        "scss": "always"
+        "scss": "always",
+        "json": "always"
       }
     ],
     "no-unused-vars": 0,

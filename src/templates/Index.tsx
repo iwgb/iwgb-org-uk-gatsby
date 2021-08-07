@@ -48,6 +48,7 @@ const Index = ({ data }: Modify<PageProps, { data: GraphqlData }>) => {
         />
         {campaigns.map(({ entity, slug }, i) => (
           <FeaturedCampaign
+            key={slug}
             image={entity.feature_image}
             topText={entity.title.split(' ').slice(0, 2).join(' ')}
             bottomText={entity.title.split(' ').slice(2).join(' ')}

@@ -9,6 +9,7 @@ import useLocalisedGhostEntities from '../../hooks/useLocalisedGhostEntities';
 import NotFound from '../../pages/404';
 import * as styles from './Post.module.scss';
 import useLocalDateTime from '../../hooks/useLocalDateTime';
+import HtmlContent from '../../components/HtmlContent/HtmlContent';
 
 interface Props {
   data: GatsbyTypes.Query,
@@ -47,9 +48,10 @@ const Post = ({ data: { allGhostPost: posts } }: Props) => {
               <small className={`col-12 col-md-3 iwgb-dark-grey ${styles.published} mb-3 mb-md-0`}>
                 {published.toLocaleString(DateTime.DATETIME_MED_WITH_WEEKDAY)}
               </small>
-              <div className={`${styles.content} col-12 col-md-9`}>
-                <div dangerouslySetInnerHTML={{ __html: post.html || '' }} />
-              </div>
+              <HtmlContent
+                html={post.html}
+                className={`${styles.content} col-12 col-md-9`}
+              />
             </div>
             <div className="row mt-3">
               <div className="col-12 col-md-9 offset-md-3 px-0">

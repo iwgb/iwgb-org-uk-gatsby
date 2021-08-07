@@ -1,8 +1,11 @@
+import { ComponentType } from 'react';
 import Paths from '../../../utils/paths';
+import About from './About/About';
 
-interface NavItem {
-  path: string,
+export interface NavItem {
   message: string,
+  path?: string,
+  Component?: ComponentType,
 }
 
 const NavConfig: NavItem[] = [
@@ -19,7 +22,7 @@ const NavConfig: NavItem[] = [
     message: 'nav.branches',
   },
   {
-    path: '',
+    Component: About,
     message: 'nav.about',
   },
   {

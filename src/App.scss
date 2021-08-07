@@ -8,9 +8,11 @@ $primary: $iwgb-red;
 
 @import '~bootstrap/scss/bootstrap';
 @import 'src/utils/colours';
-@import 'src/utils/typography';
+@import 'src/utils/ghost';
+@import 'src/utils/layout';
 @import 'src/utils/media';
 @import 'src/utils/reset';
+@import 'src/utils/typography';
 
 [disabled] {
   cursor: not-allowed;

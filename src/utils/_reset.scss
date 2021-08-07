@@ -18,8 +18,20 @@
 
   text-align: inherit;
 
+  border-radius: 0 !important;
+
   &::-moz-focus-inner {
     border: 0;
     padding: 0;
+  }
+
+  &:hover {
+    color: inherit;
+    background: transparent;
+  }
+
+  &:focus, &:active:focus, &:active {
+    box-shadow: none;
+    background-color: transparent;
   }
 }

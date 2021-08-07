@@ -1,3 +1,4 @@
+import { Fragment } from 'react';
 import { FormattedMessage, useIntl } from 'gatsby-plugin-intl';
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
 import { faPhone } from '@fortawesome/free-solid-svg-icons/faPhone';
@@ -70,10 +71,10 @@ const Contact = () => {
                   formatMessage({ id: 'home.contact.address.value' })
                     .split(',\n')
                     .map((line) => (
-                      <>
+                      <Fragment key={line}>
                         {line}
                         <br />
-                      </>
+                      </Fragment>
                     ))
                 }
               </div>

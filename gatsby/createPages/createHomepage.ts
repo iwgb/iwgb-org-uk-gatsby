@@ -1,8 +1,6 @@
 import { CreatePagesArgs } from 'gatsby';
 import { getSlugsInLocales } from '../../src/utils/intl';
 
-export const CUSTOM_HOMEPAGE_CONTEXT_FLAG = 'hasInjectedContext';
-
 const getFeaturedSlug = async (
   { graphql }: CreatePagesArgs,
   locales: string[],
@@ -100,8 +98,10 @@ const createHomepage = async (
   locales: string [],
 ) => {
   const featuredSlug = await getFeaturedSlug(args, locales);
-  const recentStorySlugs = await getRecentStorySlugs(args, locales, featuredSlug);
-  const campaignSlugs = await getFeaturedCampaignSlugs(args);
+  const [recentStorySlugs, campaignSlugs] = await Promise.all<string[]>([
+    getRecentStorySlugs(args, locales, featuredSlug),
+    getFeaturedCampaignSlugs(args),
+  ]);
 
   const component = require.resolve('../../src/templates/Index.tsx');
 

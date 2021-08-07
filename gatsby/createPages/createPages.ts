@@ -1,14 +1,19 @@
 import { CreatePagesArgs } from 'gatsby';
 import createGhostPages from './createGhostPages';
 import createHomepage from './createHomepage';
+import createJoinPages from './createJoinPages';
 
 require('dotenv').config();
 
 const locales = (process.env.GATSBY_AVAILABLE_LOCALES || 'en').split(',');
 
-const createPages = async (args: CreatePagesArgs) => Promise.all([
-  createGhostPages(args, locales),
-  createHomepage(args, locales),
-]);
+const pageCreators = [
+  createGhostPages,
+  createHomepage,
+  createJoinPages,
+] as Array<(args: CreatePagesArgs, locales: string[]) => Promise<void>>;
+
+const createPages = async (args: CreatePagesArgs) => Promise.all(pageCreators
+  .map((pageCreator) => pageCreator(args, locales)));
 
 export default createPages;

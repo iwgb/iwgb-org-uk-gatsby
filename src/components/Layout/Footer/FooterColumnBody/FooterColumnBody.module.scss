@@ -1,13 +1,5 @@
 @import 'src/utils/utils';
 
-.link {
-  text-decoration: none;
-
-  &:hover {
-    text-decoration: underline;
-  }
-}
-
 .column {
   @include media-breakpoint-down(md) {
     text-align: center;

@@ -6,6 +6,7 @@ import Nav from './Nav/Nav';
 import Footer from './Footer/Footer';
 
 interface Props {
+  className?: string,
   path: string,
   children: ReactNode,
 }
@@ -13,22 +14,27 @@ interface Props {
 const Container = ({
   path,
   children,
+  className = '',
 }: Props) => (
-  <div>
-    <Helmet>
-      <meta name="theme-color" content="#962d22" />
-      {[32, 64, 96, 128].map((px) => (
-        <link
-          key={px}
-          rel="icon"
-          href={`${config.cdnBaseUrl}/assets/favicon-${px}.png`}
-          sizes={`${px}x${px}`}
-        />
-      ))}
-    </Helmet>
-    <Locales path={path} />
-    <Nav />
-    {children}
+  <div className="d-flex flex-column justify-content-between min-vh-100">
+    <div>
+      <Helmet>
+        <meta name="theme-color" content="#962d22" />
+        {[32, 64, 96, 128].map((px) => (
+          <link
+            key={px}
+            rel="icon"
+            href={`${config.cdnBaseUrl}/assets/favicon-${px}.png`}
+            sizes={`${px}x${px}`}
+          />
+        ))}
+      </Helmet>
+      <Locales path={path} />
+      <Nav />
+      <div className={className}>
+        {children}
+      </div>
+    </div>
     <Footer />
   </div>
 );

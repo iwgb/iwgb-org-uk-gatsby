@@ -1,8 +1,7 @@
-import { Link } from 'gatsby-plugin-intl';
 import { EntitySlugTuple } from '../../../../hooks/useLocalisedGhostEntities';
 import * as styles from './FooterColumnBody.module.scss';
-import Paths from '../../../../utils/paths';
 import FooterTitle from '../FooterTitle/FooterTitle';
+import PageList from '../../../PageList/PageList';
 
 interface Props {
   titleMessage: string,
@@ -13,20 +12,12 @@ const FooterColumnBody = ({
   titleMessage,
   pages,
 }: Props) => (
-  <div className={`${styles.column} col-md`}>
+  <PageList
+    pages={pages}
+    className={styles.column}
+  >
     <FooterTitle message={titleMessage} />
-    <div className="iwgb-med-grey">
-      {pages.map(({ entity, slug }) => (
-        <Link
-          key={slug}
-          className={`${styles.link} d-block my-2`}
-          to={Paths.page(slug)}
-        >
-          {entity.title}
-        </Link>
-      ))}
-    </div>
-  </div>
+  </PageList>
 );
 
 export default FooterColumnBody;

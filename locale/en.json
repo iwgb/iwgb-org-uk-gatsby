@@ -7,7 +7,90 @@
     "campaigns": "Campaigns",
     "branches": "Branches",
     "about": "About",
-    "support": "Support"
+    "support": "Support",
+    "getInvolved": "Get involved",
+    "democracy": "Democracy"
+  },
+  "join": {
+    "title": "Tell us about your work",
+    "loading": {
+      "title": "Preparing",
+      "body": "One moment"
+    },
+    "jobType": {
+      "charityWorker": {
+        "description": "The IWGB is calling for justice and equality for all workers in the charity sector!",
+        "name": "Charity worker"
+      },
+      "cleanerFacilities": {
+        "description": "The IWGB represents cleaners, porters, hospitality workers and domestic workers across London.",
+        "name": "Cleaner or facilities worker"
+      },
+      "courier": {
+        "description": "Couriers, riders and delivery workers are organising for rights, respect and fair pay.",
+        "name": "Courier or logistics worker"
+      },
+      "cycleInstructor": {
+        "description": "Cycle instructors across Britain are organising against precarity and low pay!",
+        "name": "Cycle instructor"
+      },
+      "fosterCarer": {
+        "description": "The Foster Care Workers Branch of the IWGB is calling for reforms to the fostering system in the UK.",
+        "name": "Foster carer"
+      },
+      "gameWorker": {
+        "description": "The IWGB Game Workers Branch is  a trade union organising for game workers' rights.",
+        "name": "Game worker"
+      },
+      "higherEducation": {
+        "description": "If you work at a university in London, please sign up here!",
+        "name": "Higher education worker"
+      },
+      "privateHireDriver": {
+        "description": "The United Private Hire Drivers are fighting for workers' rights for drivers across Britain.",
+        "name": "Private hire driver"
+      },
+      "securityReceptionist": {
+        "description": "The IWGB represents security guards and receptionists across London to win respect and decent pay.",
+        "name": "Security guard or receptionist"
+      },
+      "yogaTeacher": {
+        "description": "Yoga teachers are organising for rights, equity and fair pay.",
+        "name": "Yoga teacher"
+      },
+      "nanny": {
+        "description": "Nanny or au pair",
+        "name": "Resources and support for nannies and au pairs across the UK."
+      },
+      "costs.header": "Our membership fees",
+      "costs.link": "View our full fee schedule",
+      "costs.text": "We'll let you know which fee applies to you before you set up your payment.",
+      "error.aid": "If you continue to have issues, feel free to get in contact with us. We might ask for your applicant ID:",
+      "error.body": "Sorry, but due to an error, we've had to quit your application as we couldn't find your session. For your security, you must have cookies enabled to sign up to the IWGB.",
+      "error.title": "We couldn't find your session",
+      "heading": "Tell us about your work",
+      "help.header": "None of those sound right?",
+      "help.text": "Drop the memberships team a line using the contact form to find out if you can join the IWGB.",
+      "other.description": "If you want to organise with us but can’t see your sector here, then you can join the IWGB’s General Members Branch.",
+      "other.name": "Other",
+      "title": "Join us",
+      "yoga-teacher.description": "Yoga teachers are organising for rights, equity and fair pay.",
+      "yoga-teacher.name": "Yoga teacher",
+      "nanny.name": "Nanny or au pair",
+      "nanny.description": "Resources and support for nannies and au pairs across the UK."
+    },
+    "contact": {
+      "title": "None of those sound right?",
+      "body": "Drop the memberships team a line using the contact form to find out if you can join the IWGB."
+    },
+    "fees": {
+      "title": "Our membership fees",
+      "body": "We'll let you know which fee applies to you before you set up your payment.",
+      "link": {
+        "href": "/page/membership-costs",
+        "text": "View our full fee schedule"
+      }
+    }
   },
   "home": {
     "weAre": {

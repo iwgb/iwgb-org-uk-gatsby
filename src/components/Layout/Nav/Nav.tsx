@@ -8,12 +8,24 @@ import Paths from '../../../utils/paths';
 import * as styles from './Nav.module.scss';
 import NavItems from '../NavItems/NavItems';
 import NavMenuItems from '../NavItems/NavMenuItems';
+import NavConfig from '../NavItems/navConfig';
 
 const Nav = () => {
   const { locale, formatMessage } = useIntl();
   const [isOpen, setOpen] = useState(false);
+  const [openSubnav, setOpenSubnav] = useState('');
 
   const onToggleNav = () => setOpen(!isOpen);
+
+  const onToggleOpenSubnav = (id: string) => {
+    if (openSubnav === id) {
+      setOpenSubnav('');
+    } else {
+      setOpenSubnav(id);
+    }
+  };
+
+  const openSubnavConfig = NavConfig.find((config) => config.message === openSubnav);
 
   return (
     <div className={`${styles.nav} position-sticky iwgb-dark-red-bg text-white`}>
@@ -26,7 +38,10 @@ const Nav = () => {
           />
         </Link>
         <div className="d-flex align-items-center">
-          <NavItems />
+          <NavItems
+            openSubnav={openSubnav}
+            setOpenSubnav={onToggleOpenSubnav}
+          />
           <div className="d-block d-lg-none">
             <Hamburger
               direction="right"
@@ -47,6 +62,11 @@ const Nav = () => {
       <SlideDown>
         {isOpen && (
           <NavMenuItems />
+        )}
+      </SlideDown>
+      <SlideDown className="d-none d-md-block">
+        {openSubnavConfig && openSubnavConfig.Component && (
+          <openSubnavConfig.Component />
         )}
       </SlideDown>
     </div>

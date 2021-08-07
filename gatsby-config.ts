@@ -2,12 +2,17 @@ require('dotenv').config();
 
 const locales = (process.env.GATSBY_AVAILABLE_LOCALES || 'en').split(',');
 
+const devConfig = process.env.NODE_ENV === 'development'
+  ? ['gatsby-plugin-extract-schema']
+  : [];
+
 export default {
   siteMetadata: {
     siteUrl: 'https://www.yourdomain.tld',
     title: 'iwgb-org-uk',
   },
   plugins: [
+    ...devConfig,
     {
       resolve: 'gatsby-source-ghost',
       options: {
@@ -26,11 +31,7 @@ export default {
     'gatsby-plugin-fontawesome-css',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sitemap',
-    'gatsby-plugin-extract-schema',
     'gatsby-plugin-typegen',
-    'gatsby-plugin-image',
-    'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-plugin-intl',
       options: {
@@ -38,6 +39,18 @@ export default {
         languages: locales,
         defaultLanguage: locales[0],
         redirect: true,
+      },
+    },
+    {
+      resolve: 'gatsby-source-airtable',
+      options: {
+        apiKey: process.env.AIRTABLE_API_KEY,
+        tables: [
+          {
+            baseId: process.env.AIRTABLE_JOB_TYPES_BASE_ID,
+            tableName: process.env.AIRTABLE_JOB_TYPES_TABLE_NAME,
+          },
+        ],
       },
     },
   ],

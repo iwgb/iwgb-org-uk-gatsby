@@ -1,0 +1,17 @@
+@import 'src/utils/utils';
+
+.title {
+  font-size: 4rem;
+
+  @include media-breakpoint-up(md) {
+    padding-top: 35vh;
+  }
+
+  @include media-breakpoint-down(md) {
+    padding-top: 10vh;
+  }
+
+  @include media-breakpoint-down(md) {
+    font-size: 3rem;
+  }
+}

@@ -3,9 +3,17 @@
 .navItem {
   border-top: 5px solid $iwgb-dark-red;
   border-bottom: 5px solid $iwgb-dark-red;
-  transition: border-bottom-color .3s;
+  transition: border-bottom-color $transition;
 
  &:hover {
     border-bottom-color: $white;
+  }
+}
+
+.chevron {
+  transition: transform .5s;
+
+  &.open {
+    transform: rotate(180deg);
   }
 }

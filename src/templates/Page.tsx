@@ -1,11 +1,12 @@
-import { graphql } from 'gatsby';
+import { graphql, PageProps } from 'gatsby';
 import Container from '../components/Layout/Container';
 import paths from '../utils/paths';
 import GhostEntityMeta from '../components/Meta/GhostEntityMeta';
 import useLocalisedGhostEntities from '../hooks/useLocalisedGhostEntities';
 import NotFound from '../pages/404';
+import HtmlContent from '../components/HtmlContent/HtmlContent';
 
-interface Props {
+interface Props extends PageProps {
   data: GatsbyTypes.Query,
 }
 
@@ -28,7 +29,7 @@ const Page = ({ data: { allGhostPage: pages } }: Props) => {
             <h1 className="my-5">
               {page.title}
             </h1>
-            <div dangerouslySetInnerHTML={{ __html: page.html || '' }} />
+            <HtmlContent html={page.html} />
           </div>
         </div>
       </div>
