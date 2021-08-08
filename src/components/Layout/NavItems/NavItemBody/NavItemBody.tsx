@@ -1,6 +1,4 @@
-import { FormattedMessage } from 'gatsby-plugin-intl';
-import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
-import { faChevronDown } from '@fortawesome/free-solid-svg-icons/faChevronDown';
+import NavItemText from '../NavItemText/NavItemText';
 import * as styles from './NavItemBody.module.scss';
 
 interface Props {
@@ -10,13 +8,10 @@ interface Props {
 
 const NavItemBody = ({ message, isOpen }: Props) => (
   <div className={`${styles.navItem} py-3 px-4 h-100 d-flex align-items-center text-center`}>
-    <FormattedMessage id={message} />
-    {isOpen !== undefined && (
-      <Icon
-        icon={faChevronDown}
-        className={`ms-2 ${styles.chevron} ${isOpen && styles.open}`}
-      />
-    )}
+    <NavItemText
+      message={message}
+      isOpen={isOpen}
+    />
   </div>
 );
 

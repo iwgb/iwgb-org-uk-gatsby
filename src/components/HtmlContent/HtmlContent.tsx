@@ -11,7 +11,11 @@ const HtmlContent = ({
   className = '',
 }: Props) => (
   <div className={`${className} ${styles.html}`}>
-    <Html html={html} />
+    {
+      html.includes('<script')
+        ? <Html html={html} />
+        : <div dangerouslySetInnerHTML={{ __html: html }} />
+    }
   </div>
 );
 

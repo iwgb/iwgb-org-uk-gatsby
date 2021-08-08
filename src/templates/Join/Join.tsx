@@ -1,8 +1,8 @@
 import { graphql } from 'gatsby';
 import { FormattedMessage, Link, useIntl } from 'gatsby-plugin-intl';
+import Container from '../../components/Layout/Container';
 import Config from '../../config';
 import * as styles from './Join.module.scss';
-import UiContainer from '../../components/Layout/UiContainer';
 import StripeText from '../../components/StripeText/StripeText';
 import Paths from '../../utils/paths';
 import JobType from '../../components/JobType/JobType';
@@ -25,7 +25,10 @@ const Join = ({
   const { formatMessage } = useIntl();
 
   return (
-    <UiContainer path={Paths.join()}>
+    <Container
+      path={Paths.join()}
+      title={formatMessage({ id: 'home.join' })}
+    >
       <div
         className="bg-image"
         style={{ backgroundImage: `url(${Config.cdnBaseUrl}/cms/2020/02/5de78f059c508.jpg` }}
@@ -77,7 +80,7 @@ const Join = ({
           </div>
         </div>
       </div>
-    </UiContainer>
+    </Container>
   );
 };
 

@@ -26,7 +26,7 @@ const Benefits = () => {
               <div
                 /* eslint-disable-next-line react/no-array-index-key */
                 key={i}
-                className="col-12 col-md-4 d-flex flex-column justify-content-between"
+                className="col-12 col-md-4 d-flex flex-column justify-content-between my-3 my-md-0"
               >
                 <div>
                   <h2>

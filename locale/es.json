@@ -96,5 +96,10 @@
         "text": "Contribuiré"
       }
     }
+  },
+  "404": {
+    "title": "Nosotros ganamos",
+    "heading": "Hemos perdido esta página",
+    "body": "En cambio, aquí hay algunas veces que ganamos:"
   }
 }

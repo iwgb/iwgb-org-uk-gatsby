@@ -1,0 +1,14 @@
+@import 'src/utils/utils';
+
+.image {
+  min-height: 70vh;
+}
+
+.heading {
+  font-size: 6rem;
+  padding-top: 10rem;
+
+  @include media-breakpoint-down(md) {
+    font-size: 4rem;
+  }
+}

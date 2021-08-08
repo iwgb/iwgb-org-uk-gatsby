@@ -8,7 +8,7 @@ import Paths from '../../../utils/paths';
 import * as styles from './Nav.module.scss';
 import NavItems from '../NavItems/NavItems';
 import NavMenuItems from '../NavItems/NavMenuItems';
-import NavConfig from '../NavItems/navConfig';
+import Subnav from '../NavItems/Subnav';
 
 const Nav = () => {
   const { locale, formatMessage } = useIntl();
@@ -24,8 +24,6 @@ const Nav = () => {
       setOpenSubnav(id);
     }
   };
-
-  const openSubnavConfig = NavConfig.find((config) => config.message === openSubnav);
 
   return (
     <div className={`${styles.nav} position-sticky iwgb-dark-red-bg text-white`}>
@@ -65,14 +63,16 @@ const Nav = () => {
       </div>
       <SlideDown>
         {isOpen && (
-          <NavMenuItems />
+          <NavMenuItems
+            openSubnav={openSubnav}
+            setOpenSubnav={onToggleOpenSubnav}
+          />
         )}
       </SlideDown>
-      <SlideDown className="d-none d-md-block">
-        {openSubnavConfig && openSubnavConfig.Component && (
-          <openSubnavConfig.Component />
-        )}
-      </SlideDown>
+      <Subnav
+        openSubnav={openSubnav}
+        className="d-none d-lg-block"
+      />
     </div>
   );
 };

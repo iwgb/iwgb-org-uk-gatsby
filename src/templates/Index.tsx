@@ -1,11 +1,11 @@
 import { graphql, PageProps } from 'gatsby';
-import { Link, useIntl } from 'gatsby-plugin-intl';
+import { FormattedMessage, Link, useIntl } from 'gatsby-plugin-intl';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons/faArrowRight';
 import useLocalisedGhostEntities from '../hooks/useLocalisedGhostEntities';
 import Container from '../components/Layout/Container';
 import FeaturedStoryCard from '../components/FeaturedStoryCard/FeaturedStoryCard';
-import Feed from '../components/Feed';
 import FeaturedCampaign from '../components/FeaturedCampaign/FeaturedCampaign';
+import Feed from '../components/Feed';
 import Config from '../config';
 import Paths from '../utils/paths';
 import Benefits from '../components/Benefits/Benefits';
@@ -45,11 +45,11 @@ const Index = ({ data }: Props) => {
         />
         <div className="row justify-content-end py-3">
           <Link
-            className="w-auto"
+            className="w-auto link-unstyled"
             to={Paths.news()}
           >
             <IconButton icon={faArrowRight}>
-              More stories
+              <FormattedMessage id="home.moreStories" />
             </IconButton>
           </Link>
         </div>

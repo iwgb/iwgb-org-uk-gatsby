@@ -96,6 +96,7 @@
     }
   },
   "home": {
+    "moreStories": "More stories",
     "weAre": {
       "1": "We are",
       "2": "the IWGB.",
@@ -138,7 +139,7 @@
       "copy": "Copy",
       "form": {
         "href": "https://iwgb.typeform.com/to/aORWuU",
-        "text": "The best way to get in touch with us is to {link}.",
+        "text": "The best way to get in touch with us is to {link}",
         "linkText": "send us a message"
       },
       "phone": {
@@ -235,5 +236,10 @@
       "name": "Nannies and Au Pairs",
       "description": "Support, resources and community space for nannies and au pairs based in the UK."
     }
+  },
+  "404": {
+    "title": "We win",
+    "heading": "We lost this page",
+    "body": "Instead, here's some times we won:"
   }
 }

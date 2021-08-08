@@ -9,11 +9,3 @@
     border-bottom-color: $white;
   }
 }
-
-.chevron {
-  transition: transform .5s;
-
-  &.open {
-    transform: rotate(180deg);
-  }
-}

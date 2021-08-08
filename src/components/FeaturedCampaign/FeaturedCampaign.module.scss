@@ -33,10 +33,10 @@
   @include direction(right);
 
   .text {
-    margin-bottom: 5rem;
     padding-top: 5rem;
 
     @include media-breakpoint-up(lg) {
+      margin-bottom: 5rem;
       background: none !important;
     }
   }
