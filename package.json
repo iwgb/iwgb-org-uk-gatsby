@@ -28,6 +28,7 @@
     "gatsby": "^3.10.2",
     "gatsby-awesome-pagination": "^0.3.8",
     "gatsby-plugin-extract-schema": "^0.2.0",
+    "gatsby-plugin-fathom": "^2.1.1",
     "gatsby-plugin-fontawesome-css": "^1.1.0",
     "gatsby-plugin-intl": "^0.3.3",
     "gatsby-plugin-react-helmet": "^4.10.0",
