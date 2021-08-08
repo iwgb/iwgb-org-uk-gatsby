@@ -32,6 +32,7 @@ export default {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sitemap',
     'gatsby-plugin-typegen',
+    'gatsby-plugin-netlify',
     {
       resolve: 'gatsby-plugin-intl',
       options: {
