@@ -6,7 +6,7 @@ const Paths = {
   news: (page: number = 1) => `/news/${page}`,
   campaigns: () => '/campaigns',
   branches: () => '/branches',
-  donate: () => '/donate',
+  donate: () => '/page/donate',
 };
 
 export default Paths;
