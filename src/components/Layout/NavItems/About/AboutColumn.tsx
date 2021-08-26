@@ -4,7 +4,7 @@ import NavColumnBody from '../NavColumnBody/NavColumnBody';
 
 const AboutFooter = () => {
   // language=GraphQL
-  const data = useStaticQuery(graphql`
+  const data = useStaticQuery<GatsbyTypes.Query>(graphql`
     {
       allGhostPage(filter: { tags: { elemMatch: { slug: { eq: "subcategory-about" } } } }) {
         ...GhostPageTitles,

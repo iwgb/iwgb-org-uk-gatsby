@@ -6,6 +6,9 @@ import useLocalisedGhostEntities from '../hooks/useLocalisedGhostEntities';
 import NotFound from '../pages/404';
 import HtmlContent from '../components/HtmlContent/HtmlContent';
 import { TemplateProps } from '../utils/types';
+import Jobs from '../components/Jobs/Jobs';
+
+const JOBS_PAGE_TAG_SLUG = 'special-careers';
 
 const Page = ({ data: { allGhostPage: pages } }: TemplateProps) => {
   const [{ entity: page, slug }] = useLocalisedGhostEntities(pages);
@@ -13,6 +16,8 @@ const Page = ({ data: { allGhostPage: pages } }: TemplateProps) => {
   if (page === undefined || slug === undefined) {
     return <NotFound />;
   }
+
+  const tags = page.tags || [];
 
   return (
     <UiContainer path={paths.page(slug || '')}>
@@ -27,6 +32,9 @@ const Page = ({ data: { allGhostPage: pages } }: TemplateProps) => {
               {page.title}
             </h1>
             <HtmlContent html={page.html} />
+            {tags.some((tag) => tag && tag.slug === JOBS_PAGE_TAG_SLUG) && (
+              <Jobs />
+            )}
           </div>
         </div>
       </div>

@@ -16,6 +16,22 @@ export const GhostPageTitles = graphql`
   }
 `;
 
+export const GhostPostSummaries = graphql`
+  fragment GhostPostSummaries on GhostPostConnection {
+    edges {
+      node {
+        title,
+        slug,
+        feature_image,
+        published_at,
+        tags {
+          slug,
+        },
+      }
+    }
+  }
+`;
+
 export const GhostPageFields = graphql`
   fragment GhostPageFields on GhostPageConnection {
     edges {
@@ -24,9 +40,6 @@ export const GhostPageFields = graphql`
         slug,
         feature_image,
         excerpt,
-        primary_author {
-          name,
-        },
         tags {
           slug,
         }
@@ -53,9 +66,6 @@ export const GhostPostFields = graphql`
         slug,
         feature_image,
         excerpt,
-        primary_author {
-          name,
-        },
         tags {
           slug,
         }

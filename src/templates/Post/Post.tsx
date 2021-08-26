@@ -1,21 +1,21 @@
 import { graphql } from 'gatsby';
 import { DateTime } from 'luxon';
-import { FormattedMessage, Link, useIntl } from 'gatsby-plugin-intl';
-import { Button } from 'react-bootstrap';
 import UiContainer from '../../components/Layout/UiContainer';
 import paths from '../../utils/paths';
 import GhostEntityMeta from '../../components/Meta/GhostEntityMeta';
 import useLocalisedGhostEntities from '../../hooks/useLocalisedGhostEntities';
-import NotFound from '../../pages/404';
+import NotFound from '../../components/NotFound/NotFound';
 import * as styles from './Post.module.scss';
 import useLocalDateTime from '../../hooks/useLocalDateTime';
 import HtmlContent from '../../components/HtmlContent/HtmlContent';
 import { TemplateProps } from '../../utils/types';
+import DonateCta from '../../components/DonateCta';
+
+const JOB_POST_TAG_SLUG = 'category-job';
 
 const Post = ({ data: { allGhostPost: posts } }: TemplateProps) => {
   const [{ entity: post, slug }] = useLocalisedGhostEntities(posts);
   const published = useLocalDateTime(post.published_at);
-  const { formatMessage } = useIntl();
 
   if (slug === undefined) {
     return <NotFound />;
@@ -51,21 +51,9 @@ const Post = ({ data: { allGhostPost: posts } }: TemplateProps) => {
               />
             </div>
             <div className="row mt-3">
-              <div className="col-12 col-md-9 offset-md-3 px-0">
-                <h2 className="iwgb-dark-red-bg text-white mb-0 px-3 py-2">
-                  <FormattedMessage id="post.donate.title" />
-                </h2>
-                <div className="iwgb-lightest-grey-bg mb-0 p-3">
-                  <p>
-                    <FormattedMessage id="post.donate.body" />
-                  </p>
-                  <Link to={formatMessage({ id: 'post.donate.cta.href' })}>
-                    <Button>
-                      <FormattedMessage id="post.donate.cta.text" />
-                    </Button>
-                  </Link>
-                </div>
-              </div>
+              {!(post.tags && post.tags.some((tag) => tag && tag.slug === JOB_POST_TAG_SLUG)) && (
+                <DonateCta />
+              )}
             </div>
           </div>
         </div>
