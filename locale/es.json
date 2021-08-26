@@ -116,7 +116,7 @@
         "title": "Desafíos legales",
         "body": "Sus donaciones ayudarán al sindicato a hacer campañas y asegurarnos de que podemos apoyar a todos los miembros.",
         "cta": {
-          "href": "/donate",
+          "href": "/page/donate",
           "text": "Donar"
         }
       }
@@ -167,7 +167,7 @@
       "title": "Nuestro trabajo importa",
       "body": "Somos solo un David y hay muchos Goliat por ahí. Como tal, dependemos de las cuotas y las donaciones para hacer nuestro trabajo; si puede, realmente apreciaríamos cualquier contribución a nuestro trabajo vital.",
       "cta": {
-        "href": "/donate",
+        "href": "/page/donate",
         "text": "Contribuiré"
       }
     }

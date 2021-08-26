@@ -118,7 +118,7 @@
         "title": "Support us",
         "body": "Your donations will help the union run campaigns and make sure we can support every member.",
         "cta": {
-          "href": "/donate",
+          "href": "/page/donate",
           "text": "Donate"
         }
       }
@@ -169,7 +169,7 @@
       "title": "Our work matters",
       "body": "We're just one David and there's a lot of Goliaths out there. As such, we rely on dues and donations to do our work - if you can, we'd really appreciate any contributions to our vital work.",
       "cta": {
-        "href": "/donate",
+        "href": "/page/donate",
         "text": "I'll contribute"
       }
     }
