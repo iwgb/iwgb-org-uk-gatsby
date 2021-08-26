@@ -9,13 +9,15 @@ const createRedirects = (
   locales: string[],
 ) => {
   (Object.entries(redirects) as [string, string][])
-    .forEach(([fromPath, toPath]) => locales
-      .forEach(((locale) => {
+    .forEach(([fromPath, toPath]) => {
+      createRedirect({ fromPath, toPath });
+      locales.forEach(((locale) => {
         createRedirect({
           fromPath: `/${locale}${fromPath}`,
           toPath,
         });
-      })));
+      }));
+    });
 };
 
 export default createRedirects;
