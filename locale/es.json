@@ -1,15 +1,90 @@
 {
   "global": {
-    "iwgbLogo": "Logotipo de la IWGB"
+    "iwgbLogo": "Logotipo de la IWGB",
+    "description": "La IWGB es el principal sindicato del Reino Unido para los trabajadores precarios. Somos una organización democrática y dirigida por sus miembros.",
+    "slogan": "Poner a los trabajadores primero"
   },
   "nav": {
     "news": "Noticias",
     "campaigns": "Campañas",
     "branches": "Ramas",
     "about": "Acerca de",
-    "support": "Apoyo"
+    "support": "Apoyo",
+    "getInvolved": "Involucrarse",
+    "democracy": "Democracia",
+    "joinButtonAlt": "Únete"
+  },
+  "join": {
+    "contact": {
+      "title": "¿Ninguno de esos suena bien?",
+      "body": "Llame al equipo de miembros usando el formulario de contacto para saber si puede unirse a la IWGB."
+    },
+    "fees": {
+      "title": "Nuestras cuotas de membresía",
+      "body": "Le haremos saber qué tarifa se aplica a usted antes de que establezca su pago.",
+      "link": {
+        "href": "/page/membership-costs",
+        "text": "Vea nuestra lista de tarifas completa"
+      }
+    },
+    "jobType": {
+      "charityWorker": {
+        "description": "La IWGB está pidiendo justicia e igualdad para todos los trabajadores del sector de la caridad!",
+        "name": "Trabajador de la caridad"
+      },
+      "cleanerFacilities": {
+        "description": "La IWGB representa a limpiadores, porteadores, trabajadores de la hostelería y empleados domésticos de todo Londres.",
+        "name": "Trabajador de limpieza o de instalaciones"
+      },
+      "courier": {
+        "description": "Los correos de todo el país se organizan por los derechos, el respeto y el pago justo.",
+        "name": "Mensajero o trabajador de logística"
+      },
+      "cycleInstructor": {
+        "description": "¡Los instructores de ciclismo en Londres se organizan contra la precariedad y los bajos salarios!",
+        "name": "Instructor de ciclismo"
+      },
+      "fosterCarer": {
+        "description": "La Rama de Trabajadores de Acogida de la IWGB pide que se reformen los sistemas de acogida en el Reino Unido.",
+        "name": "Cuidador de acogida"
+      },
+      "gameWorker": {
+        "description": "La IWGB Game Workers Branch es un sindicato que lucha por los derechos de los trabajadores de la industria del juego.",
+        "name": "Trabajador del videojuego"
+      },
+      "higherEducation": {
+        "description": "Si trabajas en una universidad en Londres, por favor inscríbete aquí.",
+        "name": "Trabajador de la educación superior"
+      },
+      "nanny": {
+        "description": "Niñera o au pair",
+        "name": "Recursos y apoyo para niñeras y au pairs de todo el Reino Unido."
+      },
+      "other": {
+        "description": "Si quieres organizarte con nosotros pero no puedes ver tu sector aquí, entonces puedes unirte a la sucursal del holding de la IWGB",
+        "name": "Otra"
+      },
+      "privateHireDriver": {
+        "description": "Los United Private Hire Drivers están luchando por los derechos laborales de los conductores en toda Gran Bretaña.",
+        "name": "Conductor privado de alquiler"
+      },
+      "securityReceptionist": {
+        "description": "La IWGB representa a los guardias de seguridad y recepcionistas de todo Londres para ganar respeto y un sueldo decente.",
+        "name": "Guardia de seguridad o recepcionista"
+      },
+      "yogaTeacher": {
+        "description": "Los profesores de yoga se están organizando por los derechos, la equidad y el pago justo.",
+        "name": "Instructor de yoga"
+      }
+    },
+    "loading": {
+      "title": "Preparando",
+      "body": "Estamos trabajando en ello"
+    },
+    "title": "Háblenos de su trabajo"
   },
   "home": {
+    "moreStories": "Más artículos",
     "weAre": {
       "1": "Somos",
       "2": "la IWGB.",
@@ -101,5 +176,58 @@
     "title": "Nosotros ganamos",
     "heading": "Hemos perdido esta página",
     "body": "En cambio, aquí hay algunas veces que ganamos:"
+  },
+  "branches": {
+    "title": "Ramas de la IWGB",
+    "viewWebsite": "Ver sitio web",
+    "readMore": "Leer más",
+    "charityWorkers": {
+      "name": "Trabajadorxs del sector benéfico",
+      "description": "El IWGB Charity Workers Branch es un sindicato democrático dirigido por trabajadores que representa y defiende los derechos de los trabajadores del sector benéfico en todo el Reino Unido."
+    },
+    "cleanersAndFacilities": {
+      "name": "Trabajadorxs de limpieza",
+      "description": "Luchando por un salario digno y contratos justos para los limpiadores en todo Londres, incluida la Royal Opera House y John Lewis"
+    },
+    "couriersAndLogistics": {
+      "description": "Las empresas corren asustadas. Cambiando la forma de la industria de la mensajería, de Deliveroo a CitySprint y muchas otras",
+      "name": "Trabajadorxs de entrega y mensajeria"
+    },
+    "cyclingInstructors": {
+      "name": "Instructorxs de ciclismo",
+      "description": "¡Los instructores de ciclo de Gran Bretaña se están organizando contra la precariedad y los bajos salarios!"
+    },
+    "fosterCareWorkers": {
+      "name": "Trabajadorxs de hogares adoptivos",
+      "description": "Exigir derechos laborales para los trabajadores de hogares de guarda en todo el Reino Unido"
+    },
+    "gameWorkers": {
+      "name": "Trabajadorxs de videojuegos",
+      "description": "Abogar por los derechos de los trabajadores y la sindicalización en el desarrollo de juegos"
+    },
+    "generalMembers": {
+      "description": "Si no tenemos una rama que cubra su sector o lugar de trabajo, puede afiliarse a la Rama de Miembros Generales.",
+      "name": "Miembros generales"
+    },
+    "securityAndReceptionists": {
+      "name": "Seguridad y recepcionistas",
+      "description": "Dando una voz a las guardias de seguridad en todo Londres"
+    },
+    "unitedPrivateHireDrivers": {
+      "description": "Ha leído los titulares. Estamos cambiando el curso de los derechos laborales para los conductores privados de alquiler para siempre.",
+      "name": "Conductores Privados de Alquiler"
+    },
+    "universitiesOfLondon": {
+      "name": "Universidades de Londres",
+      "description": "Representar a guardias de seguridad, limpiadores y otros trabajadores en los campus universitarios de todo Londres."
+    },
+    "yogaTeachers": {
+      "name": "Profesorxs de Yoga",
+      "description": "Las profesoras de yoga se organizan por derechos, equidad y salario justo"
+    },
+    "nanniesAndAuPairs": {
+      "name": "Niñeras y Au Pairs",
+      "description": "Apoyo, recursos y espacio comunitario para niñeras y au pairs con sede en el Reino Unido."
+    }
   }
 }
