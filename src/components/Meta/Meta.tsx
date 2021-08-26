@@ -1,5 +1,6 @@
 // @ts-ignore
 import Seo from '@americanexpress/react-seo';
+import { useIntl } from 'gatsby-plugin-intl';
 import env from '../../utils/env';
 import config from '../../config';
 import { replacePathLocale } from '../../utils/intl';
@@ -20,28 +21,33 @@ const Meta = ({
   twitterCard = {},
   openGraph = {},
   ...rest
-}: Props) => (
-  <Seo
-    siteUrl={`${env.siteUrl}${path}`}
-    description={description}
-    image={{ src: image }}
-    twitterCard={{
-      description,
-      card: 'summary_large_image',
-      src: image,
-      ...twitterCard,
-    }}
-    openGraph={{
-      description,
-      src: image,
-      ...openGraph,
-    }}
-    alternateLinks={env.availableLocales.map((locale) => ({
-      hrefLang: locale,
-      href: `${env.siteUrl}${replacePathLocale(path, locale)}`,
-    }))}
-    {...rest}
-  />
-);
+}: Props) => {
+  const { locale } = useIntl();
+
+  return (
+    <Seo
+      siteUrl={`${env.siteUrl}/${locale}${path}`}
+      description={description}
+      image={{ src: image }}
+      twitterCard={{
+        description,
+        card: 'summary_large_image',
+        src: image,
+        ...twitterCard,
+      }}
+      openGraph={{
+        description,
+        src: image,
+        ...openGraph,
+      }}
+      alternateLinks={env.availableLocales.map((availableLocale) => ({
+        hrefLang: availableLocale,
+        href: `${env.siteUrl}${replacePathLocale(path, availableLocale)}`,
+      }))}
+      locale={locale}
+      {...rest}
+    />
+  );
+};
 
 export default Meta;
