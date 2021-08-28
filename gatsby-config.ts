@@ -30,7 +30,6 @@ export default {
     'gatsby-plugin-sass',
     'gatsby-plugin-fontawesome-css',
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-sitemap',
     'gatsby-plugin-typegen',
     'gatsby-plugin-netlify',
     {
