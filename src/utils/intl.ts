@@ -1,7 +1,7 @@
 export const replacePathLocale = (path: string, locale: string): string => {
   const barePath = path
     .split('/')
-    .slice(2)
+    .slice(1)
     .join('/');
   return `/${locale}/${barePath}`;
 };
