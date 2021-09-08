@@ -31,7 +31,15 @@ export default {
     'gatsby-plugin-fontawesome-css',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-typegen',
-    'gatsby-plugin-netlify',
+    {
+      resolve: 'gatsby-plugin-netlify',
+      options: {
+        transformHeaders: (headers: { [x: string]: string }) => ({
+          ...headers,
+          'x-frame-options': 'SAMEORIGIN',
+        }),
+      },
+    },
     {
       resolve: 'gatsby-plugin-intl',
       options: {
