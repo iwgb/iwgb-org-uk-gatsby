@@ -34,10 +34,15 @@ export default {
     {
       resolve: 'gatsby-plugin-netlify',
       options: {
-        transformHeaders: (headers: { [x: string]: string }) => ({
-          ...headers,
-          'x-frame-options': 'SAMEORIGIN',
-        }),
+        mergeSecurityHeaders: false,
+        headers: {
+          '/*': [
+            'x-frame-options: SAMEORIGIN',
+            'x-xss-protection: 1; mode=block',
+            'x-content-type-options: nosniff',
+            'referrer-policy: same-origin',
+          ],
+        },
       },
     },
     {
