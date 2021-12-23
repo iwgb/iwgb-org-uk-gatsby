@@ -8,7 +8,7 @@ const devConfig = process.env.NODE_ENV === 'development'
 
 export default {
   siteMetadata: {
-    siteUrl: 'https://www.yourdomain.tld',
+    siteUrl: 'https://iwgb.org.uk',
     title: 'iwgb-org-uk',
   },
   plugins: [
@@ -28,7 +28,6 @@ export default {
       },
     },
     'gatsby-plugin-sass',
-    'gatsby-plugin-fontawesome-css',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-typegen',
     {

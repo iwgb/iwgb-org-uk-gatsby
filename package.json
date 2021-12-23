@@ -23,6 +23,7 @@
     "@fortawesome/react-fontawesome": "^0.1.14",
     "axios": "^0.21.1",
     "bootstrap": "^5.0.2",
+    "clean-css": "^5.2.2",
     "dangerously-set-html-content": "^1.0.8",
     "dotenv": "^10.0.0",
     "gatsby": "^3.10.2",
@@ -52,6 +53,7 @@
     "sass": "^1.36.0"
   },
   "devDependencies": {
+    "@types/clean-css": "^4.2.5",
     "@types/luxon": "^1.27.1",
     "@types/react-helmet": "^6.1.2",
     "@types/react-lottie": "^1.2.6",
