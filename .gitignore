@@ -3,5 +3,6 @@ node_modules/
 public/
 .env
 schema.graphql
-src/__generated__/
+# temporarily commit types to fix build
+# src/__generated__/
 .idea/
