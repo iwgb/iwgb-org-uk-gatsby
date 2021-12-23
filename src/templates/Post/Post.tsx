@@ -35,8 +35,8 @@ const Post = ({ data: { allGhostPost: posts } }: TemplateProps) => {
               style={{ backgroundImage: `url(${post.feature_image})` }}
             >
               <div className="col-12 col-md-3" />
-              <div className="col-12 col-md-9 px-0">
-                <h1 className={`${post.feature_image && `${styles.title} text-white`} mb-0 px-3`}>
+              <div className={`${post.feature_image && `${styles.title} text-white`} col-12 col-md-9`}>
+                <h1 className="mb-0">
                   {post.title}
                 </h1>
               </div>
