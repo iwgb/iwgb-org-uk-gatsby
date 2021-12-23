@@ -13,9 +13,12 @@ const getStyleTag = () => createElement('style', {
 });
 
 // eslint-disable-next-line import/prefer-default-export
-export const onRenderBody = ({ setHeadComponents }) => {
+const onRenderBody = ({ setHeadComponents }) => {
   if (styleTag !== null) {
     styleTag = getStyleTag();
   }
   setHeadComponents([styleTag]);
 };
+
+// eslint-disable-next-line import/prefer-default-export
+export { onRenderBody };
