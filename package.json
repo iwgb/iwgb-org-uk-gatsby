@@ -23,7 +23,6 @@
     "@fortawesome/react-fontawesome": "^0.1.14",
     "axios": "^0.21.1",
     "bootstrap": "^5.0.2",
-    "clean-css": "^5.2.2",
     "dangerously-set-html-content": "^1.0.8",
     "dotenv": "^10.0.0",
     "gatsby": "^3.10.2",
