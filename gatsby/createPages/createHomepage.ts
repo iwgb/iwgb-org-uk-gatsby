@@ -35,22 +35,26 @@ const getFeaturedSlug = async (
   return data.allGhostPost.edges[0].node.slug;
 };
 
-const RECENT_STORY_EXCLUDED_TAGS = ['category-job'];
+const RECENT_STORY_EXCLUDED_TAGS = ['category-job', 'special-hero-cta'];
 
 const getRecentStorySlugs = async (
   { graphql }: CreatePagesArgs,
   locales: string[],
   featuredSlug: string
 ): Promise<string[]> => {
-  // language=GraphQL
   const { errors, data } = await graphql<GatsbyTypes.Query>(
+    // language=GraphQL
     `
-      query ($locale: String!, $featuredSlug: String!) {
+      query (
+        $locale: String!
+        $featuredSlug: String!
+        $excludeTags: [String!]
+      ) {
         allGhostPost(
           limit: 15
           sort: { order: [DESC], fields: [published_at] }
           filter: {
-            tags: { elemMatch: { slug: { eq: $locale } } }
+            tags: { elemMatch: { slug: { eq: $locale, nin: $excludeTags } } }
             slug: { ne: $featuredSlug }
           }
         ) {
@@ -65,23 +69,18 @@ const getRecentStorySlugs = async (
         }
       }
     `,
-    { locale: locales[0], featuredSlug }
+    {
+      locale: locales[0],
+      featuredSlug,
+      excludeTags: RECENT_STORY_EXCLUDED_TAGS,
+    }
   );
 
   if (errors || data === undefined) {
     throw new Error(errors);
   }
 
-  return data.allGhostPost.edges
-    .filter(
-      ({ node: { tags } }) =>
-        tags &&
-        tags.every(
-          (tag) => tag && !RECENT_STORY_EXCLUDED_TAGS.includes(tag.slug)
-        )
-    )
-    .slice(0, 3)
-    .map(({ node: { slug } }) => slug);
+  return data.allGhostPost.edges.slice(0, 3).map(({ node: { slug } }) => slug);
 };
 
 const getFeaturedCampaignSlugs = async ({
