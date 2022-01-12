@@ -3,11 +3,11 @@ import Meta from '../Meta/Meta';
 import UiContainer from './UiContainer';
 
 interface Props {
-  className?: string,
-  path: string,
-  children: ReactNode,
-  title?: string,
-  [x:string]: any,
+  className?: string;
+  path: string;
+  children: ReactNode;
+  title?: string;
+  [x: string]: any;
 }
 
 const Container = ({
@@ -18,15 +18,8 @@ const Container = ({
   ...rest
 }: Props) => (
   <>
-    <Meta
-      path={path}
-      {...rest}
-    />
-    <UiContainer
-      path={path}
-      className={className}
-      title={title}
-    >
+    <Meta path={path} {...rest} />
+    <UiContainer path={path} className={className} title={title}>
       {children}
     </UiContainer>
   </>

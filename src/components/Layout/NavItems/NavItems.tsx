@@ -2,8 +2,8 @@ import NavLink from './NavLink';
 import NavConfig from './navConfig';
 
 interface Props {
-  openSubnav: string,
-  setOpenSubnav: (subnav: string) => void,
+  openSubnav: string;
+  setOpenSubnav: (subnav: string) => void;
 }
 
 const NavItems = ({ openSubnav, setOpenSubnav }: Props) => (

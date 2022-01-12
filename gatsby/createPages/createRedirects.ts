@@ -6,18 +6,19 @@ const redirects = {
 
 const createRedirects = (
   { actions: { createRedirect } }: CreatePagesArgs,
-  locales: string[],
+  locales: string[]
 ) => {
-  (Object.entries(redirects) as [string, string][])
-    .forEach(([fromPath, toPath]) => {
+  (Object.entries(redirects) as [string, string][]).forEach(
+    ([fromPath, toPath]) => {
       createRedirect({ fromPath, toPath });
-      locales.forEach(((locale) => {
+      locales.forEach((locale) => {
         createRedirect({
           fromPath: `/${locale}${fromPath}`,
           toPath,
         });
-      }));
-    });
+      });
+    }
+  );
 };
 
 export default createRedirects;

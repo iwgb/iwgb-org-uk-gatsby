@@ -2,7 +2,9 @@ import { CreatePagesArgs } from 'gatsby';
 import Paths from '../../src/utils/paths';
 
 const createFeeds = ({ actions: { createPage } }: CreatePagesArgs) => {
-  const campaignsTemplate = require.resolve('../../src/templates/Campaigns.tsx');
+  const campaignsTemplate = require.resolve(
+    '../../src/templates/Campaigns.tsx'
+  );
   createPage({
     path: Paths.campaigns(),
     component: campaignsTemplate,

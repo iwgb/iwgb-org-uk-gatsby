@@ -9,18 +9,16 @@ import { TemplateProps } from '../utils/types';
 
 interface Props extends TemplateProps {
   pageContext: {
-    page: number,
-    hasPrevious: boolean,
-    hasNext: boolean,
-    pages: number,
-  },
+    page: number;
+    hasPrevious: boolean;
+    hasNext: boolean;
+    pages: number;
+  };
 }
 
 const News = ({
   data: { allGhostPost: posts },
-  pageContext: {
-    page, hasPrevious, hasNext, pages,
-  },
+  pageContext: { page, hasPrevious, hasNext, pages },
 }: Props) => {
   const entities = useLocalisedGhostEntities(posts);
   const { formatMessage } = useIntl();
@@ -36,10 +34,7 @@ const News = ({
             <FormattedMessage id="nav.news" />
           </h1>
         </div>
-        <Feed
-          entities={entities}
-          getPath={Paths.post}
-        />
+        <Feed entities={entities} getPath={Paths.post} />
         <Pagination
           page={page}
           pages={pages}
@@ -55,8 +50,8 @@ const News = ({
 export const query = graphql`
   query ($slugs: [String!]) {
     allGhostPost(filter: { slug: { in: $slugs } }) {
-      ...GhostPostFields,
-    },
+      ...GhostPostFields
+    }
   }
 `;
 

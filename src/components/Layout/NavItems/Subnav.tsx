@@ -3,17 +3,14 @@ import { useMemo } from 'react';
 import NavConfig from './navConfig';
 
 interface Props {
-  className?: string,
-  openSubnav: string,
+  className?: string;
+  openSubnav: string;
 }
 
-const Subnav = ({
-  openSubnav,
-  className = '',
-}: Props) => {
+const Subnav = ({ openSubnav, className = '' }: Props) => {
   const openSubnavConfig = useMemo(
     () => NavConfig.find((config) => config.message === openSubnav),
-    [openSubnav],
+    [openSubnav]
   );
 
   return (

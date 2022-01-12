@@ -28,9 +28,7 @@ const Page = ({ data: { allGhostPage: pages } }: TemplateProps) => {
       <div className="container">
         <div className="row">
           <div className="col-12 col-md-8 offset-md-2">
-            <h1 className="my-5">
-              {page.title}
-            </h1>
+            <h1 className="my-5">{page.title}</h1>
             <HtmlContent html={page.html} />
             {tags.some((tag) => tag && tag.slug === JOBS_PAGE_TAG_SLUG) && (
               <Jobs />
@@ -43,10 +41,10 @@ const Page = ({ data: { allGhostPage: pages } }: TemplateProps) => {
 };
 
 export const query = graphql`
-  query($slugs: [String]) {
+  query ($slugs: [String]) {
     allGhostPage(filter: { slug: { in: $slugs } }) {
-      ...GhostPageFields,
-    },
+      ...GhostPageFields
+    }
   }
 `;
 

@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 declare namespace GatsbyTypes {
 type Maybe<T> = T | undefined;
 type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
@@ -313,6 +311,7 @@ type SitePageContext = {
   readonly featuredSlug: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
   readonly recentStorySlugs: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
   readonly campaignSlugs: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
+  readonly heroCtaSlugs: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
   readonly locales: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
 };
 
@@ -376,6 +375,8 @@ type SitePageContextIntlMessages = {
   readonly join_loading_title: Maybe<Scalars['String']>;
   readonly join_loading_body: Maybe<Scalars['String']>;
   readonly join_title: Maybe<Scalars['String']>;
+  readonly home_go: Maybe<Scalars['String']>;
+  readonly home_takeAction: Maybe<Scalars['String']>;
   readonly home_moreStories: Maybe<Scalars['String']>;
   readonly home_weAre_1: Maybe<Scalars['String']>;
   readonly home_weAre_2: Maybe<Scalars['String']>;
@@ -2145,6 +2146,7 @@ type SitePageContextFilterInput = {
   readonly featuredSlug: Maybe<StringQueryOperatorInput>;
   readonly recentStorySlugs: Maybe<StringQueryOperatorInput>;
   readonly campaignSlugs: Maybe<StringQueryOperatorInput>;
+  readonly heroCtaSlugs: Maybe<StringQueryOperatorInput>;
   readonly locales: Maybe<StringQueryOperatorInput>;
 };
 
@@ -2208,6 +2210,8 @@ type SitePageContextIntlMessagesFilterInput = {
   readonly join_loading_title: Maybe<StringQueryOperatorInput>;
   readonly join_loading_body: Maybe<StringQueryOperatorInput>;
   readonly join_title: Maybe<StringQueryOperatorInput>;
+  readonly home_go: Maybe<StringQueryOperatorInput>;
+  readonly home_takeAction: Maybe<StringQueryOperatorInput>;
   readonly home_moreStories: Maybe<StringQueryOperatorInput>;
   readonly home_weAre_1: Maybe<StringQueryOperatorInput>;
   readonly home_weAre_2: Maybe<StringQueryOperatorInput>;
@@ -2563,6 +2567,8 @@ type SitePageFieldsEnum =
   | 'context.intl.messages.join_loading_title'
   | 'context.intl.messages.join_loading_body'
   | 'context.intl.messages.join_title'
+  | 'context.intl.messages.home_go'
+  | 'context.intl.messages.home_takeAction'
   | 'context.intl.messages.home_moreStories'
   | 'context.intl.messages.home_weAre_1'
   | 'context.intl.messages.home_weAre_2'
@@ -2654,6 +2660,7 @@ type SitePageFieldsEnum =
   | 'context.featuredSlug'
   | 'context.recentStorySlugs'
   | 'context.campaignSlugs'
+  | 'context.heroCtaSlugs'
   | 'context.locales'
   | 'pluginCreator.id'
   | 'pluginCreator.parent.id'
@@ -4859,14 +4866,15 @@ type usersguymacdeviwgbiwgbOrgUkV3SrctemplatesNewsTsx2980874338QueryVariables = 
 
 type usersguymacdeviwgbiwgbOrgUkV3SrctemplatesNewsTsx2980874338Query = { readonly allGhostPost: GhostPostFieldsFragment };
 
-type usersguymacdeviwgbiwgbOrgUkV3SrctemplatesIndexTsx1073159954QueryVariables = Exact<{
+type usersguymacdeviwgbiwgbOrgUkV3SrctemplatesIndexTsx1494857561QueryVariables = Exact<{
   featuredSlug: Maybe<ReadonlyArray<Scalars['String']> | Scalars['String']>;
   recentStorySlugs: Maybe<ReadonlyArray<Scalars['String']> | Scalars['String']>;
   campaignSlugs: Maybe<ReadonlyArray<Scalars['String']> | Scalars['String']>;
+  heroCtaSlugs: Maybe<ReadonlyArray<Scalars['String']> | Scalars['String']>;
 }>;
 
 
-type usersguymacdeviwgbiwgbOrgUkV3SrctemplatesIndexTsx1073159954Query = { readonly featured: GhostPostFieldsFragment, readonly recentStories: GhostPostFieldsFragment, readonly campaigns: GhostPageFieldsFragment };
+type usersguymacdeviwgbiwgbOrgUkV3SrctemplatesIndexTsx1494857561Query = { readonly featured: GhostPostFieldsFragment, readonly recentStories: GhostPostFieldsFragment, readonly campaigns: GhostPageFieldsFragment, readonly heroCtas: GhostPostFieldsFragment };
 
 type PagesQueryQueryVariables = Exact<{ [key: string]: never; }>;
 

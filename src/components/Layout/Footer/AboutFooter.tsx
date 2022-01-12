@@ -6,20 +6,17 @@ const AboutFooter = () => {
   // language=GraphQL
   const data = useStaticQuery<GatsbyTypes.Query>(graphql`
     {
-      allGhostPage(filter: { tags: { elemMatch: { slug: { eq: "subcategory-about" } } } }) {
-        ...GhostPageTitles,
+      allGhostPage(
+        filter: { tags: { elemMatch: { slug: { eq: "subcategory-about" } } } }
+      ) {
+        ...GhostPageTitles
       }
     }
   `);
 
   const pages = useLocalisedGhostEntities(data.allGhostPage);
 
-  return (
-    <FooterColumnBody
-      titleMessage="footer.about"
-      pages={pages}
-    />
-  );
+  return <FooterColumnBody titleMessage="footer.about" pages={pages} />;
 };
 
 export default AboutFooter;

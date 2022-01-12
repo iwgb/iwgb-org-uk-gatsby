@@ -2,7 +2,7 @@ import Lottie from 'react-lottie';
 import animationData from './animation.json';
 
 interface Props {
-  height: number,
+  height: number;
 }
 
 const LogoAnimation = ({ height }: Props) => (

@@ -5,7 +5,7 @@ import Config from '../../config';
 import SocialIcons from '../SocialIcons/SocialIcons';
 
 interface Props {
-  branch: GatsbyTypes.AirtableData,
+  branch: GatsbyTypes.AirtableData;
 }
 
 const Branch = ({ branch }: Props) => (
@@ -13,10 +13,16 @@ const Branch = ({ branch }: Props) => (
     <div className="pt-3 h-100">
       <div
         className={`${styles.image} bg-image`}
-        style={{ backgroundImage: `url(${branch.Image || Config.defaultMetaImage}` }}
+        style={{
+          backgroundImage: `url(${branch.Image || Config.defaultMetaImage}`,
+        }}
       >
-        <div className={`${styles.description} h-100 d-flex align-items-center justify-content-center text-white text-center p-3`}>
-          <FormattedMessage id={`branches.${camelCase(branch.Name)}.description`} />
+        <div
+          className={`${styles.description} h-100 d-flex align-items-center justify-content-center text-white text-center p-3`}
+        >
+          <FormattedMessage
+            id={`branches.${camelCase(branch.Name)}.description`}
+          />
         </div>
       </div>
       <div className={`${styles.text} bg-white px-3 py-2`}>
@@ -31,11 +37,11 @@ const Branch = ({ branch }: Props) => (
               rel="noreferrer"
               className="me-3"
             >
-              {
-                branch.Link.slice(0, 19) === 'https://iwgb.org.uk'
-                  ? <FormattedMessage id="branches.readMore" />
-                  : <FormattedMessage id="branches.viewWebsite" />
-              }
+              {branch.Link.slice(0, 19) === 'https://iwgb.org.uk' ? (
+                <FormattedMessage id="branches.readMore" />
+              ) : (
+                <FormattedMessage id="branches.viewWebsite" />
+              )}
             </a>
           )}
           <SocialIcons

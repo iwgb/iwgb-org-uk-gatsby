@@ -4,10 +4,10 @@ import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
 import { ReactNode } from 'react';
 
 interface Props extends ButtonProps {
-  icon: IconProp,
-  children: ReactNode,
-  className?: string,
-  direction?: 'left' | 'right',
+  icon: IconProp;
+  children: ReactNode;
+  className?: string;
+  direction?: 'left' | 'right';
 }
 
 const IconButton = ({
@@ -18,14 +18,13 @@ const IconButton = ({
   ...rest
 }: Props) => (
   <Button
-    className={`d-flex align-items-center ${direction === 'left' && 'flex-row-reverse'}${className}`}
+    className={`d-flex align-items-center ${
+      direction === 'left' && 'flex-row-reverse'
+    }${className}`}
     {...rest}
   >
     {children}
-    <Icon
-      className={direction === 'left' ? 'me-2' : 'ms-2'}
-      icon={icon}
-    />
+    <Icon className={direction === 'left' ? 'me-2' : 'ms-2'} icon={icon} />
   </Button>
 );
 

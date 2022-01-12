@@ -6,7 +6,7 @@ import * as styles from './JobType.module.scss';
 import Paths from '../../utils/paths';
 
 interface Props {
-  slug: string,
+  slug: string;
 }
 
 const JobType = ({ slug }: Props) => (
@@ -21,15 +21,15 @@ const JobType = ({ slug }: Props) => (
             <FormattedMessage id={`join.jobType.${camelCase(slug)}.name`} />
           </h3>
           <p>
-            <FormattedMessage id={`join.jobType.${camelCase(slug)}.description`} />
+            <FormattedMessage
+              id={`join.jobType.${camelCase(slug)}.description`}
+            />
           </p>
         </div>
-        <div className={`${styles.arrow} d-flex align-items-center justify-content-center flex-shrink-0 ms-2`}>
-          <Icon
-            icon={faArrowRight}
-            fixedWidth={true}
-            size="lg"
-          />
+        <div
+          className={`${styles.arrow} d-flex align-items-center justify-content-center flex-shrink-0 ms-2`}
+        >
+          <Icon icon={faArrowRight} fixedWidth={true} size="lg" />
         </div>
       </Link>
     </div>

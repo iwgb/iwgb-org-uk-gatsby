@@ -6,20 +6,19 @@ const GetInvolvedFooter = () => {
   // language=GraphQL
   const data = useStaticQuery<GatsbyTypes.Query>(graphql`
     {
-      allGhostPage(filter: { tags: { elemMatch: { slug: { eq: "subcategory-get-involved" } } } }) {
-        ...GhostPageTitles,
+      allGhostPage(
+        filter: {
+          tags: { elemMatch: { slug: { eq: "subcategory-get-involved" } } }
+        }
+      ) {
+        ...GhostPageTitles
       }
     }
   `);
 
   const pages = useLocalisedGhostEntities(data.allGhostPage);
 
-  return (
-    <FooterColumnBody
-      titleMessage="footer.getInvolved"
-      pages={pages}
-    />
-  );
+  return <FooterColumnBody titleMessage="footer.getInvolved" pages={pages} />;
 };
 
 export default GetInvolvedFooter;

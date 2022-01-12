@@ -2,7 +2,7 @@ import { FormattedMessage } from 'gatsby-plugin-intl';
 import * as styles from './FooterTitle.module.scss';
 
 interface Props {
-  message: string,
+  message: string;
 }
 
 const FooterTitle = ({ message }: Props) => (

@@ -86,6 +86,8 @@
     "title": "Tell us about your work"
   },
   "home": {
+    "go": "Go",
+    "takeAction": "Take action",
     "moreStories": "More stories",
     "weAre": {
       "1": "We are",

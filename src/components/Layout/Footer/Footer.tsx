@@ -22,9 +22,15 @@ const Footer = () => {
           <div className="my-2">
             <SocialIcons
               className="my-2"
-              twitter={`https://twitter.com/${formatMessage({ id: 'footer.handles.twitter' })}`}
-              facebook={`https://facebook.com/${formatMessage({ id: 'footer.handles.facebook' })}`}
-              instagram={`https://instagram.com/${formatMessage({ id: 'footer.handles.instagram' })}`}
+              twitter={`https://twitter.com/${formatMessage({
+                id: 'footer.handles.twitter',
+              })}`}
+              facebook={`https://facebook.com/${formatMessage({
+                id: 'footer.handles.facebook',
+              })}`}
+              instagram={`https://instagram.com/${formatMessage({
+                id: 'footer.handles.instagram',
+              })}`}
             />
           </div>
         </div>
@@ -51,19 +57,11 @@ const Footer = () => {
             <FormattedMessage id="footer.credit" />
           </p>
           <p className="mb-0">
-            <a
-              href={Config.cmsUrl}
-              target="_blank"
-              rel="noreferrer"
-            >
+            <a href={Config.cmsUrl} target="_blank" rel="noreferrer">
               <FormattedMessage id="footer.logIn" />
             </a>
             <span className="mx-2">&middot;</span>
-            <a
-              href={Config.repoUrl}
-              target="_blank"
-              rel="noreferrer"
-            >
+            <a href={Config.repoUrl} target="_blank" rel="noreferrer">
               <FormattedMessage id="footer.contribute" />
             </a>
           </p>

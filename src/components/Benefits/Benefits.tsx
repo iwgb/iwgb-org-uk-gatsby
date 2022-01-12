@@ -11,7 +11,11 @@ const Benefits = () => {
     <>
       <div
         className={`${styles.header} bg-image d-flex align-items-end`}
-        style={{ backgroundImage: `url(${formatMessage({ id: 'home.benefits.image' })}` }}
+        style={{
+          backgroundImage: `url(${formatMessage({
+            id: 'home.benefits.image',
+          })}`,
+        }}
       >
         <div className="container my-4">
           <StripeText className={styles.title}>
@@ -24,7 +28,7 @@ const Benefits = () => {
           <div className="row py-4">
             {arrayOf(3).map((_, i) => (
               <div
-                /* eslint-disable-next-line react/no-array-index-key */
+                /* eslint-disable-next-line react/no-array-index-key -- no other index */
                 key={i}
                 className="col-12 col-md-4 d-flex flex-column justify-content-between my-3 my-md-0"
               >
@@ -47,7 +51,6 @@ const Benefits = () => {
         </div>
       </div>
     </>
-
   );
 };
 

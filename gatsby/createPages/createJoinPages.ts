@@ -2,22 +2,24 @@ import { CreatePagesArgs } from 'gatsby';
 import Paths from '../../src/utils/paths';
 import { getSlugsInLocales } from '../../src/utils/intl';
 
-const getJobTypeSlugs = async ({ graphql }: CreatePagesArgs): Promise<string[]> => {
+const getJobTypeSlugs = async ({
+  graphql,
+}: CreatePagesArgs): Promise<string[]> => {
   // language=GraphQL
   const { errors, data } = await graphql<GatsbyTypes.Query>(`
     {
       allAirtable(
-        sort: { fields: [data___Slug], order: [ASC] },
-        filter: { table: { eq: "Job types" } },
+        sort: { fields: [data___Slug], order: [ASC] }
+        filter: { table: { eq: "Job types" } }
       ) {
         edges {
           node {
             data {
-              Slug,
-            },
-          },
-        },
-      },
+              Slug
+            }
+          }
+        }
+      }
     }
   `);
 
@@ -26,11 +28,11 @@ const getJobTypeSlugs = async ({ graphql }: CreatePagesArgs): Promise<string[]> 
   }
 
   return data.allAirtable.edges
-    .reduce((jobTypes, { node }) => (
-      node.data && node.data.Slug
-        ? [...jobTypes, node.data.Slug]
-        : jobTypes
-    ), [] as string[])
+    .reduce(
+      (jobTypes, { node }) =>
+        node.data && node.data.Slug ? [...jobTypes, node.data.Slug] : jobTypes,
+      [] as string[]
+    )
     .sort((a, b) => {
       if (a === 'other') {
         return 1;

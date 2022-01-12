@@ -5,16 +5,12 @@ import * as styles from './PageList.module.scss';
 import Paths from '../../utils/paths';
 
 interface Props {
-  className?: string,
-  children: ReactNode,
-  pages: EntitySlugTuple[],
+  className?: string;
+  children: ReactNode;
+  pages: EntitySlugTuple[];
 }
 
-const PageList = ({
-  className = '',
-  children,
-  pages,
-}: Props) => (
+const PageList = ({ className = '', children, pages }: Props) => (
   <div className={`${className} col-md`}>
     {children}
     <div className="iwgb-med-grey">

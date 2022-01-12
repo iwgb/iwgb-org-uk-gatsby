@@ -11,26 +11,34 @@ import Paths from '../utils/paths';
 import Benefits from '../components/Benefits/Benefits';
 import Contact from '../components/Contact/Contact';
 import IconButton from '../components/IconButton';
+import HeroCta from '../components/HeroCta/HeroCta';
 
 interface Props extends PageProps {
   data: {
-    featured: GatsbyTypes.GhostPostConnection
-    recentStories: GatsbyTypes.GhostPostConnection,
-    campaigns: GatsbyTypes.GhostPostConnection,
-  },
+    featured: GatsbyTypes.GhostPostConnection;
+    recentStories: GatsbyTypes.GhostPostConnection;
+    campaigns: GatsbyTypes.GhostPageConnection;
+    heroCtas: GatsbyTypes.GhostPostConnection;
+  };
 }
 
 const Index = ({ data }: Props) => {
   const { formatMessage } = useIntl();
-  const [{ entity: featured, slug: featuredSlug }] = useLocalisedGhostEntities(data.featured);
+  const [{ entity: featured, slug: featuredSlug }] = useLocalisedGhostEntities(
+    data.featured
+  );
   const recentStories = useLocalisedGhostEntities(data.recentStories);
   const campaigns = useLocalisedGhostEntities(data.campaigns);
+  const heroCtas = useLocalisedGhostEntities(data.heroCtas);
 
   return (
     <Container
       path="/"
       description={formatMessage({ id: 'global.description' })}
     >
+      {heroCtas.map(({ entity, slug }) => (
+        <HeroCta key={slug} post={entity} />
+      ))}
       <div className="container py-3">
         <FeaturedStoryCard
           title={featured.title}
@@ -44,10 +52,7 @@ const Index = ({ data }: Props) => {
           hideMobileImages={true}
         />
         <div className="row justify-content-end py-3">
-          <Link
-            className="w-auto link-unstyled"
-            to={Paths.news()}
-          >
+          <Link className="w-auto link-unstyled" to={Paths.news()}>
             <IconButton icon={faArrowRight}>
               <FormattedMessage id="home.moreStories" />
             </IconButton>
@@ -83,19 +88,23 @@ const Index = ({ data }: Props) => {
 
 export const query = graphql`
   query (
-    $featuredSlug: [String!],
-    $recentStorySlugs: [String!],
-    $campaignSlugs: [String!],
+    $featuredSlug: [String!]
+    $recentStorySlugs: [String!]
+    $campaignSlugs: [String!]
+    $heroCtaSlugs: [String!]
   ) {
     featured: allGhostPost(filter: { slug: { in: $featuredSlug } }) {
-      ...GhostPostFields,
-    },
+      ...GhostPostFields
+    }
     recentStories: allGhostPost(filter: { slug: { in: $recentStorySlugs } }) {
-      ...GhostPostFields,
-    },
+      ...GhostPostFields
+    }
     campaigns: allGhostPage(filter: { slug: { in: $campaignSlugs } }) {
-      ...GhostPageFields,
-    },
+      ...GhostPageFields
+    }
+    heroCtas: allGhostPost(filter: { slug: { in: $heroCtaSlugs } }) {
+      ...GhostPostFields
+    }
   }
 `;
 

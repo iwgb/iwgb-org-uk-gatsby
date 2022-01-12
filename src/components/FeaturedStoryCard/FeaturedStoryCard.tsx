@@ -28,7 +28,9 @@ const FeaturedStoryCard = ({
     >
       <div className={`${styles.text} px-3 py-2`}>
         <h2 className="text-white">{title}</h2>
-        <div className="iwgb-lightest-grey">{localPublished.toLocaleString(DateTime.DATE_MED)}</div>
+        <div className="iwgb-lightest-grey">
+          {localPublished.toLocaleString(DateTime.DATE_MED)}
+        </div>
       </div>
     </Link>
   );

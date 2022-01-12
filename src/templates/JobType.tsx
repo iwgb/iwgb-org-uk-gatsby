@@ -9,8 +9,8 @@ import Config from '../config';
 
 interface Props extends PageProps {
   pageContext: {
-    jobType: string,
-  }
+    jobType: string;
+  };
 }
 
 const JobType = ({ pageContext: { jobType } }: Props) => {
@@ -19,15 +19,18 @@ const JobType = ({ pageContext: { jobType } }: Props) => {
   useEffect(() => {
     window.setTimeout(
       () => window.location.replace(`${Config.joinBaseUrl}/${jobType}`),
-      1000,
+      1000
     );
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- only runs once
   }, []);
 
   return (
     <Container
       path={Paths.joinJobType(jobType)}
       className="d-flex flex-column align-items-center p-5"
-      title={`${formatMessage({ id: 'home.join' })} · ${formatMessage({ id: `join.jobType.${camelCase(jobType)}.name` })}`}
+      title={`${formatMessage({ id: 'home.join' })} · ${formatMessage({
+        id: `join.jobType.${camelCase(jobType)}.name`,
+      })}`}
     >
       <LogoAnimation height={100} />
       <h3>

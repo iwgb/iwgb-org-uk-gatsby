@@ -4,11 +4,11 @@ import * as styles from './Story.module.scss';
 import useLocalDateTime from '../../hooks/useLocalDateTime';
 
 interface Props {
-  image?: string,
-  title: string,
-  published?: string,
-  path: string,
-  hideMobileImages?: boolean,
+  image?: string;
+  title: string;
+  published?: string;
+  path: string;
+  hideMobileImages?: boolean;
 }
 
 const Story = ({
@@ -28,7 +28,9 @@ const Story = ({
       >
         {image && (
           <div
-            className={`${styles.image} bg-image ${hideMobileImages && 'd-none'} d-md-block`}
+            className={`${styles.image} bg-image ${
+              hideMobileImages && 'd-none'
+            } d-md-block`}
             style={{ backgroundImage: `url(${image})` }}
           />
         )}

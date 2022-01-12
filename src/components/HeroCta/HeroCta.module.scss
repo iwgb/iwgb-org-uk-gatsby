@@ -1,0 +1,53 @@
+@import 'src/utils/utils';
+
+.marqueeContainer {
+  height: 1.5rem;
+
+  @media (prefers-reduced-motion) {
+    display: none;
+  }
+}
+
+.marquee {
+  z-index: $zindex-dropdown;
+}
+
+.html {
+  p {
+    margin: 0;
+  }
+}
+
+.link {
+  .imageContainer {
+    overflow: hidden;
+  }
+
+  .image {
+    transition: transform .5s;
+  }
+
+  &:hover .image {
+    transform: scale(1.1);
+  }
+}
+
+.button {
+  border-radius: 10rem;
+}
+
+.title {
+  font-size: 1.3rem;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 1.7rem;
+  }
+
+  @include media-breakpoint-up(md) {
+    font-size: 2rem;
+  }
+
+  @include media-breakpoint-up(lg) {
+    font-size: 3rem;
+  }
+}

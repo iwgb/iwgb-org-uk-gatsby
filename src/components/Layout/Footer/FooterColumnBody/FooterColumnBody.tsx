@@ -4,18 +4,12 @@ import FooterTitle from '../FooterTitle/FooterTitle';
 import PageList from '../../../PageList/PageList';
 
 interface Props {
-  titleMessage: string,
-  pages: EntitySlugTuple[],
+  titleMessage: string;
+  pages: EntitySlugTuple[];
 }
 
-const FooterColumnBody = ({
-  titleMessage,
-  pages,
-}: Props) => (
-  <PageList
-    pages={pages}
-    className={styles.column}
-  >
+const FooterColumnBody = ({ titleMessage, pages }: Props) => (
+  <PageList pages={pages} className={styles.column}>
     <FooterTitle message={titleMessage} />
   </PageList>
 );

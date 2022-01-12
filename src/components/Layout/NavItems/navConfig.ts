@@ -3,9 +3,9 @@ import Paths from '../../../utils/paths';
 import About from './About/About';
 
 export interface NavItem {
-  message: string,
-  path?: string,
-  Component?: ComponentType,
+  message: string;
+  path?: string;
+  Component?: ComponentType;
 }
 
 const NavConfig: NavItem[] = [

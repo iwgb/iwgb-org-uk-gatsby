@@ -31,18 +31,24 @@ const Post = ({ data: { allGhostPost: posts } }: TemplateProps) => {
         <div className="row">
           <div className="col-12 col-md-8">
             <div
-              className={`${post.feature_image && styles.image} row bg-image align-items-end pt-3`}
+              className={`${
+                post.feature_image && styles.image
+              } row bg-image align-items-end pt-3`}
               style={{ backgroundImage: `url(${post.feature_image})` }}
             >
               <div className="col-12 col-md-3" />
-              <div className={`${post.feature_image && `${styles.title} text-white`} col-12 col-md-9`}>
-                <h1 className="mb-0">
-                  {post.title}
-                </h1>
+              <div
+                className={`${
+                  post.feature_image && `${styles.title} text-white`
+                } col-12 col-md-9`}
+              >
+                <h1 className="mb-0">{post.title}</h1>
               </div>
             </div>
             <div className="row mt-3">
-              <small className={`col-12 col-md-3 iwgb-dark-grey ${styles.published} mb-3 mb-md-0`}>
+              <small
+                className={`col-12 col-md-3 iwgb-dark-grey ${styles.published} mb-3 mb-md-0`}
+              >
                 {published.toLocaleString(DateTime.DATETIME_MED_WITH_WEEKDAY)}
               </small>
               <HtmlContent
@@ -51,9 +57,10 @@ const Post = ({ data: { allGhostPost: posts } }: TemplateProps) => {
               />
             </div>
             <div className="row mt-3">
-              {!(post.tags && post.tags.some((tag) => tag && tag.slug === JOB_POST_TAG_SLUG)) && (
-                <DonateCta />
-              )}
+              {!(
+                post.tags &&
+                post.tags.some((tag) => tag && tag.slug === JOB_POST_TAG_SLUG)
+              ) && <DonateCta />}
             </div>
           </div>
         </div>
@@ -63,10 +70,10 @@ const Post = ({ data: { allGhostPost: posts } }: TemplateProps) => {
 };
 
 export const query = graphql`
-  query($slugs: [String]) {
+  query ($slugs: [String]) {
     allGhostPost(filter: { slug: { in: $slugs } }) {
-      ...GhostPostFields,
-    },
+      ...GhostPostFields
+    }
   }
 `;
 

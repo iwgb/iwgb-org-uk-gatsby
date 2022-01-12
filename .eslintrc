@@ -1,44 +1,31 @@
 {
-  "extends": [
-    "airbnb"
-  ],
-  "plugins": [
-    "@typescript-eslint"
-  ],
+  "extends": ["amex/prettier"],
   "parser": "@typescript-eslint/parser",
-  "globals": {
-    "GatsbyTypes": "readonly"
+  "settings": {
+    "import/resolver": {
+      "typescript": {}
+    },
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    }
   },
+  "ignorePatterns": ["**/__generated__/*.ts"],
+  "plugins": ["@typescript-eslint"],
   "rules": {
-    "import/no-unresolved": 0,
-    "react/react-in-jsx-scope": 0,
-    "react/jsx-props-no-spreading": 0,
-    "react/no-danger": 0,
-    "react/jsx-boolean-value": [0, "never"],
-    "react/jsx-filename-extension": [
-      2,
-      {
-        "extensions": [
-          ".jsx",
-          ".tsx"
-        ]
-      }
-    ],
-    "import/extensions": [
-      2,
-      {
-        "ts": "never",
-        "scss": "always",
-        "json": "always"
-      }
-    ],
-    "no-unused-vars": 0,
-    "react/require-default-props": 0,
+    "prettier/prettier": ["error", {"singleQuote": true }],
+    "no-use-before-define": "off",
+    "no-unused-vars": "off",
+    "no-undef": "off",
+    "react/jsx-filename-extension": ["error", { "extensions": [".tsx"]}],
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-props-no-spreading": "off",
+    "import/extensions": ["error",{
+      "ts": "never",
+      "tsx": "never",
+      "scss": "always",
+      "json": "always"
+    }],
     "no-shadow": "off",
     "@typescript-eslint/no-shadow": "error"
-  },
-  "env": {
-    "browser": true,
-    "node": true
   }
 }

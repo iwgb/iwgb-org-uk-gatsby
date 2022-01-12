@@ -26,7 +26,9 @@ const Nav = () => {
   };
 
   return (
-    <div className={`${styles.nav} position-sticky iwgb-dark-red-bg text-white`}>
+    <div
+      className={`${styles.nav} position-sticky iwgb-dark-red-bg text-white`}
+    >
       <div className="container d-flex justify-content-between flex-row-reverse flex-lg-row">
         <Link to="/">
           <img
@@ -41,15 +43,9 @@ const Nav = () => {
             setOpenSubnav={onToggleOpenSubnav}
           />
           <div className="d-block d-lg-none">
-            <Hamburger
-              direction="right"
-              onToggle={onToggleNav}
-            />
+            <Hamburger direction="right" onToggle={onToggleNav} />
           </div>
-          <Link
-            className="ms-3"
-            to={Paths.join()}
-          >
+          <Link className="ms-3" to={Paths.join()}>
             <Button
               className={`${styles.join} ${styles[`join_${locale}`]}`}
               variant="light"
@@ -69,10 +65,7 @@ const Nav = () => {
           />
         )}
       </SlideDown>
-      <Subnav
-        openSubnav={openSubnav}
-        className="d-none d-lg-block"
-      />
+      <Subnav openSubnav={openSubnav} className="d-none d-lg-block" />
     </div>
   );
 };

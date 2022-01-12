@@ -22,11 +22,11 @@ const Branches = ({ data: { allAirtable: branches } }: TemplateProps) => {
           </h1>
         </div>
         <div className="row">
-          {branches.edges.map(({ node: { data: branch } }) => (
-            branch && !EXCLUDE_BRANCHES.includes(branch.Name || '')
-              ? <Branch branch={branch} />
-              : null
-          ))}
+          {branches.edges.map(({ node: { data: branch } }) =>
+            branch && !EXCLUDE_BRANCHES.includes(branch.Name || '') ? (
+              <Branch branch={branch} />
+            ) : null
+          )}
         </div>
       </div>
     </Container>
@@ -36,22 +36,22 @@ const Branches = ({ data: { allAirtable: branches } }: TemplateProps) => {
 export const query = graphql`
   {
     allAirtable(
-      sort: { fields: [data___Name], order: [ASC] },
-      filter: { table: { eq: "Branches" } },
+      sort: { fields: [data___Name], order: [ASC] }
+      filter: { table: { eq: "Branches" } }
     ) {
       edges {
         node {
           data {
-            Name,
-            Twitter,
-            Facebook,
-            Instagram,
-            Link,
-            Image,
-          },
-        },
-      },
-    },
+            Name
+            Twitter
+            Facebook
+            Instagram
+            Link
+            Image
+          }
+        }
+      }
+    }
   }
 `;
 

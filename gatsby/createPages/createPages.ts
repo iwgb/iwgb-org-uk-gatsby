@@ -17,7 +17,7 @@ const pageCreators = [
   createRedirects,
 ] as Array<(args: CreatePagesArgs, locales: string[]) => Promise<void>>;
 
-const createPages = async (args: CreatePagesArgs) => Promise.all(pageCreators
-  .map((pageCreator) => pageCreator(args, locales)));
+const createPages = async (args: CreatePagesArgs) =>
+  Promise.all(pageCreators.map((pageCreator) => pageCreator(args, locales)));
 
 export default createPages;

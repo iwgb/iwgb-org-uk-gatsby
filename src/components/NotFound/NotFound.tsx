@@ -14,24 +14,23 @@ const NotFound = () => {
   const data = useStaticQuery<GatsbyTypes.Query>(graphql`
     {
       allGhostPost(
-        sort: { order: [DESC], fields: [published_at] },
-        filter: { tags: { elemMatch: { slug: { eq: "special-victory" } } } },
+        sort: { order: [DESC], fields: [published_at] }
+        filter: { tags: { elemMatch: { slug: { eq: "special-victory" } } } }
       ) {
-        ...GhostPostFields,
-      },
+        ...GhostPostFields
+      }
     }
   `);
 
   const victories = useLocalisedGhostEntities(data.allGhostPost);
 
   return (
-    <Container
-      path="/404"
-      title={formatMessage({ id: '404.title' })}
-    >
+    <Container path="/404" title={formatMessage({ id: '404.title' })}>
       <div
         className={`${styles.image} bg-image pb-5`}
-        style={{ backgroundImage: `url(${Config.cdnBaseUrl}/bucket/Press/5e5d2de3b04df.jpg` }}
+        style={{
+          backgroundImage: `url(${Config.cdnBaseUrl}/bucket/Press/5e5d2de3b04df.jpg`,
+        }}
       >
         <div className="container">
           <div className="row">
@@ -47,10 +46,7 @@ const NotFound = () => {
                 <h2>
                   <FormattedMessage id="404.body" />
                 </h2>
-                <Feed
-                  entities={victories}
-                  getPath={Paths.post}
-                />
+                <Feed entities={victories} getPath={Paths.post} />
               </div>
             </div>
           </div>

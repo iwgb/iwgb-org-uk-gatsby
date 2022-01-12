@@ -24,10 +24,7 @@ const Contact = () => {
         </div>
         <div className="row mb-4">
           <div className="col-12 col-md-6">
-            <ContactMethod
-              icon={faCommentDots}
-              showActions={false}
-            >
+            <ContactMethod icon={faCommentDots} showActions={false}>
               <FormattedMessage
                 id="home.contact.form.text"
                 values={{
@@ -51,7 +48,9 @@ const Contact = () => {
             <ContactMethod
               icon={faPhone}
               text={formatMessage({ id: 'home.contact.phone.value' })}
-              actionHref={formatMessage({ id: 'home.contact.phone.action.href' })}
+              actionHref={formatMessage({
+                id: 'home.contact.phone.action.href',
+              })}
               actionMessage="home.contact.phone.action.text"
               actionIcon={faPhone}
               hintMessage="home.contact.phone.openingHours"
@@ -61,22 +60,22 @@ const Contact = () => {
             <ContactMethod
               icon={faMapMarkerAlt}
               text={formatMessage({ id: 'home.contact.address.value' })}
-              actionHref={formatMessage({ id: 'home.contact.address.action.href' })}
+              actionHref={formatMessage({
+                id: 'home.contact.address.action.href',
+              })}
               actionMessage="home.contact.address.action.text"
               actionIcon={faLocationArrow}
               isActionInNewTab={true}
             >
               <div>
-                {
-                  formatMessage({ id: 'home.contact.address.value' })
-                    .split(',\n')
-                    .map((line) => (
-                      <Fragment key={line}>
-                        {line}
-                        <br />
-                      </Fragment>
-                    ))
-                }
+                {formatMessage({ id: 'home.contact.address.value' })
+                  .split(',\n')
+                  .map((line) => (
+                    <Fragment key={line}>
+                      {line}
+                      <br />
+                    </Fragment>
+                  ))}
               </div>
             </ContactMethod>
           </div>

@@ -6,12 +6,12 @@ import config from '../../config';
 import { replacePathLocale } from '../../utils/intl';
 
 interface Props {
-  path: string,
-  description?: string,
-  image?: string,
-  twitterCard?: object,
-  openGraph?: object,
-  [x:string]: any;
+  path: string;
+  description?: string;
+  image?: string;
+  twitterCard?: object;
+  openGraph?: object;
+  [x: string]: any;
 }
 
 const Meta = ({

@@ -6,20 +6,19 @@ const GetInvolvedColumn = () => {
   // language=GraphQL
   const data = useStaticQuery<GatsbyTypes.Query>(graphql`
     {
-      allGhostPage(filter: { tags: { elemMatch: { slug: { eq: "subcategory-get-involved" } } } }) {
-        ...GhostPageTitles,
+      allGhostPage(
+        filter: {
+          tags: { elemMatch: { slug: { eq: "subcategory-get-involved" } } }
+        }
+      ) {
+        ...GhostPageTitles
       }
     }
   `);
 
   const pages = useLocalisedGhostEntities(data.allGhostPage);
 
-  return (
-    <NavColumnBody
-      titleMessage="nav.getInvolved"
-      pages={pages}
-    />
-  );
+  return <NavColumnBody titleMessage="nav.getInvolved" pages={pages} />;
 };
 
 export default GetInvolvedColumn;

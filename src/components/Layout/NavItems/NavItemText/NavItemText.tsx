@@ -4,8 +4,8 @@ import { faChevronDown } from '@fortawesome/free-solid-svg-icons/faChevronDown';
 import * as styles from './NavItemText.module.scss';
 
 interface Props {
-  message: string,
-  isOpen?: boolean,
+  message: string;
+  isOpen?: boolean;
 }
 
 const NavItemText = ({ message, isOpen }: Props) => (

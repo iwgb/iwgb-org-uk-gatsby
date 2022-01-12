@@ -2,9 +2,10 @@ require('dotenv').config();
 
 const locales = (process.env.GATSBY_AVAILABLE_LOCALES || 'en').split(',');
 
-const devConfig = process.env.NODE_ENV === 'development'
-  ? ['gatsby-plugin-extract-schema', 'gatsby-plugin-typegen']
-  : [];
+const devConfig =
+  process.env.NODE_ENV === 'development'
+    ? ['gatsby-plugin-extract-schema', 'gatsby-plugin-typegen']
+    : [];
 
 export default {
   siteMetadata: {
@@ -28,7 +29,6 @@ export default {
       },
     },
     'gatsby-plugin-sass',
-    'gatsby-plugin-fontawesome-css',
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-plugin-netlify',

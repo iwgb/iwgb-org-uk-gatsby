@@ -8,15 +8,15 @@ import ContactAction from './ContactAction';
 import * as styles from './ContactMethod.module.scss';
 
 interface Props {
-  icon: IconProp,
-  actionIcon?: IconProp | null,
-  actionHref?: string,
-  actionMessage?: string,
-  hintMessage?: string,
-  isActionInNewTab?: boolean,
-  showActions?: boolean,
-  text?: string,
-  children: ReactNode,
+  icon: IconProp;
+  actionIcon?: IconProp | null;
+  actionHref?: string;
+  actionMessage?: string;
+  hintMessage?: string;
+  isActionInNewTab?: boolean;
+  showActions?: boolean;
+  text?: string;
+  children: ReactNode;
 }
 
 const ContactMethod = ({
@@ -42,11 +42,7 @@ const ContactMethod = ({
 
   return (
     <div className="d-flex my-3">
-      <Icon
-        className="mx-3 mt-1"
-        icon={icon}
-        fixedWidth
-      />
+      <Icon className="mx-3 mt-1" icon={icon} fixedWidth={true} />
       <div>
         {children}
         {showActions && actionIcon && (
@@ -67,10 +63,7 @@ const ContactMethod = ({
               rel="noreferrer"
               href={actionHref}
             >
-              <ContactAction
-                icon={actionIcon}
-                message={actionMessage}
-              />
+              <ContactAction icon={actionIcon} message={actionMessage} />
             </a>
             {hintMessage && (
               <>

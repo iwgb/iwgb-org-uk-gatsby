@@ -21,10 +21,7 @@ const Campaigns = ({ data: { allGhostPage: pages } }: TemplateProps) => {
             <FormattedMessage id="nav.campaigns" />
           </h1>
         </div>
-        <Feed
-          entities={campaigns}
-          getPath={Paths.page}
-        />
+        <Feed entities={campaigns} getPath={Paths.page} />
       </div>
     </Container>
   );
@@ -33,11 +30,11 @@ const Campaigns = ({ data: { allGhostPage: pages } }: TemplateProps) => {
 export const query = graphql`
   {
     allGhostPage(
-      sort: { order: [DESC], fields: [published_at] },
-      filter: { tags: { elemMatch: { slug: { eq: "category-campaign" } } } },
+      sort: { order: [DESC], fields: [published_at] }
+      filter: { tags: { elemMatch: { slug: { eq: "category-campaign" } } } }
     ) {
-      ...GhostPageFields,
-    },
+      ...GhostPageFields
+    }
   }
 `;
 

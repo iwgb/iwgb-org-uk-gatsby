@@ -11,10 +11,10 @@ import HtmlContent from '../../components/HtmlContent/HtmlContent';
 import { TemplateProps } from '../../utils/types';
 
 interface Props extends TemplateProps {
-  data: GatsbyTypes.Query,
+  data: GatsbyTypes.Query;
   pageContext: {
-    jobTypes: string[],
-  },
+    jobTypes: string[];
+  };
 }
 
 const Join = ({
@@ -25,13 +25,12 @@ const Join = ({
   const { formatMessage } = useIntl();
 
   return (
-    <Container
-      path={Paths.join()}
-      title={formatMessage({ id: 'home.join' })}
-    >
+    <Container path={Paths.join()} title={formatMessage({ id: 'home.join' })}>
       <div
         className="bg-image"
-        style={{ backgroundImage: `url(${Config.cdnBaseUrl}/cms/2020/02/5de78f059c508.jpg` }}
+        style={{
+          backgroundImage: `url(${Config.cdnBaseUrl}/cms/2020/02/5de78f059c508.jpg`,
+        }}
       >
         <div className="container">
           <div className={`row ${styles.title}`}>
@@ -43,10 +42,7 @@ const Join = ({
           </div>
           <div className="row pb-5">
             {jobTypes.map((jobType) => (
-              <JobType
-                key={jobType}
-                slug={jobType}
-              />
+              <JobType key={jobType} slug={jobType} />
             ))}
           </div>
         </div>
@@ -87,8 +83,8 @@ const Join = ({
 export const query = graphql`
   query ($contentSlugs: [String!]) {
     allGhostPage(filter: { slug: { in: $contentSlugs } }) {
-      ...GhostPageFields,
-    },
+      ...GhostPageFields
+    }
   }
 `;
 
