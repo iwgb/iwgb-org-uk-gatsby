@@ -4,7 +4,7 @@
 .campaign {
   $margin: 10rem;
 
-  @include media-breakpoint-up(lg) {
+  @include media-breakpoint-up(xl) {
     padding: 0 7rem;
   }
 

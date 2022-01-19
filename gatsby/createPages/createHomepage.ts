@@ -51,7 +51,7 @@ const getRecentStorySlugs = async (
         $excludeTags: [String!]
       ) {
         allGhostPost(
-          limit: 15
+          limit: 3
           sort: { order: [DESC], fields: [published_at] }
           filter: {
             tags: { elemMatch: { slug: { eq: $locale, nin: $excludeTags } } }
@@ -80,7 +80,7 @@ const getRecentStorySlugs = async (
     throw new Error(errors);
   }
 
-  return data.allGhostPost.edges.slice(0, 3).map(({ node: { slug } }) => slug);
+  return data.allGhostPost.edges.map(({ node: { slug } }) => slug);
 };
 
 const getFeaturedCampaignSlugs = async ({

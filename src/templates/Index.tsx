@@ -13,6 +13,15 @@ import Contact from '../components/Contact/Contact';
 import IconButton from '../components/IconButton';
 import HeroCta from '../components/HeroCta/HeroCta';
 
+const getCampaignText = (title: string): string[] => {
+  const titlePieces = title.split(' ');
+  const firstSliceLength = Math.ceil(titlePieces.length / 2);
+  return [
+    titlePieces.slice(0, firstSliceLength).join(' '),
+    titlePieces.slice(firstSliceLength).join(' '),
+  ];
+};
+
 interface Props extends PageProps {
   data: {
     featured: GatsbyTypes.GhostPostConnection;
@@ -68,17 +77,21 @@ const Index = ({ data }: Props) => {
           ctaPath={Paths.join()}
           ctaMessage="home.join"
         />
-        {campaigns.map(({ entity, slug }, i) => (
-          <FeaturedCampaign
-            key={slug}
-            image={entity.feature_image}
-            topText={entity.title.split(' ').slice(0, 2).join(' ')}
-            bottomText={entity.title.split(' ').slice(2).join(' ')}
-            body={entity.excerpt}
-            ctaPath={Paths.page(slug)}
-            direction={i % 2 === 1 ? 'left' : 'right'}
-          />
-        ))}
+        {campaigns.map(({ entity, slug }, i) => {
+          const [topText, bottomText] = getCampaignText(entity.title);
+
+          return (
+            <FeaturedCampaign
+              key={slug}
+              image={entity.feature_image}
+              topText={topText}
+              bottomText={bottomText}
+              body={entity.excerpt}
+              ctaPath={Paths.page(slug)}
+              direction={i % 2 === 1 ? 'left' : 'right'}
+            />
+          );
+        })}
       </div>
       <Benefits />
       <Contact />

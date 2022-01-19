@@ -4886,7 +4886,7 @@ type PagesQueryQuery = { readonly allSiteFunction: { readonly nodes: ReadonlyArr
 type Unnamed_1_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type Unnamed_1_Query = { readonly allGhostPost: GhostPostSummariesFragment };
+type Unnamed_1_Query = { readonly allGhostPage: GhostPageTitlesFragment };
 
 type Unnamed_2_QueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -4916,7 +4916,7 @@ type Unnamed_6_Query = { readonly allGhostPage: GhostPageTitlesFragment };
 type Unnamed_7_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type Unnamed_7_Query = { readonly allGhostPage: GhostPageTitlesFragment };
+type Unnamed_7_Query = { readonly allGhostPost: GhostPostSummariesFragment };
 
 type Unnamed_8_QueryVariables = Exact<{ [key: string]: never; }>;
 

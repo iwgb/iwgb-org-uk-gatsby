@@ -1,4 +1,5 @@
 import { useIntl } from 'gatsby-plugin-intl';
+import { useMemo } from 'react';
 import { getSlugInLocale } from '../utils/intl';
 
 export type GhostEntityConnection =
@@ -30,19 +31,21 @@ const useLocalisedGhostEntities = (
 ): EntitySlugTuple[] => {
   const { defaultLocale, locale } = useIntl();
 
-  const defaultEntities = findEntitiesWithLocale(entities, defaultLocale);
-  const localEntities = findEntitiesWithLocale(entities, locale);
+  return useMemo(() => {
+    const defaultEntities = findEntitiesWithLocale(entities, defaultLocale);
+    const localEntities = findEntitiesWithLocale(entities, locale);
 
-  return defaultEntities.map(({ node: defaultEntity }): EntitySlugTuple => {
-    const { slug } = defaultEntity;
-    const localEdge = localEntities.find(
-      ({ node }) => node.slug === getSlugInLocale(slug, locale)
-    );
-    return {
-      slug,
-      entity: localEdge === undefined ? defaultEntity : localEdge.node,
-    };
-  });
+    return defaultEntities.map(({ node: defaultEntity }): EntitySlugTuple => {
+      const { slug } = defaultEntity;
+      const localEdge = localEntities.find(
+        ({ node }) => node.slug === getSlugInLocale(slug, locale)
+      );
+      return {
+        slug,
+        entity: localEdge === undefined ? defaultEntity : localEdge.node,
+      };
+    });
+  }, [entities, locale, defaultLocale]);
 };
 
 export default useLocalisedGhostEntities;
