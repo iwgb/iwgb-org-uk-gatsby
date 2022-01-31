@@ -315,6 +315,11 @@ type SitePageContext = {
   readonly campaignSlugs: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
   readonly heroCtaSlugs: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
   readonly locales: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
+  readonly id: Maybe<Scalars['String']>;
+  readonly title: Maybe<Scalars['String']>;
+  readonly header_img: Maybe<Scalars['String']>;
+  readonly content: Maybe<Scalars['String']>;
+  readonly timestamp: Maybe<Scalars['Date']>;
 };
 
 type SitePageContextIntl = {
@@ -2150,6 +2155,11 @@ type SitePageContextFilterInput = {
   readonly campaignSlugs: Maybe<StringQueryOperatorInput>;
   readonly heroCtaSlugs: Maybe<StringQueryOperatorInput>;
   readonly locales: Maybe<StringQueryOperatorInput>;
+  readonly id: Maybe<StringQueryOperatorInput>;
+  readonly title: Maybe<StringQueryOperatorInput>;
+  readonly header_img: Maybe<StringQueryOperatorInput>;
+  readonly content: Maybe<StringQueryOperatorInput>;
+  readonly timestamp: Maybe<DateQueryOperatorInput>;
 };
 
 type SitePageContextIntlFilterInput = {
@@ -2664,6 +2674,11 @@ type SitePageFieldsEnum =
   | 'context.campaignSlugs'
   | 'context.heroCtaSlugs'
   | 'context.locales'
+  | 'context.id'
+  | 'context.title'
+  | 'context.header_img'
+  | 'context.content'
+  | 'context.timestamp'
   | 'pluginCreator.id'
   | 'pluginCreator.parent.id'
   | 'pluginCreator.parent.parent.id'
@@ -4854,12 +4869,12 @@ type GhostPostFieldsFragment = { readonly edges: ReadonlyArray<{ readonly node: 
       & { readonly tags: Maybe<ReadonlyArray<Maybe<Pick<GhostTag, 'slug'>>>> }
     ) }> };
 
-type usersguymacdeviwgbiwgbOrgUkV3SrctemplatesPostPostTsx57463910QueryVariables = Exact<{
+type usersguymacdeviwgbiwgbOrgUkV3SrctemplatesPostTsx57463910QueryVariables = Exact<{
   slugs: Maybe<ReadonlyArray<Maybe<Scalars['String']>> | Maybe<Scalars['String']>>;
 }>;
 
 
-type usersguymacdeviwgbiwgbOrgUkV3SrctemplatesPostPostTsx57463910Query = { readonly allGhostPost: GhostPostFieldsFragment };
+type usersguymacdeviwgbiwgbOrgUkV3SrctemplatesPostTsx57463910Query = { readonly allGhostPost: GhostPostFieldsFragment };
 
 type usersguymacdeviwgbiwgbOrgUkV3SrctemplatesNewsTsx2980874338QueryVariables = Exact<{
   slugs: Maybe<ReadonlyArray<Scalars['String']> | Scalars['String']>;
@@ -4886,7 +4901,7 @@ type PagesQueryQuery = { readonly allSiteFunction: { readonly nodes: ReadonlyArr
 type Unnamed_1_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type Unnamed_1_Query = { readonly allGhostPage: GhostPageTitlesFragment };
+type Unnamed_1_Query = { readonly allGhostPost: GhostPostSummariesFragment };
 
 type Unnamed_2_QueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -4916,7 +4931,7 @@ type Unnamed_6_Query = { readonly allGhostPage: GhostPageTitlesFragment };
 type Unnamed_7_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type Unnamed_7_Query = { readonly allGhostPost: GhostPostSummariesFragment };
+type Unnamed_7_Query = { readonly allGhostPage: GhostPageTitlesFragment };
 
 type Unnamed_8_QueryVariables = Exact<{ [key: string]: never; }>;
 

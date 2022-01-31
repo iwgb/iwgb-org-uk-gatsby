@@ -4,6 +4,7 @@ import createHomepage from './createHomepage';
 import createJoinPages from './createJoinPages';
 import createFeeds from './createFeeds';
 import createRedirects from './createRedirects';
+import createLegacyPosts from './createLegacyPosts';
 
 require('dotenv').config();
 
@@ -15,6 +16,7 @@ const pageCreators = [
   createJoinPages,
   createFeeds,
   createRedirects,
+  createLegacyPosts,
 ] as Array<(args: CreatePagesArgs, locales: string[]) => Promise<void>>;
 
 const createPages = async (args: CreatePagesArgs) =>

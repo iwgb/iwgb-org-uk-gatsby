@@ -83,7 +83,7 @@ const createGhostPages = async (
   const posts = data.allGhostPost.edges;
 
   const pageTemplate = require.resolve('../../src/templates/Page.tsx');
-  const postTemplate = require.resolve('../../src/templates/Post/Post.tsx');
+  const postTemplate = require.resolve('../../src/templates/Post.tsx');
 
   const createPagesFromSlug = (
     edges: Readonly<GhostEntityEdges>,
