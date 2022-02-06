@@ -1,4 +1,4 @@
-import { CreatePagesArgs, Page } from 'gatsby';
+import { CreatePagesArgs } from 'gatsby';
 import chunk from 'lodash/chunk';
 import Paths from '../../src/utils/paths';
 import { getSlugsInLocales } from '../../src/utils/intl';
@@ -8,7 +8,7 @@ const PAGE_SIZE = 15;
 
 interface PaginatedFeedParams {
   items: Readonly<GhostEntityEdges>;
-  createPage: (page: Page<any>) => void;
+  createPage: CreatePagesArgs['actions']['createPage'];
   getPath: (page: number) => string;
   component: string;
   locales: string[];

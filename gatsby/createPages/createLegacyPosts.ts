@@ -6,7 +6,7 @@ import Paths from '../../src/utils/paths';
 import { LegacyPostResponse } from '../../src/utils/types';
 
 const createLegacyPosts = async ({
-  actions: { createPage },
+  actions: { createPage, createRedirect },
 }: CreatePagesArgs) => {
   const archiveUrl = process.env.LEGACY_POST_URL;
   if (archiveUrl === undefined) {
@@ -27,6 +27,10 @@ const createLegacyPosts = async ({
           content: marked.parse(content),
           timestamp: DateTime.fromFormat(timestamp, 'y-MM-dd HH:mm:ss').toISO(),
         },
+      });
+      createRedirect({
+        fromPath: `${Paths.post(id)}/*`,
+        toPath: Paths.post(id),
       });
     }
   );
