@@ -31,6 +31,9 @@ const Footer = () => {
               instagram={`https://instagram.com/${formatMessage({
                 id: 'footer.handles.instagram',
               })}`}
+              youtube={`https://youtube.com/${formatMessage({
+                id: 'footer.handles.youtube',
+              })}`}
             />
           </div>
         </div>
