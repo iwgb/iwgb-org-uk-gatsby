@@ -425,6 +425,7 @@ type SitePageContextIntlMessages = {
   readonly footer_handles_twitter: Maybe<Scalars['String']>;
   readonly footer_handles_facebook: Maybe<Scalars['String']>;
   readonly footer_handles_instagram: Maybe<Scalars['String']>;
+  readonly footer_handles_youtube: Maybe<Scalars['String']>;
   readonly footer_copyright: Maybe<Scalars['String']>;
   readonly footer_credit: Maybe<Scalars['String']>;
   readonly footer_logIn: Maybe<Scalars['String']>;
@@ -2265,6 +2266,7 @@ type SitePageContextIntlMessagesFilterInput = {
   readonly footer_handles_twitter: Maybe<StringQueryOperatorInput>;
   readonly footer_handles_facebook: Maybe<StringQueryOperatorInput>;
   readonly footer_handles_instagram: Maybe<StringQueryOperatorInput>;
+  readonly footer_handles_youtube: Maybe<StringQueryOperatorInput>;
   readonly footer_copyright: Maybe<StringQueryOperatorInput>;
   readonly footer_credit: Maybe<StringQueryOperatorInput>;
   readonly footer_logIn: Maybe<StringQueryOperatorInput>;
@@ -2622,6 +2624,7 @@ type SitePageFieldsEnum =
   | 'context.intl.messages.footer_handles_twitter'
   | 'context.intl.messages.footer_handles_facebook'
   | 'context.intl.messages.footer_handles_instagram'
+  | 'context.intl.messages.footer_handles_youtube'
   | 'context.intl.messages.footer_copyright'
   | 'context.intl.messages.footer_credit'
   | 'context.intl.messages.footer_logIn'
@@ -4931,12 +4934,12 @@ type Unnamed_6_Query = { readonly allGhostPage: GhostPageTitlesFragment };
 type Unnamed_7_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type Unnamed_7_Query = { readonly allGhostPage: GhostPageTitlesFragment };
+type Unnamed_7_Query = { readonly allGhostPost: GhostPostFieldsFragment };
 
 type Unnamed_8_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type Unnamed_8_Query = { readonly allGhostPost: GhostPostFieldsFragment };
+type Unnamed_8_Query = { readonly allGhostPage: GhostPageTitlesFragment };
 
 type GhostPageTitlesFragment = { readonly edges: ReadonlyArray<{ readonly node: (
       Pick<GhostPage, 'title' | 'slug'>

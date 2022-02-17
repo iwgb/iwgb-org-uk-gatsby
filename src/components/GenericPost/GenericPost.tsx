@@ -1,8 +1,7 @@
-import { DateTime } from 'luxon';
 import * as styles from './GenericPost.module.scss';
 import HtmlContent from '../HtmlContent/HtmlContent';
 import DonateCta from '../DonateCta';
-import useLocalDateTime from '../../hooks/useLocalDateTime';
+import useFormattedTimestamp from '../../hooks/useFormattedTimestamp';
 
 interface Props {
   image?: string;
@@ -19,8 +18,7 @@ const GenericPost = ({
   html = '',
   showDonate = true,
 }: Props) => {
-  const published = useLocalDateTime(timestamp);
-
+  const published = useFormattedTimestamp(timestamp);
   return (
     <div className="container">
       <div className="row">
@@ -44,7 +42,7 @@ const GenericPost = ({
             <small
               className={`col-12 col-md-3 iwgb-dark-grey ${styles.published} mb-3 mb-md-0`}
             >
-              {published.toLocaleString(DateTime.DATETIME_MED_WITH_WEEKDAY)}
+              {published}
             </small>
             <HtmlContent
               html={html}
