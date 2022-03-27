@@ -24,7 +24,7 @@ const Branches = ({ data: { allAirtable: branches } }: TemplateProps) => {
         <div className="row">
           {branches.edges.map(({ node: { data: branch } }) =>
             branch && !EXCLUDE_BRANCHES.includes(branch.Name || '') ? (
-              <Branch branch={branch} />
+              <Branch branch={branch} key={branch.Name} />
             ) : null
           )}
         </div>

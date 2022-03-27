@@ -1,5 +1,6 @@
 import { Link } from 'gatsby-plugin-intl';
 import { Button } from 'react-bootstrap';
+import { Fragment } from 'react';
 import NavConfig from './navConfig';
 import NavItemText from './NavItemText/NavItemText';
 import Subnav from './Subnav';
@@ -13,7 +14,7 @@ const NavMenuItems = ({ openSubnav, setOpenSubnav }: Props) => (
   <div className="d-flex d-lg-none flex-column iwgb-dark-grey-bg">
     {NavConfig.map(({ path, message }) =>
       path === undefined ? (
-        <>
+        <Fragment key={message}>
           <div className="container py-3">
             <Button
               className="btn-reset"
@@ -23,9 +24,9 @@ const NavMenuItems = ({ openSubnav, setOpenSubnav }: Props) => (
             </Button>
           </div>
           <Subnav openSubnav={message === openSubnav ? message : ''} />
-        </>
+        </Fragment>
       ) : (
-        <Link className="container link-unstyled py-3" to={path}>
+        <Link className="container link-unstyled py-3" to={path} key={message}>
           <NavItemText message={message} />
         </Link>
       )

@@ -3,6 +3,7 @@ import camelCase from 'lodash/camelCase';
 import * as styles from './Branch.module.scss';
 import Config from '../../config';
 import SocialIcons from '../SocialIcons/SocialIcons';
+import BranchLink from './BranchLink';
 
 interface Props {
   branch: GatsbyTypes.AirtableData;
@@ -30,20 +31,7 @@ const Branch = ({ branch }: Props) => (
           <FormattedMessage id={`branches.${camelCase(branch.Name)}.name`} />
         </h4>
         <div className="d-flex align-items-center">
-          {branch.Link && (
-            <a
-              href={branch.Link}
-              target="_blank"
-              rel="noreferrer"
-              className="me-3"
-            >
-              {branch.Link.slice(0, 19) === 'https://iwgb.org.uk' ? (
-                <FormattedMessage id="branches.readMore" />
-              ) : (
-                <FormattedMessage id="branches.viewWebsite" />
-              )}
-            </a>
-          )}
+          {branch.Link && <BranchLink href={branch.Link} className="me-3" />}
           <SocialIcons
             twitter={branch.Twitter}
             facebook={branch.Facebook}

@@ -717,8 +717,6 @@ type SitePluginPluginOptions = {
   readonly isTSX: Maybe<Scalars['Boolean']>;
   readonly allExtensions: Maybe<Scalars['Boolean']>;
   readonly jsxPragma: Maybe<Scalars['String']>;
-  readonly mergeSecurityHeaders: Maybe<Scalars['Boolean']>;
-  readonly headers: Maybe<SitePluginPluginOptionsHeaders>;
   readonly path: Maybe<Scalars['String']>;
   readonly languages: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
   readonly defaultLanguage: Maybe<Scalars['String']>;
@@ -728,15 +726,17 @@ type SitePluginPluginOptions = {
   readonly trackingUrl: Maybe<Scalars['String']>;
   readonly siteId: Maybe<Scalars['String']>;
   readonly pathCheck: Maybe<Scalars['Boolean']>;
-};
-
-type SitePluginPluginOptionsHeaders = {
-  readonly _x: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
+  readonly mergeSecurityHeaders: Maybe<Scalars['Boolean']>;
+  readonly headers: Maybe<SitePluginPluginOptionsHeaders>;
 };
 
 type SitePluginPluginOptionsTables = {
   readonly baseId: Maybe<Scalars['String']>;
   readonly tableName: Maybe<Scalars['String']>;
+};
+
+type SitePluginPluginOptionsHeaders = {
+  readonly _x: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
 };
 
 type SitePluginPackageJson = {
@@ -2326,8 +2326,6 @@ type SitePluginPluginOptionsFilterInput = {
   readonly isTSX: Maybe<BooleanQueryOperatorInput>;
   readonly allExtensions: Maybe<BooleanQueryOperatorInput>;
   readonly jsxPragma: Maybe<StringQueryOperatorInput>;
-  readonly mergeSecurityHeaders: Maybe<BooleanQueryOperatorInput>;
-  readonly headers: Maybe<SitePluginPluginOptionsHeadersFilterInput>;
   readonly path: Maybe<StringQueryOperatorInput>;
   readonly languages: Maybe<StringQueryOperatorInput>;
   readonly defaultLanguage: Maybe<StringQueryOperatorInput>;
@@ -2337,10 +2335,8 @@ type SitePluginPluginOptionsFilterInput = {
   readonly trackingUrl: Maybe<StringQueryOperatorInput>;
   readonly siteId: Maybe<StringQueryOperatorInput>;
   readonly pathCheck: Maybe<BooleanQueryOperatorInput>;
-};
-
-type SitePluginPluginOptionsHeadersFilterInput = {
-  readonly _x: Maybe<StringQueryOperatorInput>;
+  readonly mergeSecurityHeaders: Maybe<BooleanQueryOperatorInput>;
+  readonly headers: Maybe<SitePluginPluginOptionsHeadersFilterInput>;
 };
 
 type SitePluginPluginOptionsTablesFilterListInput = {
@@ -2350,6 +2346,10 @@ type SitePluginPluginOptionsTablesFilterListInput = {
 type SitePluginPluginOptionsTablesFilterInput = {
   readonly baseId: Maybe<StringQueryOperatorInput>;
   readonly tableName: Maybe<StringQueryOperatorInput>;
+};
+
+type SitePluginPluginOptionsHeadersFilterInput = {
+  readonly _x: Maybe<StringQueryOperatorInput>;
 };
 
 type SitePluginPackageJsonFilterInput = {
@@ -2728,8 +2728,6 @@ type SitePageFieldsEnum =
   | 'pluginCreator.pluginOptions.isTSX'
   | 'pluginCreator.pluginOptions.allExtensions'
   | 'pluginCreator.pluginOptions.jsxPragma'
-  | 'pluginCreator.pluginOptions.mergeSecurityHeaders'
-  | 'pluginCreator.pluginOptions.headers._x'
   | 'pluginCreator.pluginOptions.path'
   | 'pluginCreator.pluginOptions.languages'
   | 'pluginCreator.pluginOptions.defaultLanguage'
@@ -2741,6 +2739,8 @@ type SitePageFieldsEnum =
   | 'pluginCreator.pluginOptions.trackingUrl'
   | 'pluginCreator.pluginOptions.siteId'
   | 'pluginCreator.pluginOptions.pathCheck'
+  | 'pluginCreator.pluginOptions.mergeSecurityHeaders'
+  | 'pluginCreator.pluginOptions.headers._x'
   | 'pluginCreator.nodeAPIs'
   | 'pluginCreator.browserAPIs'
   | 'pluginCreator.ssrAPIs'
@@ -4451,8 +4451,6 @@ type SitePluginFieldsEnum =
   | 'pluginOptions.isTSX'
   | 'pluginOptions.allExtensions'
   | 'pluginOptions.jsxPragma'
-  | 'pluginOptions.mergeSecurityHeaders'
-  | 'pluginOptions.headers._x'
   | 'pluginOptions.path'
   | 'pluginOptions.languages'
   | 'pluginOptions.defaultLanguage'
@@ -4464,6 +4462,8 @@ type SitePluginFieldsEnum =
   | 'pluginOptions.trackingUrl'
   | 'pluginOptions.siteId'
   | 'pluginOptions.pathCheck'
+  | 'pluginOptions.mergeSecurityHeaders'
+  | 'pluginOptions.headers._x'
   | 'nodeAPIs'
   | 'browserAPIs'
   | 'ssrAPIs'
@@ -4904,12 +4904,12 @@ type PagesQueryQuery = { readonly allSiteFunction: { readonly nodes: ReadonlyArr
 type Unnamed_1_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type Unnamed_1_Query = { readonly allGhostPost: GhostPostSummariesFragment };
+type Unnamed_1_Query = { readonly allGhostPage: GhostPageTitlesFragment };
 
 type Unnamed_2_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type Unnamed_2_Query = { readonly allGhostPage: GhostPageTitlesFragment };
+type Unnamed_2_Query = { readonly allGhostPost: GhostPostSummariesFragment };
 
 type Unnamed_3_QueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -4934,12 +4934,12 @@ type Unnamed_6_Query = { readonly allGhostPage: GhostPageTitlesFragment };
 type Unnamed_7_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type Unnamed_7_Query = { readonly allGhostPost: GhostPostFieldsFragment };
+type Unnamed_7_Query = { readonly allGhostPage: GhostPageTitlesFragment };
 
 type Unnamed_8_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type Unnamed_8_Query = { readonly allGhostPage: GhostPageTitlesFragment };
+type Unnamed_8_Query = { readonly allGhostPost: GhostPostFieldsFragment };
 
 type GhostPageTitlesFragment = { readonly edges: ReadonlyArray<{ readonly node: (
       Pick<GhostPage, 'title' | 'slug'>

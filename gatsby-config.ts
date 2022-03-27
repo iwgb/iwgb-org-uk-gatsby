@@ -1,19 +1,36 @@
-require('dotenv').config();
+import dotenv from 'dotenv';
+import { GatsbyConfig } from 'gatsby';
+import { Application } from 'express';
+import { ifDev } from './gatsby/dev';
+import csp from './gatsby/csp';
+
+dotenv.config();
 
 const locales = (process.env.GATSBY_AVAILABLE_LOCALES || 'en').split(',');
 
-const devConfig =
-  process.env.NODE_ENV === 'development'
-    ? ['gatsby-plugin-extract-schema', 'gatsby-plugin-typegen']
-    : [];
+const headers = {
+  'x-xss-protection': '1; mode=block',
+  'x-content-type-options': 'nosniff',
+  'referrer-policy': 'same-origin',
+  'content-security-policy': csp,
+  'x-frame-options': 'DENY',
+};
 
-export default {
+const config: GatsbyConfig = {
+  developMiddleware: (app: Application) => {
+    app.use((_req, res, next) => {
+      Object.entries(headers).forEach(([header, value]) => {
+        res.set(header, value);
+      });
+      next();
+    });
+  },
   siteMetadata: {
     siteUrl: 'https://iwgb.org.uk',
     title: 'iwgb-org-uk',
   },
   plugins: [
-    ...devConfig,
+    ...ifDev(['gatsby-plugin-extract-schema', 'gatsby-plugin-typegen']),
     {
       resolve: 'gatsby-source-ghost',
       options: {
@@ -35,11 +52,9 @@ export default {
       options: {
         mergeSecurityHeaders: false,
         headers: {
-          '/*': [
-            'x-xss-protection: 1; mode=block',
-            'x-content-type-options: nosniff',
-            'referrer-policy: same-origin',
-          ],
+          '/*': Object.entries(headers).map(
+            ([header, value]) => `${header}: ${value}`
+          ),
         },
       },
     },
@@ -77,3 +92,5 @@ export default {
     },
   ],
 };
+
+export default config;
