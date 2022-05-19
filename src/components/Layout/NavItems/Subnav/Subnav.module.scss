@@ -1,0 +1,8 @@
+@import 'src/utils/utils';
+
+@include media-breakpoint-down(sm) {
+  .component {
+    height: 30vh;
+    overflow-y: scroll;
+  }
+}

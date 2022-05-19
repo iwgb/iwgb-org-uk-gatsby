@@ -2,13 +2,13 @@ import { graphql, useStaticQuery } from 'gatsby';
 import useLocalisedGhostEntities from '../../../../hooks/useLocalisedGhostEntities';
 import NavColumnBody from '../NavColumnBody/NavColumnBody';
 
-const GetInvolvedColumn = () => {
+const ForSupportersColumn = () => {
   // language=GraphQL
   const data = useStaticQuery<GatsbyTypes.Query>(graphql`
     {
       allGhostPage(
         filter: {
-          tags: { elemMatch: { slug: { eq: "subcategory-get-involved" } } }
+          tags: { elemMatch: { slug: { eq: "subcategory-for-supporters" } } }
         }
       ) {
         ...GhostPageTitles
@@ -18,7 +18,7 @@ const GetInvolvedColumn = () => {
 
   const pages = useLocalisedGhostEntities(data.allGhostPage);
 
-  return <NavColumnBody titleMessage="nav.getInvolved" pages={pages} />;
+  return <NavColumnBody titleMessage="nav.forSupporters" pages={pages} />;
 };
 
-export default GetInvolvedColumn;
+export default ForSupportersColumn;

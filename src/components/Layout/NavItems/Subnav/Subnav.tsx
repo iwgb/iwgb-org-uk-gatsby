@@ -1,6 +1,7 @@
 import SlideDown from 'react-slidedown';
 import { useMemo } from 'react';
-import NavConfig from './navConfig';
+import NavConfig from '../navConfig';
+import * as styles from './Subnav.module.scss';
 
 interface Props {
   className?: string;
@@ -16,7 +17,7 @@ const Subnav = ({ openSubnav, className = '' }: Props) => {
   return (
     <SlideDown className={className}>
       {openSubnavConfig && openSubnavConfig.Component && (
-        <openSubnavConfig.Component />
+        <openSubnavConfig.Component className={styles.component} />
       )}
     </SlideDown>
   );

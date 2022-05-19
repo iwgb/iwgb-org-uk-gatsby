@@ -1,14 +1,18 @@
 import { ComponentType } from 'react';
 import Paths from '../../../utils/paths';
-import About from './About/About';
+import More from './About/More';
 
 export interface NavItem {
   message: string;
   path?: string;
-  Component?: ComponentType;
+  Component?: ComponentType<{ className?: string }>;
 }
 
 const NavConfig: NavItem[] = [
+  {
+    path: '/page/about-us',
+    message: 'nav.about',
+  },
   {
     path: Paths.news(),
     message: 'nav.news',
@@ -22,12 +26,12 @@ const NavConfig: NavItem[] = [
     message: 'nav.branches',
   },
   {
-    Component: About,
-    message: 'nav.about',
+    path: '/page/contact',
+    message: 'nav.contact',
   },
   {
-    path: '/page/support-and-advice',
-    message: 'nav.support',
+    Component: More,
+    message: 'nav.more',
   },
 ];
 

@@ -8,7 +8,7 @@ interface Props {
 }
 
 const NavColumnBody = ({ titleMessage, pages }: Props) => (
-  <PageList pages={pages} className="py-2 py-md-0">
+  <PageList pages={pages} className="py-2 py-md-0 col-sm-6">
     <h3 className="text-dark">
       <FormattedMessage id={titleMessage} />
     </h3>

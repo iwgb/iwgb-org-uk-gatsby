@@ -3,7 +3,7 @@ import { Button } from 'react-bootstrap';
 import { Fragment } from 'react';
 import NavConfig from './navConfig';
 import NavItemText from './NavItemText/NavItemText';
-import Subnav from './Subnav';
+import Subnav from './Subnav/Subnav';
 
 interface Props {
   openSubnav: string;

@@ -12,7 +12,12 @@
     "support": "Support",
     "getInvolved": "Get involved",
     "democracy": "Democracy",
-    "joinButtonAlt": "Join"
+    "joinButtonAlt": "Join",
+    "general": "General",
+    "forSupporters": "For supporters",
+    "forMembers": "For members",
+    "more": "More",
+    "contact": "Contact"
   },
   "join": {
     "contact": {

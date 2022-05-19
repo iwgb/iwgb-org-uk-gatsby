@@ -347,6 +347,11 @@ type SitePageContextIntlMessages = {
   readonly nav_getInvolved: Maybe<Scalars['String']>;
   readonly nav_democracy: Maybe<Scalars['String']>;
   readonly nav_joinButtonAlt: Maybe<Scalars['String']>;
+  readonly nav_general: Maybe<Scalars['String']>;
+  readonly nav_forSupporters: Maybe<Scalars['String']>;
+  readonly nav_forMembers: Maybe<Scalars['String']>;
+  readonly nav_more: Maybe<Scalars['String']>;
+  readonly nav_contact: Maybe<Scalars['String']>;
   readonly join_contact_title: Maybe<Scalars['String']>;
   readonly join_contact_body: Maybe<Scalars['String']>;
   readonly join_fees_title: Maybe<Scalars['String']>;
@@ -717,6 +722,8 @@ type SitePluginPluginOptions = {
   readonly isTSX: Maybe<Scalars['Boolean']>;
   readonly allExtensions: Maybe<Scalars['Boolean']>;
   readonly jsxPragma: Maybe<Scalars['String']>;
+  readonly mergeSecurityHeaders: Maybe<Scalars['Boolean']>;
+  readonly headers: Maybe<SitePluginPluginOptionsHeaders>;
   readonly path: Maybe<Scalars['String']>;
   readonly languages: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
   readonly defaultLanguage: Maybe<Scalars['String']>;
@@ -726,17 +733,15 @@ type SitePluginPluginOptions = {
   readonly trackingUrl: Maybe<Scalars['String']>;
   readonly siteId: Maybe<Scalars['String']>;
   readonly pathCheck: Maybe<Scalars['Boolean']>;
-  readonly mergeSecurityHeaders: Maybe<Scalars['Boolean']>;
-  readonly headers: Maybe<SitePluginPluginOptionsHeaders>;
+};
+
+type SitePluginPluginOptionsHeaders = {
+  readonly _x: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
 };
 
 type SitePluginPluginOptionsTables = {
   readonly baseId: Maybe<Scalars['String']>;
   readonly tableName: Maybe<Scalars['String']>;
-};
-
-type SitePluginPluginOptionsHeaders = {
-  readonly _x: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
 };
 
 type SitePluginPackageJson = {
@@ -2188,6 +2193,11 @@ type SitePageContextIntlMessagesFilterInput = {
   readonly nav_getInvolved: Maybe<StringQueryOperatorInput>;
   readonly nav_democracy: Maybe<StringQueryOperatorInput>;
   readonly nav_joinButtonAlt: Maybe<StringQueryOperatorInput>;
+  readonly nav_general: Maybe<StringQueryOperatorInput>;
+  readonly nav_forSupporters: Maybe<StringQueryOperatorInput>;
+  readonly nav_forMembers: Maybe<StringQueryOperatorInput>;
+  readonly nav_more: Maybe<StringQueryOperatorInput>;
+  readonly nav_contact: Maybe<StringQueryOperatorInput>;
   readonly join_contact_title: Maybe<StringQueryOperatorInput>;
   readonly join_contact_body: Maybe<StringQueryOperatorInput>;
   readonly join_fees_title: Maybe<StringQueryOperatorInput>;
@@ -2326,6 +2336,8 @@ type SitePluginPluginOptionsFilterInput = {
   readonly isTSX: Maybe<BooleanQueryOperatorInput>;
   readonly allExtensions: Maybe<BooleanQueryOperatorInput>;
   readonly jsxPragma: Maybe<StringQueryOperatorInput>;
+  readonly mergeSecurityHeaders: Maybe<BooleanQueryOperatorInput>;
+  readonly headers: Maybe<SitePluginPluginOptionsHeadersFilterInput>;
   readonly path: Maybe<StringQueryOperatorInput>;
   readonly languages: Maybe<StringQueryOperatorInput>;
   readonly defaultLanguage: Maybe<StringQueryOperatorInput>;
@@ -2335,8 +2347,10 @@ type SitePluginPluginOptionsFilterInput = {
   readonly trackingUrl: Maybe<StringQueryOperatorInput>;
   readonly siteId: Maybe<StringQueryOperatorInput>;
   readonly pathCheck: Maybe<BooleanQueryOperatorInput>;
-  readonly mergeSecurityHeaders: Maybe<BooleanQueryOperatorInput>;
-  readonly headers: Maybe<SitePluginPluginOptionsHeadersFilterInput>;
+};
+
+type SitePluginPluginOptionsHeadersFilterInput = {
+  readonly _x: Maybe<StringQueryOperatorInput>;
 };
 
 type SitePluginPluginOptionsTablesFilterListInput = {
@@ -2346,10 +2360,6 @@ type SitePluginPluginOptionsTablesFilterListInput = {
 type SitePluginPluginOptionsTablesFilterInput = {
   readonly baseId: Maybe<StringQueryOperatorInput>;
   readonly tableName: Maybe<StringQueryOperatorInput>;
-};
-
-type SitePluginPluginOptionsHeadersFilterInput = {
-  readonly _x: Maybe<StringQueryOperatorInput>;
 };
 
 type SitePluginPackageJsonFilterInput = {
@@ -2546,6 +2556,11 @@ type SitePageFieldsEnum =
   | 'context.intl.messages.nav_getInvolved'
   | 'context.intl.messages.nav_democracy'
   | 'context.intl.messages.nav_joinButtonAlt'
+  | 'context.intl.messages.nav_general'
+  | 'context.intl.messages.nav_forSupporters'
+  | 'context.intl.messages.nav_forMembers'
+  | 'context.intl.messages.nav_more'
+  | 'context.intl.messages.nav_contact'
   | 'context.intl.messages.join_contact_title'
   | 'context.intl.messages.join_contact_body'
   | 'context.intl.messages.join_fees_title'
@@ -2728,6 +2743,8 @@ type SitePageFieldsEnum =
   | 'pluginCreator.pluginOptions.isTSX'
   | 'pluginCreator.pluginOptions.allExtensions'
   | 'pluginCreator.pluginOptions.jsxPragma'
+  | 'pluginCreator.pluginOptions.mergeSecurityHeaders'
+  | 'pluginCreator.pluginOptions.headers._x'
   | 'pluginCreator.pluginOptions.path'
   | 'pluginCreator.pluginOptions.languages'
   | 'pluginCreator.pluginOptions.defaultLanguage'
@@ -2739,8 +2756,6 @@ type SitePageFieldsEnum =
   | 'pluginCreator.pluginOptions.trackingUrl'
   | 'pluginCreator.pluginOptions.siteId'
   | 'pluginCreator.pluginOptions.pathCheck'
-  | 'pluginCreator.pluginOptions.mergeSecurityHeaders'
-  | 'pluginCreator.pluginOptions.headers._x'
   | 'pluginCreator.nodeAPIs'
   | 'pluginCreator.browserAPIs'
   | 'pluginCreator.ssrAPIs'
@@ -4451,6 +4466,8 @@ type SitePluginFieldsEnum =
   | 'pluginOptions.isTSX'
   | 'pluginOptions.allExtensions'
   | 'pluginOptions.jsxPragma'
+  | 'pluginOptions.mergeSecurityHeaders'
+  | 'pluginOptions.headers._x'
   | 'pluginOptions.path'
   | 'pluginOptions.languages'
   | 'pluginOptions.defaultLanguage'
@@ -4462,8 +4479,6 @@ type SitePluginFieldsEnum =
   | 'pluginOptions.trackingUrl'
   | 'pluginOptions.siteId'
   | 'pluginOptions.pathCheck'
-  | 'pluginOptions.mergeSecurityHeaders'
-  | 'pluginOptions.headers._x'
   | 'nodeAPIs'
   | 'browserAPIs'
   | 'ssrAPIs'
@@ -4909,7 +4924,7 @@ type Unnamed_1_Query = { readonly allGhostPage: GhostPageTitlesFragment };
 type Unnamed_2_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type Unnamed_2_Query = { readonly allGhostPost: GhostPostSummariesFragment };
+type Unnamed_2_Query = { readonly allGhostPage: GhostPageTitlesFragment };
 
 type Unnamed_3_QueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -4924,7 +4939,7 @@ type Unnamed_4_Query = { readonly allGhostPage: GhostPageTitlesFragment };
 type Unnamed_5_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type Unnamed_5_Query = { readonly allGhostPage: GhostPageTitlesFragment };
+type Unnamed_5_Query = { readonly allGhostPost: GhostPostSummariesFragment };
 
 type Unnamed_6_QueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -4939,7 +4954,12 @@ type Unnamed_7_Query = { readonly allGhostPage: GhostPageTitlesFragment };
 type Unnamed_8_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type Unnamed_8_Query = { readonly allGhostPost: GhostPostFieldsFragment };
+type Unnamed_8_Query = { readonly allGhostPage: GhostPageTitlesFragment };
+
+type Unnamed_9_QueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type Unnamed_9_Query = { readonly allGhostPost: GhostPostFieldsFragment };
 
 type GhostPageTitlesFragment = { readonly edges: ReadonlyArray<{ readonly node: (
       Pick<GhostPage, 'title' | 'slug'>

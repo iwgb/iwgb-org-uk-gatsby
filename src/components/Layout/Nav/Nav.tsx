@@ -8,7 +8,7 @@ import Paths from '../../../utils/paths';
 import * as styles from './Nav.module.scss';
 import NavItems from '../NavItems/NavItems';
 import NavMenuItems from '../NavItems/NavMenuItems';
-import Subnav from '../NavItems/Subnav';
+import Subnav from '../NavItems/Subnav/Subnav';
 
 const Nav = () => {
   const { locale, formatMessage } = useIntl();
