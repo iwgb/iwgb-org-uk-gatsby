@@ -4875,6 +4875,11 @@ type usersguymacdeviwgbiwgbOrgUkV3SrctemplatesJoinJoinTsx3124867692QueryVariable
 
 type usersguymacdeviwgbiwgbOrgUkV3SrctemplatesJoinJoinTsx3124867692Query = { readonly allGhostPage: GhostPageFieldsFragment };
 
+type PagesQueryQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type PagesQueryQuery = { readonly allSiteFunction: { readonly nodes: ReadonlyArray<Pick<SiteFunction, 'functionRoute'>> }, readonly allSitePage: { readonly nodes: ReadonlyArray<Pick<SitePage, 'path'>> } };
+
 type usersguymacdeviwgbiwgbOrgUkV3SrctemplatesPageTsx811223386QueryVariables = Exact<{
   slugs: Maybe<ReadonlyArray<Maybe<Scalars['String']>> | Maybe<Scalars['String']>>;
 }>;
@@ -4911,15 +4916,10 @@ type usersguymacdeviwgbiwgbOrgUkV3SrctemplatesIndexTsx1494857561QueryVariables =
 
 type usersguymacdeviwgbiwgbOrgUkV3SrctemplatesIndexTsx1494857561Query = { readonly featured: GhostPostFieldsFragment, readonly recentStories: GhostPostFieldsFragment, readonly campaigns: GhostPageFieldsFragment, readonly heroCtas: GhostPostFieldsFragment };
 
-type PagesQueryQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type PagesQueryQuery = { readonly allSiteFunction: { readonly nodes: ReadonlyArray<Pick<SiteFunction, 'functionRoute'>> }, readonly allSitePage: { readonly nodes: ReadonlyArray<Pick<SitePage, 'path'>> } };
-
 type Unnamed_1_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type Unnamed_1_Query = { readonly allGhostPage: GhostPageTitlesFragment };
+type Unnamed_1_Query = { readonly allGhostPost: GhostPostSummariesFragment };
 
 type Unnamed_2_QueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -4939,7 +4939,7 @@ type Unnamed_4_Query = { readonly allGhostPage: GhostPageTitlesFragment };
 type Unnamed_5_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type Unnamed_5_Query = { readonly allGhostPost: GhostPostSummariesFragment };
+type Unnamed_5_Query = { readonly allGhostPage: GhostPageTitlesFragment };
 
 type Unnamed_6_QueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -4954,12 +4954,12 @@ type Unnamed_7_Query = { readonly allGhostPage: GhostPageTitlesFragment };
 type Unnamed_8_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type Unnamed_8_Query = { readonly allGhostPage: GhostPageTitlesFragment };
+type Unnamed_8_Query = { readonly allGhostPost: GhostPostFieldsFragment };
 
 type Unnamed_9_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type Unnamed_9_Query = { readonly allGhostPost: GhostPostFieldsFragment };
+type Unnamed_9_Query = { readonly allGhostPage: GhostPageTitlesFragment };
 
 type GhostPageTitlesFragment = { readonly edges: ReadonlyArray<{ readonly node: (
       Pick<GhostPage, 'title' | 'slug'>

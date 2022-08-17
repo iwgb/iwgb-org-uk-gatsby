@@ -174,10 +174,10 @@
   },
   "post": {
     "donate": {
-      "title": "Our work matters",
-      "body": "We're just one David and there's a lot of Goliaths out there. As such, we rely on dues and donations to do our work - if you can, we'd really appreciate any contributions to our vital work.",
+      "title": "Back the workers",
+      "body": "Precarious and low-paid workers are fighting back against a rigged system. Will you help to build the union by making a monthly donation?",
       "cta": {
-        "href": "/page/donate",
+        "href": "/page/solidarity-squad",
         "text": "I'll contribute"
       }
     }
