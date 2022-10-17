@@ -352,7 +352,6 @@ type SitePageContextIntlMessages = {
   readonly nav_forMembers: Maybe<Scalars['String']>;
   readonly nav_more: Maybe<Scalars['String']>;
   readonly nav_contact: Maybe<Scalars['String']>;
-  readonly join_errorNotice: Maybe<Scalars['String']>;
   readonly join_contact_title: Maybe<Scalars['String']>;
   readonly join_contact_body: Maybe<Scalars['String']>;
   readonly join_fees_title: Maybe<Scalars['String']>;
@@ -2199,7 +2198,6 @@ type SitePageContextIntlMessagesFilterInput = {
   readonly nav_forMembers: Maybe<StringQueryOperatorInput>;
   readonly nav_more: Maybe<StringQueryOperatorInput>;
   readonly nav_contact: Maybe<StringQueryOperatorInput>;
-  readonly join_errorNotice: Maybe<StringQueryOperatorInput>;
   readonly join_contact_title: Maybe<StringQueryOperatorInput>;
   readonly join_contact_body: Maybe<StringQueryOperatorInput>;
   readonly join_fees_title: Maybe<StringQueryOperatorInput>;
@@ -2563,7 +2561,6 @@ type SitePageFieldsEnum =
   | 'context.intl.messages.nav_forMembers'
   | 'context.intl.messages.nav_more'
   | 'context.intl.messages.nav_contact'
-  | 'context.intl.messages.join_errorNotice'
   | 'context.intl.messages.join_contact_title'
   | 'context.intl.messages.join_contact_body'
   | 'context.intl.messages.join_fees_title'
@@ -4952,12 +4949,12 @@ type Unnamed_6_Query = { readonly allGhostPage: GhostPageTitlesFragment };
 type Unnamed_7_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type Unnamed_7_Query = { readonly allGhostPost: GhostPostFieldsFragment };
+type Unnamed_7_Query = { readonly allGhostPage: GhostPageTitlesFragment };
 
 type Unnamed_8_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type Unnamed_8_Query = { readonly allGhostPage: GhostPageTitlesFragment };
+type Unnamed_8_Query = { readonly allGhostPost: GhostPostFieldsFragment };
 
 type Unnamed_9_QueryVariables = Exact<{ [key: string]: never; }>;
 
