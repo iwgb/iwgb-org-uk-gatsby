@@ -1,5 +1,7 @@
 import { graphql } from 'gatsby';
 import { FormattedMessage, Link, useIntl } from 'gatsby-plugin-intl';
+import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
+import { faInfoCircle } from '@fortawesome/free-solid-svg-icons/faInfoCircle';
 import Container from '../../components/Layout/Container';
 import Config from '../../config';
 import * as styles from './Join.module.scss';
@@ -26,6 +28,20 @@ const Join = ({
 
   return (
     <Container path={Paths.join()} title={formatMessage({ id: 'home.join' })}>
+      <div className="iwgb-dark-red-bg border-top text-white py-2">
+        <div className="container d-flex align-items-center">
+          <Icon icon={faInfoCircle} className="ms-1 me-3" />
+          <div>
+            <FormattedMessage
+              id="join.errorNotice"
+              values={{
+                // eslint-disable-next-line react/display-name -- intl value component
+                b: (s: string) => <span className="font-weight-700">{s}</span>,
+              }}
+            />
+          </div>
+        </div>
+      </div>
       <div
         className="bg-image"
         style={{

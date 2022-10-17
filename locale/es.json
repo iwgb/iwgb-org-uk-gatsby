@@ -20,6 +20,7 @@
     "contact": "Contacto"
   },
   "join": {
+    "errorNotice": "<b>Lo sentimos, nuestros formularios no están funcionando correctamente en este momento.</b> Si no puedes completar el proceso de registro, te enviaremos un correo electrónico cuando volvamos a estar plenamente operativos.",
     "contact": {
       "title": "¿Ninguno de esos suena bien?",
       "body": "Llame al equipo de miembros usando el formulario de contacto para saber si puede unirse a la IWGB."

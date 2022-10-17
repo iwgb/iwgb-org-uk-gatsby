@@ -20,6 +20,7 @@
     "contact": "Contact"
   },
   "join": {
+    "errorNotice": "<b>Sorry, our forms aren’t working properly right now.</b> If you aren’t able to complete the sign-up process, we will email you when we are fully operational again.",
     "contact": {
       "title": "None of those sound right?",
       "body": "Drop the memberships team a line using the contact form to find out if you can join the IWGB."
