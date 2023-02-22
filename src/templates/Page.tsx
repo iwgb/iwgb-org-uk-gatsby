@@ -7,6 +7,7 @@ import NotFound from '../pages/404';
 import HtmlContent from '../components/HtmlContent/HtmlContent';
 import { TemplateProps } from '../utils/types';
 import Jobs from '../components/Jobs/Jobs';
+import applyHeadingsToHtml, { HEADINGS_TAG_SLUG } from '../utils/headings';
 
 const JOBS_PAGE_TAG_SLUG = 'special-careers';
 
@@ -19,6 +20,12 @@ const Page = ({ data: { allGhostPage: pages } }: TemplateProps) => {
 
   const tags = page.tags || [];
 
+  const processedHtml = tags.some(
+    (tag) => tag && tag.slug === HEADINGS_TAG_SLUG
+  )
+    ? applyHeadingsToHtml(page.html || '')
+    : page.html;
+
   return (
     <UiContainer path={paths.page(slug || '')}>
       <GhostEntityMeta
@@ -29,7 +36,7 @@ const Page = ({ data: { allGhostPage: pages } }: TemplateProps) => {
         <div className="row">
           <div className="col-12 col-md-8 offset-md-2">
             <h1 className="my-5">{page.title}</h1>
-            <HtmlContent html={page.html} />
+            <HtmlContent html={processedHtml} />
             {tags.some((tag) => tag && tag.slug === JOBS_PAGE_TAG_SLUG) && (
               <Jobs />
             )}

@@ -803,6 +803,7 @@ type AirtableData = {
   readonly Sort: Maybe<Scalars['Boolean']>;
   readonly Typeform_ID: Maybe<Scalars['String']>;
   readonly Image: Maybe<Scalars['String']>;
+  readonly Join_link: Maybe<Scalars['String']>;
   readonly Instagram: Maybe<Scalars['String']>;
   readonly Facebook: Maybe<Scalars['String']>;
   readonly Link: Maybe<Scalars['String']>;
@@ -4674,6 +4675,7 @@ type AirtableDataFilterInput = {
   readonly Sort: Maybe<BooleanQueryOperatorInput>;
   readonly Typeform_ID: Maybe<StringQueryOperatorInput>;
   readonly Image: Maybe<StringQueryOperatorInput>;
+  readonly Join_link: Maybe<StringQueryOperatorInput>;
   readonly Instagram: Maybe<StringQueryOperatorInput>;
   readonly Facebook: Maybe<StringQueryOperatorInput>;
   readonly Link: Maybe<StringQueryOperatorInput>;
@@ -4821,6 +4823,7 @@ type AirtableFieldsEnum =
   | 'data.Sort'
   | 'data.Typeform_ID'
   | 'data.Image'
+  | 'data.Join_link'
   | 'data.Instagram'
   | 'data.Facebook'
   | 'data.Link'
