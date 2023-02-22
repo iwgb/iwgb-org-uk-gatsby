@@ -31,9 +31,9 @@ const generateSubheroHeading = (
       <div class="d-flex justify-content-end">
         <img aria-hidden="true" class="m-2" style="height: 1.5rem; width: auto" src="https://cdn.iwgb.org.uk/assets/wordmark-white.png">
       </div>
-      <div class="m-2">
+      <h2 class="m-2">
         <span class="bg-white font-weight-700 font-size-32">${title}</span>
-      </div>
+      </h2>
     </div>
   </div>
 `;
