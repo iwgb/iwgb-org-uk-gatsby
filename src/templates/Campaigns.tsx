@@ -1,4 +1,4 @@
-import { graphql } from 'gatsby';
+import { graphql, PageProps } from 'gatsby';
 import { FormattedMessage, useIntl } from 'gatsby-plugin-intl';
 import useLocalisedGhostEntities from '../hooks/useLocalisedGhostEntities';
 import Container from '../components/Layout/Container';
@@ -6,7 +6,7 @@ import Paths from '../utils/paths';
 import Feed from '../components/Feed';
 import { TemplateProps } from '../utils/types';
 
-const Campaigns = ({ data: { allGhostPage: pages } }: TemplateProps) => {
+const Campaigns = ({ data: { allGhostPage: pages } }: PageProps<GatsbyTypes.Query>) => {
   const campaigns = useLocalisedGhostEntities(pages);
   const { formatMessage } = useIntl();
 
@@ -30,7 +30,7 @@ const Campaigns = ({ data: { allGhostPage: pages } }: TemplateProps) => {
 export const query = graphql`
   {
     allGhostPage(
-      sort: { order: [DESC], fields: [published_at] }
+      sort: { published_at: DESC }
       filter: { tags: { elemMatch: { slug: { eq: "category-campaign" } } } }
     ) {
       ...GhostPageFields

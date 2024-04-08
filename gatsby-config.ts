@@ -1,7 +1,6 @@
 import dotenv from 'dotenv';
 import { GatsbyConfig } from 'gatsby';
 import { Application } from 'express';
-import { ifDev } from './gatsby/dev';
 import csp from './gatsby/csp';
 
 dotenv.config();
@@ -29,20 +28,13 @@ const config: GatsbyConfig = {
     siteUrl: 'https://iwgb.org.uk',
     title: 'iwgb-org-uk',
   },
+  graphqlTypegen: true,
   plugins: [
-    ...ifDev(['gatsby-plugin-extract-schema', 'gatsby-plugin-typegen']),
     {
       resolve: 'gatsby-source-ghost',
       options: {
         apiUrl: process.env.GHOST_API_URL,
         contentApiKey: process.env.GHOST_API_KEY,
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-typescript',
-      options: {
-        isTSX: true,
-        allExtensions: true,
       },
     },
     'gatsby-plugin-sass',

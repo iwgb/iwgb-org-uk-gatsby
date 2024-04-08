@@ -1,13 +1,14 @@
-import { graphql } from 'gatsby';
+import { graphql, PageProps } from 'gatsby';
 import { FormattedMessage, useIntl } from 'gatsby-plugin-intl';
-import { TemplateProps } from '../utils/types';
 import Container from '../components/Layout/Container';
 import Paths from '../utils/paths';
 import Branch from '../components/Branch/Branch';
 
 const EXCLUDE_BRANCHES = ['Central Union'];
 
-const Branches = ({ data: { allAirtable: branches } }: TemplateProps) => {
+const Branches = ({
+  data: { allAirtable: branches },
+}: PageProps<GatsbyTypes.Query>) => {
   const { formatMessage } = useIntl();
 
   return (
@@ -36,7 +37,7 @@ const Branches = ({ data: { allAirtable: branches } }: TemplateProps) => {
 export const query = graphql`
   {
     allAirtable(
-      sort: { fields: [data___Name], order: [ASC] }
+      sort: { data: { Name: ASC } }
       filter: { table: { eq: "Branches" } }
     ) {
       edges {

@@ -22,16 +22,14 @@ const getCampaignText = (title: string): string[] => {
   ];
 };
 
-interface Props extends PageProps {
-  data: {
-    featured: GatsbyTypes.GhostPostConnection;
-    recentStories: GatsbyTypes.GhostPostConnection;
-    campaigns: GatsbyTypes.GhostPageConnection;
-    heroCtas: GatsbyTypes.GhostPostConnection;
-  };
+interface TData {
+  featured: GatsbyTypes.GhostPostConnection;
+  recentStories: GatsbyTypes.GhostPostConnection;
+  campaigns: GatsbyTypes.GhostPageConnection;
+  heroCtas: GatsbyTypes.GhostPostConnection;
 }
 
-const Index = ({ data }: Props) => {
+const Index = ({ data }: PageProps<TData>) => {
   const { formatMessage } = useIntl();
   const [{ entity: featured, slug: featuredSlug }] = useLocalisedGhostEntities(
     data.featured

@@ -1,5 +1,5 @@
-import SlideDown from 'react-slidedown';
 import { useMemo } from 'react';
+import AnimateHeight from 'react-animate-height';
 import NavConfig from '../navConfig';
 import * as styles from './Subnav.module.scss';
 
@@ -15,11 +15,14 @@ const Subnav = ({ openSubnav, className = '' }: Props) => {
   );
 
   return (
-    <SlideDown className={className}>
+    <AnimateHeight
+      height={openSubnavConfig && openSubnavConfig.Component ? 'auto' : 0}
+      className={className}
+    >
       {openSubnavConfig && openSubnavConfig.Component && (
         <openSubnavConfig.Component className={styles.component} />
       )}
-    </SlideDown>
+    </AnimateHeight>
   );
 };
 

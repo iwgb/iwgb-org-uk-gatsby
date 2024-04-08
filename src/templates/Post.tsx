@@ -1,15 +1,14 @@
-import { graphql } from 'gatsby';
+import { graphql, PageProps } from 'gatsby';
 import UiContainer from '../components/Layout/UiContainer';
 import paths from '../utils/paths';
 import GhostEntityMeta from '../components/Meta/GhostEntityMeta';
 import useLocalisedGhostEntities from '../hooks/useLocalisedGhostEntities';
 import NotFound from '../components/NotFound/NotFound';
-import { TemplateProps } from '../utils/types';
 import GenericPost from '../components/GenericPost/GenericPost';
 
 const JOB_POST_TAG_SLUG = 'category-job';
 
-const Post = ({ data: { allGhostPost: posts } }: TemplateProps) => {
+const Post = ({ data: { allGhostPost: posts } }: PageProps<GatsbyTypes.Query>) => {
   const [{ entity: post, slug }] = useLocalisedGhostEntities(posts);
 
   if (slug === undefined) {

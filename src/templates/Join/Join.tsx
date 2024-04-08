@@ -1,4 +1,4 @@
-import { graphql } from 'gatsby';
+import { graphql, PageProps } from 'gatsby';
 import { FormattedMessage, Link, useIntl } from 'gatsby-plugin-intl';
 import Container from '../../components/Layout/Container';
 import Config from '../../config';
@@ -8,19 +8,15 @@ import Paths from '../../utils/paths';
 import JobType from '../../components/JobType/JobType';
 import useLocalisedGhostEntities from '../../hooks/useLocalisedGhostEntities';
 import HtmlContent from '../../components/HtmlContent/HtmlContent';
-import { TemplateProps } from '../../utils/types';
 
-interface Props extends TemplateProps {
-  data: GatsbyTypes.Query;
-  pageContext: {
-    jobTypes: string[];
-  };
+interface TContext {
+  jobTypes: string[];
 }
 
 const Join = ({
   data: { allGhostPage: pages },
   pageContext: { jobTypes },
-}: Props) => {
+}: PageProps<GatsbyTypes.Query, TContext>) => {
   const [{ entity: content }] = useLocalisedGhostEntities(pages);
   const { formatMessage } = useIntl();
 

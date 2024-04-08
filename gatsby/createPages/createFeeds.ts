@@ -1,17 +1,16 @@
 import { CreatePagesArgs } from 'gatsby';
+import path from 'node:path';
 import Paths from '../../src/utils/paths';
 
 const createFeeds = ({ actions: { createPage } }: CreatePagesArgs) => {
-  const campaignsTemplate = require.resolve(
-    '../../src/templates/Campaigns.tsx'
-  );
+  const campaignsTemplate = path.resolve('./src/templates/Campaigns.tsx');
   createPage({
     path: Paths.campaigns(),
     component: campaignsTemplate,
     context: {},
   });
 
-  const branchesTemplate = require.resolve('../../src/templates/Branches.tsx');
+  const branchesTemplate = path.resolve('./src/templates/Branches.tsx');
   createPage({
     path: Paths.branches(),
     component: branchesTemplate,

@@ -1,25 +1,22 @@
-import { graphql } from 'gatsby';
+import { graphql, PageProps } from 'gatsby';
 import { FormattedMessage, useIntl } from 'gatsby-plugin-intl';
 import useLocalisedGhostEntities from '../hooks/useLocalisedGhostEntities';
 import Container from '../components/Layout/Container';
 import Paths from '../utils/paths';
 import Feed from '../components/Feed';
 import Pagination from '../components/Pagination';
-import { TemplateProps } from '../utils/types';
 
-interface Props extends TemplateProps {
-  pageContext: {
-    page: number;
-    hasPrevious: boolean;
-    hasNext: boolean;
-    pages: number;
-  };
+interface TContext {
+  page: number;
+  hasPrevious: boolean;
+  hasNext: boolean;
+  pages: number;
 }
 
 const News = ({
   data: { allGhostPost: posts },
   pageContext: { page, hasPrevious, hasNext, pages },
-}: Props) => {
+}: PageProps<GatsbyTypes.Query, TContext>) => {
   const entities = useLocalisedGhostEntities(posts);
   const { formatMessage } = useIntl();
 

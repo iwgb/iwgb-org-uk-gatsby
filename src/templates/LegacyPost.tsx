@@ -8,13 +8,9 @@ interface LegacyContext extends LegacyPostType {
   id: string;
 }
 
-interface Props extends PageProps {
-  pageContext: LegacyContext;
-}
-
 const LegacyPost = ({
   pageContext: { id, header_img: headerImage, content, title, timestamp },
-}: Props) => {
+}: PageProps<{}, LegacyContext>) => {
   return (
     <UiContainer path={paths.post(id)}>
       <GenericPost

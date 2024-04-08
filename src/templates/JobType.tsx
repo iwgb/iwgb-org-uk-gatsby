@@ -7,13 +7,9 @@ import LogoAnimation from '../components/LogoAnimation/LogoAnimation';
 import Paths from '../utils/paths';
 import Config from '../config';
 
-interface Props extends PageProps {
-  pageContext: {
-    jobType: string;
-  };
-}
-
-const JobType = ({ pageContext: { jobType } }: Props) => {
+const JobType = ({
+  pageContext: { jobType },
+}: PageProps<{}, { jobType: string }>) => {
   const { formatMessage } = useIntl();
 
   useEffect(() => {

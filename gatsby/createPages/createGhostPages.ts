@@ -1,5 +1,6 @@
 import { CreatePagesArgs } from 'gatsby';
 import chunk from 'lodash/chunk';
+import path from 'node:path';
 import Paths from '../../src/utils/paths';
 import { getSlugsInLocales } from '../../src/utils/intl';
 import { GhostEntityEdges } from '../../src/hooks/useLocalisedGhostEntities';
@@ -52,7 +53,7 @@ const createGhostPages = async (
     `
       query ($locale: String!) {
         allGhostPost(
-          sort: { order: [DESC], fields: [published_at] }
+          sort: { published_at: DESC }
           filter: { tags: { elemMatch: { slug: { eq: $locale } } } }
         ) {
           edges {
@@ -82,8 +83,8 @@ const createGhostPages = async (
   const pages = data.allGhostPage.edges;
   const posts = data.allGhostPost.edges;
 
-  const pageTemplate = require.resolve('../../src/templates/Page.tsx');
-  const postTemplate = require.resolve('../../src/templates/Post.tsx');
+  const pageTemplate = path.resolve('./src/templates/Page.tsx');
+  const postTemplate = path.resolve('./src/templates/Post.tsx');
 
   const createPagesFromSlug = (
     edges: Readonly<GhostEntityEdges>,
@@ -103,7 +104,7 @@ const createGhostPages = async (
   createPagesFromSlug(pages, Paths.page, pageTemplate);
   createPagesFromSlug(posts, Paths.post, postTemplate);
 
-  const newsTemplate = require.resolve('../../src/templates/News.tsx');
+  const newsTemplate = path.resolve('./src/templates/News.tsx');
   createPaginatedFeed({
     items: posts,
     createPage,

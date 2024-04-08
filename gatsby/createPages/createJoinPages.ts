@@ -1,4 +1,5 @@
 import { CreatePagesArgs } from 'gatsby';
+import path from 'node:path';
 import Paths from '../../src/utils/paths';
 import { getSlugsInLocales } from '../../src/utils/intl';
 
@@ -9,7 +10,7 @@ const getJobTypeSlugs = async ({
   const { errors, data } = await graphql<GatsbyTypes.Query>(`
     {
       allAirtable(
-        sort: { fields: [data___Slug], order: [ASC] }
+        sort: { data: {Slug: ASC} }
         filter: { table: { eq: "Job types" } }
       ) {
         edges {
@@ -49,7 +50,7 @@ const createJoinPages = async (args: CreatePagesArgs, locales: string[]) => {
 
   args.actions.createPage({
     path: Paths.join(),
-    component: require.resolve('../../src/templates/Join/Join.tsx'),
+    component: path.resolve('./src/templates/Join/Join.tsx'),
     context: {
       jobTypes,
       contentSlugs: getSlugsInLocales(['join'], locales),
@@ -59,7 +60,7 @@ const createJoinPages = async (args: CreatePagesArgs, locales: string[]) => {
   jobTypes.forEach((jobType) => {
     args.actions.createPage({
       path: Paths.joinJobType(jobType),
-      component: require.resolve('../../src/templates/JobType.tsx'),
+      component: path.resolve('./src/templates/JobType.tsx'),
       context: { jobType },
     });
   });

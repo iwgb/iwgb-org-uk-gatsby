@@ -1,17 +1,18 @@
-import { graphql } from 'gatsby';
+import { graphql, PageProps } from 'gatsby';
 import UiContainer from '../components/Layout/UiContainer';
 import paths from '../utils/paths';
 import GhostEntityMeta from '../components/Meta/GhostEntityMeta';
 import useLocalisedGhostEntities from '../hooks/useLocalisedGhostEntities';
 import NotFound from '../pages/404';
 import HtmlContent from '../components/HtmlContent/HtmlContent';
-import { TemplateProps } from '../utils/types';
 import Jobs from '../components/Jobs/Jobs';
 import applyHeadingsToHtml, { HEADINGS_TAG_SLUG } from '../utils/headings';
 
 const JOBS_PAGE_TAG_SLUG = 'special-careers';
 
-const Page = ({ data: { allGhostPage: pages } }: TemplateProps) => {
+const Page = ({
+  data: { allGhostPage: pages },
+}: PageProps<GatsbyTypes.Query>) => {
   const [{ entity: page, slug }] = useLocalisedGhostEntities(pages);
 
   if (page === undefined || slug === undefined) {

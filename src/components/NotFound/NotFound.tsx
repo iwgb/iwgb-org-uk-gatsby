@@ -14,7 +14,7 @@ const NotFound = () => {
   const data = useStaticQuery<GatsbyTypes.Query>(graphql`
     {
       allGhostPost(
-        sort: { order: [DESC], fields: [published_at] }
+        sort: { published_at: DESC }
         filter: { tags: { elemMatch: { slug: { eq: "special-victory" } } } }
       ) {
         ...GhostPostFields

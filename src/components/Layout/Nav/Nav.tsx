@@ -2,7 +2,7 @@ import { FormattedMessage, Link, useIntl } from 'gatsby-plugin-intl';
 import { Button } from 'react-bootstrap';
 import { Fade as Hamburger } from 'hamburger-react';
 import { useState } from 'react';
-import SlideDown from 'react-slidedown';
+import AnimateHeight from 'react-animate-height';
 import Config from '../../../config';
 import Paths from '../../../utils/paths';
 import * as styles from './Nav.module.scss';
@@ -57,14 +57,12 @@ const Nav = () => {
           </Link>
         </div>
       </div>
-      <SlideDown>
-        {isOpen && (
-          <NavMenuItems
-            openSubnav={openSubnav}
-            setOpenSubnav={onToggleOpenSubnav}
-          />
-        )}
-      </SlideDown>
+      <AnimateHeight height={isOpen ? 'auto' : 0}>
+        <NavMenuItems
+          openSubnav={openSubnav}
+          setOpenSubnav={onToggleOpenSubnav}
+        />
+      </AnimateHeight>
       <Subnav openSubnav={openSubnav} className="d-none d-lg-block" />
     </div>
   );

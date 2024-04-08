@@ -1,4 +1,5 @@
 import { CreatePagesArgs } from 'gatsby';
+import path from 'node:path';
 import { getSlugsInLocales } from '../../src/utils/intl';
 
 const getFeaturedSlug = async (
@@ -11,7 +12,7 @@ const getFeaturedSlug = async (
       query ($locale: String!) {
         allGhostPost(
           limit: 1
-          sort: { order: [DESC], fields: [published_at] }
+          sort: { published_at: DESC }
           filter: {
             tags: { elemMatch: { slug: { eq: $locale } } }
             featured: { eq: true }
@@ -52,7 +53,7 @@ const getRecentStorySlugs = async (
       ) {
         allGhostPost(
           limit: 3
-          sort: { order: [DESC], fields: [published_at] }
+          sort: { published_at: DESC }
           filter: {
             tags: { elemMatch: { slug: { eq: $locale, nin: $excludeTags } } }
             slug: { ne: $featuredSlug }
@@ -90,7 +91,7 @@ const getFeaturedCampaignSlugs = async ({
   const { errors, data } = await graphql<GatsbyTypes.Query>(`
     {
       allGhostPage(
-        sort: { order: [DESC], fields: [published_at] }
+        sort: { published_at: DESC }
         filter: {
           tags: { elemMatch: { slug: { eq: "category-campaign" } } }
           featured: { eq: true }
@@ -119,7 +120,7 @@ const getHeroCtaSlugs = async ({
   const { errors, data } = await graphql<GatsbyTypes.Query>(`
     {
       allGhostPost(
-        sort: { order: [DESC], fields: [published_at] }
+        sort: { published_at: DESC }
         filter: { tags: { elemMatch: { slug: { eq: "special-hero-cta" } } } }
       ) {
         edges {
@@ -148,7 +149,7 @@ const createHomepage = async (args: CreatePagesArgs, locales: string[]) => {
     getHeroCtaSlugs(args),
   ]);
 
-  const component = require.resolve('../../src/templates/Index.tsx');
+  const component = path.resolve('./src/templates/Index.tsx');
 
   args.actions.createPage({
     path: '/',

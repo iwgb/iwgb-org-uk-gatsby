@@ -1,4 +1,5 @@
 import { CreatePagesArgs } from 'gatsby';
+import path from 'node:path';
 import http from 'axios';
 import { marked } from 'marked';
 import { DateTime } from 'luxon';
@@ -14,7 +15,7 @@ const createLegacyPosts = async ({
   }
 
   const { data: legacyPosts } = await http.get<LegacyPostResponse>(archiveUrl);
-  const component = require.resolve('../../src/templates/LegacyPost.tsx');
+  const component = path.resolve('./src/templates/LegacyPost.tsx');
 
   Object.entries(legacyPosts).forEach(
     ([id, { content, timestamp, ...post }]) => {
