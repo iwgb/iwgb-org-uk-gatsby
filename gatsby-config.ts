@@ -1,6 +1,5 @@
 import dotenv from 'dotenv';
 import { GatsbyConfig } from 'gatsby';
-import { Application } from 'express';
 import csp from './gatsby/csp';
 
 dotenv.config();
@@ -16,19 +15,17 @@ const headers = {
 };
 
 const config: GatsbyConfig = {
-  developMiddleware: (app: Application) => {
-    app.use((_req, res, next) => {
-      Object.entries(headers).forEach(([header, value]) => {
-        res.set(header, value);
-      });
-      next();
-    });
-  },
   siteMetadata: {
     siteUrl: 'https://iwgb.org.uk',
     title: 'iwgb-org-uk',
   },
   graphqlTypegen: true,
+  headers: [
+    {
+      source: '/*',
+      headers: Object.entries(headers).map(([key, value]) => ({ key, value })),
+    },
+  ],
   plugins: [
     {
       resolve: 'gatsby-source-ghost',
