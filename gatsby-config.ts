@@ -37,17 +37,6 @@ const config: GatsbyConfig = {
     'gatsby-plugin-sass',
     'gatsby-plugin-react-helmet',
     {
-      resolve: 'gatsby-plugin-netlify',
-      options: {
-        mergeSecurityHeaders: false,
-        headers: {
-          '/*': Object.entries(headers).map(
-            ([header, value]) => `${header}: ${value}`
-          ),
-        },
-      },
-    },
-    {
       resolve: 'gatsby-plugin-intl',
       options: {
         path: `${__dirname}/locale`,
