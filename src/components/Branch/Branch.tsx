@@ -6,7 +6,7 @@ import SocialIcons from '../SocialIcons/SocialIcons';
 import BranchLink from './BranchLink';
 
 interface Props {
-  branch: GatsbyTypes.AirtableData;
+  branch: Queries.AirtableData;
 }
 
 const Branch = ({ branch }: Props) => (
@@ -22,20 +22,22 @@ const Branch = ({ branch }: Props) => (
           className={`${styles.description} h-100 d-flex align-items-center justify-content-center text-white text-center p-3`}
         >
           <FormattedMessage
-            id={`branches.${camelCase(branch.Name)}.description`}
+            id={`branches.${camelCase(branch.Name ?? undefined)}.description`}
           />
         </div>
       </div>
       <div className={`${styles.text} bg-white px-3 py-2`}>
         <h4>
-          <FormattedMessage id={`branches.${camelCase(branch.Name)}.name`} />
+          <FormattedMessage
+            id={`branches.${camelCase(branch.Name ?? undefined)}.name`}
+          />
         </h4>
         <div className="d-flex align-items-center">
           {branch.Link && <BranchLink href={branch.Link} className="me-3" />}
           <SocialIcons
-            twitter={branch.Twitter}
-            facebook={branch.Facebook}
-            instagram={branch.Instagram}
+            twitter={branch.Twitter ?? undefined}
+            facebook={branch.Facebook ?? undefined}
+            instagram={branch.Instagram ?? undefined}
           />
         </div>
       </div>

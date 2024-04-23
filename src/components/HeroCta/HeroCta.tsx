@@ -33,7 +33,7 @@ const HeroCta = ({
     <div className="container">
       <a
         className={`${styles.link} link-unstyled row`}
-        href={href}
+        href={href ?? undefined}
         target="_blank"
         rel="noreferrer"
       >
@@ -41,7 +41,7 @@ const HeroCta = ({
           <StripeText className={styles.title}>{title}</StripeText>
           <div className="d-none d-lg-flex align-items-center my-3">
             <HtmlContent
-              html={html}
+              html={html ?? undefined}
               className={`${styles.html} d-none d-lg-block`}
             />
             {href && (

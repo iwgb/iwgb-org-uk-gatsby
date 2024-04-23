@@ -49,7 +49,7 @@ const createGhostPages = async (
   locales: string[]
 ) => {
   // language=GraphQL
-  const { errors, data } = await graphql<GatsbyTypes.Query>(
+  const { errors, data } = await graphql<Queries.Query>(
     `
       query ($locale: String!) {
         allGhostPost(

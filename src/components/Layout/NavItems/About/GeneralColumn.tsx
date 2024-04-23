@@ -4,7 +4,7 @@ import NavColumnBody from '../NavColumnBody/NavColumnBody';
 
 const GeneralColumn = () => {
   // language=GraphQL
-  const data = useStaticQuery<GatsbyTypes.Query>(graphql`
+  const data = useStaticQuery<Queries.Query>(graphql`
     {
       allGhostPage(
         filter: { tags: { elemMatch: { slug: { eq: "subcategory-general" } } } }

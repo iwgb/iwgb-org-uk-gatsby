@@ -4,7 +4,7 @@ import Feed from '../Feed';
 import Paths from '../../utils/paths';
 
 const Jobs = () => {
-  const data = useStaticQuery<GatsbyTypes.Query>(graphql`
+  const data = useStaticQuery<Queries.Query>(graphql`
     {
       allGhostPost(
         filter: { tags: { elemMatch: { slug: { eq: "category-job" } } } }

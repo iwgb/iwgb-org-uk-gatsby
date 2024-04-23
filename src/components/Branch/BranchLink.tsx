@@ -11,6 +11,7 @@ const BranchLink = ({ href, className = '' }: Props) =>
       <FormattedMessage id="branches.readMore" />
     </Link>
   ) : (
+    // eslint-disable-next-line jsx-a11y/control-has-associated-label -- intl label
     <a href={href} target="_blank" rel="noreferrer" className={className}>
       <FormattedMessage id="branches.viewWebsite" />
     </a>

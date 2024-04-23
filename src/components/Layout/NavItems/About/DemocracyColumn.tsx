@@ -4,7 +4,7 @@ import NavColumnBody from '../NavColumnBody/NavColumnBody';
 
 const DemocracyColumn = () => {
   // language=GraphQL
-  const data = useStaticQuery<GatsbyTypes.Query>(graphql`
+  const data = useStaticQuery<Queries.Query>(graphql`
     {
       allGhostPage(
         filter: {

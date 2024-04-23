@@ -60,10 +60,12 @@ const Footer = () => {
             <FormattedMessage id="footer.credit" />
           </p>
           <p className="mb-0">
+            {/* eslint-disable-next-line jsx-a11y/control-has-associated-label -- intl label */}
             <a href={Config.cmsUrl} target="_blank" rel="noreferrer">
               <FormattedMessage id="footer.logIn" />
             </a>
             <span className="mx-2">&middot;</span>
+            {/* eslint-disable-next-line jsx-a11y/control-has-associated-label -- intl label */}
             <a href={Config.repoUrl} target="_blank" rel="noreferrer">
               <FormattedMessage id="footer.contribute" />
             </a>

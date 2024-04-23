@@ -1,8 +1,6 @@
 import { graphql } from 'gatsby';
 
-export const oneOf = (items: string[]): string =>
-  new RegExp(`^(${items.join('|')})$`).toString();
-
+// noinspection JSUnusedGlobalSymbols
 export const GhostPageTitles = graphql`
   fragment GhostPageTitles on GhostPageConnection {
     edges {
@@ -17,6 +15,7 @@ export const GhostPageTitles = graphql`
   }
 `;
 
+// noinspection JSUnusedGlobalSymbols
 export const GhostPostSummaries = graphql`
   fragment GhostPostSummaries on GhostPostConnection {
     edges {
@@ -33,6 +32,7 @@ export const GhostPostSummaries = graphql`
   }
 `;
 
+// noinspection JSUnusedGlobalSymbols
 export const GhostPageFields = graphql`
   fragment GhostPageFields on GhostPageConnection {
     edges {
@@ -59,6 +59,7 @@ export const GhostPageFields = graphql`
   }
 `;
 
+// noinspection JSUnusedGlobalSymbols
 export const GhostPostFields = graphql`
   fragment GhostPostFields on GhostPostConnection {
     edges {

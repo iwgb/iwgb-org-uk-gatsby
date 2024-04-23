@@ -4,7 +4,7 @@ import FooterColumnBody from './FooterColumnBody/FooterColumnBody';
 
 const AboutFooter = () => {
   // language=GraphQL
-  const data = useStaticQuery<GatsbyTypes.Query>(graphql`
+  const data = useStaticQuery<Queries.Query>(graphql`
     {
       allGhostPage(
         filter: { tags: { elemMatch: { slug: { eq: "subcategory-about" } } } }

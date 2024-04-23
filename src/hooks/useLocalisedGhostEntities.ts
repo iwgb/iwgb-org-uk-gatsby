@@ -3,15 +3,15 @@ import { useMemo } from 'react';
 import { getSlugInLocale } from '../utils/intl';
 
 export type GhostEntityConnection =
-  | GatsbyTypes.GhostPageConnection
-  | GatsbyTypes.GhostPostConnection;
+  | Queries.GhostPageConnection
+  | Queries.GhostPostConnection;
 
 export type GhostEntityEdges = (
-  | GatsbyTypes.GhostPageEdge
-  | GatsbyTypes.GhostPostEdge
+  | Queries.GhostPageEdge
+  | Queries.GhostPostEdge
 )[];
 
-export type GhostEntity = GatsbyTypes.GhostPage | GatsbyTypes.GhostPost;
+export type GhostEntity = Queries.GhostPage | Queries.GhostPost;
 
 export interface EntitySlugTuple {
   entity: GhostEntity;
@@ -23,7 +23,7 @@ export const findEntitiesWithLocale = (
   locale: string
 ): GhostEntityEdges =>
   entities.edges.filter(({ node: { tags = [] } }) =>
-    tags.some((tag) => tag && tag.slug === locale)
+    (tags ?? []).some((tag) => tag && tag.slug === locale)
   );
 
 const useLocalisedGhostEntities = (

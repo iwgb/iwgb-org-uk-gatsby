@@ -4,9 +4,10 @@ import useLocalisedGhostEntities from '../hooks/useLocalisedGhostEntities';
 import Container from '../components/Layout/Container';
 import Paths from '../utils/paths';
 import Feed from '../components/Feed';
-import { TemplateProps } from '../utils/types';
 
-const Campaigns = ({ data: { allGhostPage: pages } }: PageProps<GatsbyTypes.Query>) => {
+const Campaigns = ({
+  data: { allGhostPage: pages },
+}: PageProps<Queries.Query>) => {
   const campaigns = useLocalisedGhostEntities(pages);
   const { formatMessage } = useIntl();
 

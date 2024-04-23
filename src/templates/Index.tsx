@@ -23,10 +23,10 @@ const getCampaignText = (title: string): string[] => {
 };
 
 interface TData {
-  featured: GatsbyTypes.GhostPostConnection;
-  recentStories: GatsbyTypes.GhostPostConnection;
-  campaigns: GatsbyTypes.GhostPageConnection;
-  heroCtas: GatsbyTypes.GhostPostConnection;
+  featured: Queries.GhostPostConnection;
+  recentStories: Queries.GhostPostConnection;
+  campaigns: Queries.GhostPageConnection;
+  heroCtas: Queries.GhostPostConnection;
 }
 
 const Index = ({ data }: PageProps<TData>) => {
@@ -49,8 +49,8 @@ const Index = ({ data }: PageProps<TData>) => {
       <div className="container py-3">
         <FeaturedStoryCard
           title={featured.title}
-          image={featured.feature_image}
-          published={featured.published_at}
+          image={featured.feature_image ?? undefined}
+          published={featured.published_at ?? undefined}
           slug={featuredSlug}
         />
         <Feed
@@ -81,10 +81,10 @@ const Index = ({ data }: PageProps<TData>) => {
           return (
             <FeaturedCampaign
               key={slug}
-              image={entity.feature_image}
+              image={entity.feature_image ?? undefined}
               topText={topText}
               bottomText={bottomText}
-              body={entity.excerpt}
+              body={entity.excerpt ?? undefined}
               ctaPath={Paths.page(slug)}
               direction={i % 2 === 1 ? 'left' : 'right'}
             />

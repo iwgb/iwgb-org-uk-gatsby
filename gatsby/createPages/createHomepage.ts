@@ -7,7 +7,7 @@ const getFeaturedSlug = async (
   locales: string[]
 ): Promise<string> => {
   // language=GraphQL
-  const { errors, data } = await graphql<GatsbyTypes.Query>(
+  const { errors, data } = await graphql<Queries.Query>(
     `
       query ($locale: String!) {
         allGhostPost(
@@ -43,7 +43,7 @@ const getRecentStorySlugs = async (
   locales: string[],
   featuredSlug: string
 ): Promise<string[]> => {
-  const { errors, data } = await graphql<GatsbyTypes.Query>(
+  const { errors, data } = await graphql<Queries.Query>(
     // language=GraphQL
     `
       query (
@@ -88,7 +88,7 @@ const getFeaturedCampaignSlugs = async ({
   graphql,
 }: CreatePagesArgs): Promise<string[]> => {
   // language=GraphQL
-  const { errors, data } = await graphql<GatsbyTypes.Query>(`
+  const { errors, data } = await graphql<Queries.Query>(`
     {
       allGhostPage(
         sort: { published_at: DESC }
@@ -117,7 +117,7 @@ const getHeroCtaSlugs = async ({
   graphql,
 }: CreatePagesArgs): Promise<string[]> => {
   // language=GraphQL
-  const { errors, data } = await graphql<GatsbyTypes.Query>(`
+  const { errors, data } = await graphql<Queries.Query>(`
     {
       allGhostPost(
         sort: { published_at: DESC }

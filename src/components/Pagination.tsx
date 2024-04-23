@@ -24,11 +24,16 @@ const Pagination = ({ page, pages, hasPrevious, hasNext, getPath }: Props) => (
     <div className="w-auto">
       {arrayOf(pages).map((_, i) =>
         i + 1 === page ? (
-          <span className="px-2 font-weight-700 text-decoration-none disabled">
+          <span
+            // eslint-disable-next-line react/no-array-index-key -- no other index
+            key={i}
+            className="px-2 font-weight-700 text-decoration-none disabled"
+          >
             {i + 1}
           </span>
         ) : (
-          <Link className="px-2" to={getPath(i + 1)}>
+          // eslint-disable-next-line react/no-array-index-key -- no other index
+          <Link key={i} className="px-2" to={getPath(i + 1)}>
             {i + 1}
           </Link>
         )

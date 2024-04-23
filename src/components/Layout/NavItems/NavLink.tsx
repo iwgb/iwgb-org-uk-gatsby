@@ -8,18 +8,15 @@ interface Props extends NavItem {
   openSubnav: string;
 }
 
-const NavLink = ({ path, message, setOpenSubnav, openSubnav }: Props) => (
-  <>
-    {path === undefined ? (
-      <Button className="btn-reset" onClick={() => setOpenSubnav(message)}>
-        <NavItemBody message={message} isOpen={openSubnav === message} />
-      </Button>
-    ) : (
-      <Link className="link-unstyled h-100" to={path}>
-        <NavItemBody message={message} />
-      </Link>
-    )}
-  </>
-);
+const NavLink = ({ path, message, setOpenSubnav, openSubnav }: Props) =>
+  path === undefined ? (
+    <Button className="btn-reset" onClick={() => setOpenSubnav(message)}>
+      <NavItemBody message={message} isOpen={openSubnav === message} />
+    </Button>
+  ) : (
+    <Link className="link-unstyled h-100" to={path}>
+      <NavItemBody message={message} />
+    </Link>
+  );
 
 export default NavLink;

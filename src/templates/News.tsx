@@ -16,7 +16,7 @@ interface TContext {
 const News = ({
   data: { allGhostPost: posts },
   pageContext: { page, hasPrevious, hasNext, pages },
-}: PageProps<GatsbyTypes.Query, TContext>) => {
+}: PageProps<Queries.Query, TContext>) => {
   const entities = useLocalisedGhostEntities(posts);
   const { formatMessage } = useIntl();
 

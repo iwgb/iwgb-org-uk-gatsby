@@ -47,6 +47,7 @@ const ContactMethod = ({
         {children}
         {showActions && actionIcon && (
           <small className="d-flex align-items-start mt-1">
+            {/* eslint-disable-next-line jsx-a11y/control-has-associated-label -- label in child */}
             <button
               className={`${styles.copy} btn-reset`}
               type="button"
@@ -58,6 +59,7 @@ const ContactMethod = ({
               />
             </button>
             <span className="iwgb-light-grey mx-2">&middot;</span>
+            {/* eslint-disable-next-line jsx-a11y/control-has-associated-label -- label in child */}
             <a
               target={isActionInNewTab ? '_blank' : '_self'}
               rel="noreferrer"

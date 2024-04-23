@@ -8,7 +8,7 @@ const EXCLUDE_BRANCHES = ['Central Union'];
 
 const Branches = ({
   data: { allAirtable: branches },
-}: PageProps<GatsbyTypes.Query>) => {
+}: PageProps<Queries.Query>) => {
   const { formatMessage } = useIntl();
 
   return (

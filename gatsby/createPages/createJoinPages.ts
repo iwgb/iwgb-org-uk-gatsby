@@ -7,10 +7,10 @@ const getJobTypeSlugs = async ({
   graphql,
 }: CreatePagesArgs): Promise<string[]> => {
   // language=GraphQL
-  const { errors, data } = await graphql<GatsbyTypes.Query>(`
+  const { errors, data } = await graphql<Queries.Query>(`
     {
       allAirtable(
-        sort: { data: {Slug: ASC} }
+        sort: { data: { Slug: ASC } }
         filter: { table: { eq: "Job types" } }
       ) {
         edges {

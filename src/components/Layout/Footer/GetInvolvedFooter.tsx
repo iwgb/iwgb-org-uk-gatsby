@@ -4,7 +4,7 @@ import FooterColumnBody from './FooterColumnBody/FooterColumnBody';
 
 const GetInvolvedFooter = () => {
   // language=GraphQL
-  const data = useStaticQuery<GatsbyTypes.Query>(graphql`
+  const data = useStaticQuery<Queries.Query>(graphql`
     {
       allGhostPage(
         filter: {

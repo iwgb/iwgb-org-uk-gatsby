@@ -10,9 +10,7 @@ import applyHeadingsToHtml, { HEADINGS_TAG_SLUG } from '../utils/headings';
 
 const JOBS_PAGE_TAG_SLUG = 'special-careers';
 
-const Page = ({
-  data: { allGhostPage: pages },
-}: PageProps<GatsbyTypes.Query>) => {
+const Page = ({ data: { allGhostPage: pages } }: PageProps<Queries.Query>) => {
   const [{ entity: page, slug }] = useLocalisedGhostEntities(pages);
 
   if (page === undefined || slug === undefined) {
@@ -31,13 +29,13 @@ const Page = ({
     <UiContainer path={paths.page(slug || '')}>
       <GhostEntityMeta
         path={paths.page(slug || '')}
-        entity={page as GatsbyTypes.GhostPage}
+        entity={page as Queries.GhostPage}
       />
       <div className="container">
         <div className="row">
           <div className="col-12 col-md-8 offset-md-2">
             <h1 className="my-5">{page.title}</h1>
-            <HtmlContent html={processedHtml} />
+            <HtmlContent html={processedHtml ?? undefined} />
             {tags.some((tag) => tag && tag.slug === JOBS_PAGE_TAG_SLUG) && (
               <Jobs />
             )}

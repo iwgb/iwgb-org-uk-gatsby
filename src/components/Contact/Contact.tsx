@@ -29,6 +29,7 @@ const Contact = () => {
                 id="home.contact.form.text"
                 values={{
                   link: (
+                    // eslint-disable-next-line jsx-a11y/control-has-associated-label -- intl label
                     <a
                       href={formatMessage({ id: 'home.contact.form.href' })}
                       target="_blank"

@@ -12,9 +12,9 @@ const Feed = ({ entities, getPath, hideMobileImages = false }: Props) => (
     {entities.map(({ entity, slug }) => (
       <div className="col-12 col-md-4" key={slug}>
         <Story
-          image={entity.feature_image}
+          image={entity.feature_image ?? undefined}
           title={entity.title}
-          published={entity.published_at}
+          published={entity.published_at ?? undefined}
           path={getPath(slug)}
           hideMobileImages={hideMobileImages}
         />

@@ -16,7 +16,7 @@ interface TContext {
 const Join = ({
   data: { allGhostPage: pages },
   pageContext: { jobTypes },
-}: PageProps<GatsbyTypes.Query, TContext>) => {
+}: PageProps<Queries.Query, TContext>) => {
   const [{ entity: content }] = useLocalisedGhostEntities(pages);
   const { formatMessage } = useIntl();
 
@@ -48,7 +48,7 @@ const Join = ({
           <div className="row py-5">
             <div className="col-12 col-md-6">
               <h3>{content.title}</h3>
-              <HtmlContent html={content.html} />
+              <HtmlContent html={content.html ?? undefined} />
             </div>
             <div className="col-12 col-md-6">
               <h3>

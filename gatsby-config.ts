@@ -64,7 +64,6 @@ const config: GatsbyConfig = {
     {
       resolve: 'gatsby-plugin-fathom',
       options: {
-        trackingUrl: process.env.FATHOM_URL,
         siteId: process.env.FATHOM_SITE_ID,
       },
     },

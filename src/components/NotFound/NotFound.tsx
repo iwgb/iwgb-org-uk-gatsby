@@ -11,7 +11,7 @@ import * as styles from './NotFound.module.scss';
 const NotFound = () => {
   const { formatMessage } = useIntl();
   // language=GraphQL
-  const data = useStaticQuery<GatsbyTypes.Query>(graphql`
+  const data = useStaticQuery<Queries.Query>(graphql`
     {
       allGhostPost(
         sort: { published_at: DESC }

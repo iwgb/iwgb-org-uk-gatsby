@@ -3,16 +3,15 @@ import Meta from './Meta';
 
 interface Props {
   path: string;
-  entity: GatsbyTypes.GhostPost | GatsbyTypes.GhostPage;
+  entity: Queries.GhostPost | Queries.GhostPage;
 }
 
-// eslint-disable-next-line complexity -- complex meta logic colocated
 const GhostEntityMeta = ({ path, entity }: Props) => (
   <>
     <Meta
       path={path}
-      image={entity?.feature_image}
-      description={entity?.meta_description || entity?.excerpt}
+      image={entity?.feature_image ?? undefined}
+      description={(entity?.meta_description || entity?.excerpt) ?? undefined}
       twitterCard={{
         title: entity?.twitter_title || entity?.title,
         description:
