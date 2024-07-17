@@ -26,7 +26,7 @@ const csp = buildCsp({
     styleSrc: [...defaultSrc, "'unsafe-inline'", 'fonts.googleapis.com'],
     connectSrc: [...defaultSrc, ...ifDev(['localhost:*'])],
     scriptSrc: [...defaultSrc, "'unsafe-inline'", ...ifDev(["'unsafe-eval'"])],
-    frameAncestors: ['cms.iwgb.org.uk'],
+    frameAncestors: ['cms.iwgb.org.uk', 'gameworkers.co.uk'],
   },
 });
 
