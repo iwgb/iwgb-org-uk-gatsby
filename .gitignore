@@ -1,6 +1,6 @@
-node_modules/
-.cache/
-public/
+node_modules
+.cache
+public
 .env
 schema.graphql
 # temporarily commit types to fix build

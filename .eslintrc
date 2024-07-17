@@ -1,5 +1,9 @@
 {
-  "extends": ["amex/prettier"],
+  "extends": [
+    "amex",
+    "prettier",
+    "plugin:@typescript-eslint/recommended-type-checked"
+  ],
   "parser": "@typescript-eslint/parser",
   "settings": {
     "import/resolver": {
@@ -9,23 +13,38 @@
       "@typescript-eslint/parser": [".ts", ".tsx"]
     }
   },
-  "ignorePatterns": ["**/__generated__/*.ts"],
+  "ignorePatterns": ["**/__generated__/*.ts", "**/gatsby-types.d.ts"],
   "plugins": ["@typescript-eslint"],
+  "parserOptions": {
+    "project": true
+  },
   "rules": {
-    "prettier/prettier": ["error", {"singleQuote": true }],
     "no-use-before-define": "off",
     "no-unused-vars": "off",
     "no-undef": "off",
-    "react/jsx-filename-extension": ["error", { "extensions": [".tsx"]}],
+    "react/jsx-filename-extension": ["error", { "extensions": [".tsx"] }],
     "react/react-in-jsx-scope": "off",
     "react/jsx-props-no-spreading": "off",
-    "import/extensions": ["error",{
-      "ts": "never",
-      "tsx": "never",
-      "scss": "always",
-      "json": "always"
-    }],
+    "import/extensions": [
+      "error",
+      {
+        "ts": "never",
+        "tsx": "never",
+        "scss": "always",
+        "json": "always"
+      }
+    ],
     "no-shadow": "off",
-    "@typescript-eslint/no-shadow": "error"
-  }
+    "@typescript-eslint/no-shadow": "error",
+    "@typescript-eslint/unbound-method": "off"
+  },
+  "overrides": [
+    {
+      "files": ["gatsby/**"],
+      "rules": {
+        "@typescript-eslint/no-unsafe-argument": "off",
+        "@typescript-eslint/no-unsafe-assignment": "off"
+      }
+    }
+  ]
 }

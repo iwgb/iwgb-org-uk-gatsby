@@ -1,5 +1,5 @@
 .chevron {
-  transition: transform .5s;
+  transition: transform 0.5s;
 
   &.open {
     transform: rotate(180deg);

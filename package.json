@@ -13,7 +13,7 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "lint": "eslint . --ext .ts,.tsx --ignore-path .gitignore"
+    "lint": "eslint . --ignore-path .gitignore && prettier . --check"
   },
   "dependencies": {
     "@americanexpress/react-seo": "^2.4.0",
@@ -55,14 +55,17 @@
     "@types/marked": "^4.0.2",
     "@types/react-helmet": "^6.1.2",
     "@types/react-lottie": "^1.2.6",
-    "@typescript-eslint/eslint-plugin": "^4.33.0",
-    "@typescript-eslint/parser": "^4.33.0",
-    "eslint": "^7.31.0",
-    "eslint-config-amex": "^15.0.1",
-    "eslint-import-resolver-typescript": "^2.5.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-react-hooks": "^4.3.0",
-    "prettier": "^2.5.1",
+    "@typescript-eslint/eslint-plugin": "^7.7.1",
+    "@typescript-eslint/parser": "^7.7.1",
+    "eslint": "^8.57.0",
+    "eslint-config-amex": "^16.1.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "prettier": "^2.8.8",
     "typescript": "^4.3.5"
+  },
+  "overrides": {
+    "eslint-plugin-unicorn": "52.0.0",
+    "eslint-plugin-react": "7.33.0"
   }
 }

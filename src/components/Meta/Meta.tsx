@@ -1,4 +1,4 @@
-// @ts-ignore
+// @ts-expect-error -- untyped
 import Seo from '@americanexpress/react-seo';
 import { useIntl } from 'gatsby-plugin-intl';
 import env from '../../utils/env';
@@ -11,6 +11,7 @@ interface Props {
   image?: string;
   twitterCard?: object;
   openGraph?: object;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any -- passthrough to untyped
   [x: string]: any;
 }
 

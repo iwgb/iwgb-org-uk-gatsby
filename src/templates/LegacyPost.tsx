@@ -10,17 +10,15 @@ interface LegacyContext extends LegacyPostType {
 
 const LegacyPost = ({
   pageContext: { id, header_img: headerImage, content, title, timestamp },
-}: PageProps<{}, LegacyContext>) => {
-  return (
-    <UiContainer path={paths.post(id)}>
-      <GenericPost
-        image={headerImage}
-        title={title}
-        timestamp={timestamp}
-        html={content}
-      />
-    </UiContainer>
-  );
-};
+}: PageProps<null, LegacyContext>) => (
+  <UiContainer path={paths.post(id)}>
+    <GenericPost
+      image={headerImage}
+      title={title}
+      timestamp={timestamp}
+      html={content}
+    />
+  </UiContainer>
+);
 
 export default LegacyPost;

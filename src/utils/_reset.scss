@@ -30,12 +30,15 @@
     background: transparent;
   }
 
-  &:focus, &:active:focus, &:active {
+  &:focus,
+  &:active:focus,
+  &:active {
     box-shadow: none;
     background-color: transparent;
   }
 }
 
-[disabled], .disabled {
+[disabled],
+.disabled {
   cursor: not-allowed;
 }

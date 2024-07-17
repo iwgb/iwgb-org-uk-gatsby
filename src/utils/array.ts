@@ -1,1 +1,2 @@
-export const arrayOf = (n: number): undefined[] => new Array(n).fill(undefined);
+export const arrayOf = (n: number): undefined[] =>
+  new Array<undefined>(n).fill(undefined);

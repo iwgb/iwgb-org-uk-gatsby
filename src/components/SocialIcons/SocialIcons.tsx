@@ -20,10 +20,14 @@ const SocialIcons = ({
   youtube,
 }: Props) => (
   <div className={className}>
-    {twitter && <SocialIcon icon={faTwitter} href={twitter} />}
-    {facebook && <SocialIcon icon={faFacebook} href={facebook} />}
-    {instagram && <SocialIcon icon={faInstagram} href={instagram} />}
-    {youtube && <SocialIcon icon={faYoutube} href={youtube} />}
+    {twitter && <SocialIcon icon={faTwitter} href={twitter} label="Twitter" />}
+    {facebook && (
+      <SocialIcon icon={faFacebook} href={facebook} label="Facebook" />
+    )}
+    {instagram && (
+      <SocialIcon icon={faInstagram} href={instagram} label="Instagram" />
+    )}
+    {youtube && <SocialIcon icon={faYoutube} href={youtube} label="Youtube" />}
   </div>
 );
 

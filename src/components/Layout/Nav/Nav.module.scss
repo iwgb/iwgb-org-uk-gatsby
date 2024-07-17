@@ -13,14 +13,14 @@
   width: 8ch;
 
   &_en::after {
-    content: "Join"
+    content: 'Join';
   }
 
   &_es::after {
-    content: "Únete"
+    content: 'Únete';
   }
 
   &:hover::after {
-    content: "❤️";
+    content: '❤️';
   }
 }

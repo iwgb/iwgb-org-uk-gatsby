@@ -9,7 +9,7 @@ import Config from '../config';
 
 const JobType = ({
   pageContext: { jobType },
-}: PageProps<{}, { jobType: string }>) => {
+}: PageProps<null, { jobType: string }>) => {
   const { formatMessage } = useIntl();
 
   useEffect(() => {

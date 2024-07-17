@@ -32,8 +32,11 @@ const ContactMethod = ({
 }: Props) => {
   const [isComplete, setComplete] = useState(false);
 
-  const onCopy = async () => {
-    await navigator.clipboard.writeText(text);
+  const onCopy = () => {
+    // eslint-disable-next-line no-void -- floating
+    void (async () => {
+      await navigator.clipboard.writeText(text);
+    })();
     setComplete(true);
     window.setTimeout(() => {
       setComplete(false);

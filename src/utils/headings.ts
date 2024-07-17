@@ -41,7 +41,7 @@ const generateSubheroHeading = (
 const applyHeadingsToHtml = (html: string): string =>
   html.replace(
     /<h2 id="(?<id>[\w-]+)">(?<title>[^<]+)<\/h2>/g,
-    (_, id, title) => {
+    (_, id: string, title: string) => {
       if (Object.keys(headings).includes(id)) {
         return generateSubheroHeading(
           id,

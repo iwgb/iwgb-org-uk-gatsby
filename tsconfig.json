@@ -1,5 +1,5 @@
 {
-  "include": ["src/**/*", "gatsby/**/*"],
+  "include": ["src/**/*", "gatsby/**/*", "gatsby-*.ts"],
   "compilerOptions": {
     "module": "commonjs",
     "target": "es6",
@@ -14,6 +14,6 @@
     "noUnusedParameters": true,
     "removeComments": false,
     "rootDir": "",
-    "typeRoots" : ["src", "node_modules/@types"]
+    "typeRoots": ["src", "node_modules/@types"]
   }
 }

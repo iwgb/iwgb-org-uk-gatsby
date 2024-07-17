@@ -5,8 +5,7 @@ import createJoinPages from './createJoinPages';
 import createFeeds from './createFeeds';
 import createRedirects from './createRedirects';
 import createLegacyPosts from './createLegacyPosts';
-
-require('dotenv').config();
+import 'dotenv/config';
 
 const locales = (process.env.GATSBY_AVAILABLE_LOCALES || 'en').split(',');
 
