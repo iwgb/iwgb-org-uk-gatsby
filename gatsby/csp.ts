@@ -29,7 +29,7 @@ const csp = buildCsp({
     frameAncestors: [
       'cms.iwgb.org.uk',
       'gameworkers.co.uk',
-      'http://localhost',
+      'http://localhost:3000',
     ],
   },
 });
